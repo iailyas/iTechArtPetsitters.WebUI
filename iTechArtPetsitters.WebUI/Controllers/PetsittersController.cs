@@ -1,15 +1,11 @@
-﻿using iTechArtPetsitters.WebUI.Models;
-using iTechArtPetsitters.WebUI.PetsittersData;
+﻿using iTechArtPetsitters.WebUI2.Domain.Models;
+using iTechArtPetsitters.WebUI2.Infrastructure.Repositories.Fake.PetsittersData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace iTechArtPetsitters.WebUI.Controllers
+namespace iTechArtPetsitters.WebUI2.Controllers
 {
-    
+
     [ApiController]
 
     

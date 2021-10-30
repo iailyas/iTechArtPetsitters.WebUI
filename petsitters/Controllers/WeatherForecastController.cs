@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace iTechArtPetsitters.WebUI2.Controllers
+namespace petsitters.Controllers
 {
     [ApiController]
     [Route("[controller]")]

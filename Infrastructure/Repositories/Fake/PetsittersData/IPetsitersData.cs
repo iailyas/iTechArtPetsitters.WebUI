@@ -1,10 +1,7 @@
-﻿using iTechArtPetsitters.WebUI.Models;
+﻿using iTechArtPetsitters.WebUI2.Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace iTechArtPetsitters.WebUI.PetsittersData
+namespace iTechArtPetsitters.WebUI2.Infrastructure.Repositories.Fake.PetsittersData
 {
     public interface IPetsitersData
     {

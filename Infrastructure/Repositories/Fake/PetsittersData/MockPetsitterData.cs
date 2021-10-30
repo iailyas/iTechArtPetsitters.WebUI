@@ -1,10 +1,10 @@
-﻿using iTechArtPetsitters.WebUI.Models;
+﻿using iTechArtPetsitters.WebUI2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using iTechArtPetsitters.WebUI2.Domain.Models;
 
-namespace iTechArtPetsitters.WebUI.PetsittersData
+namespace iTechArtPetsitters.WebUI2.Infrastructure.Repositories.Fake.PetsittersData
 {
     public class MockPetsitterData : IPetsitersData
     {

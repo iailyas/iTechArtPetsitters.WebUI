@@ -1,6 +1,6 @@
 using System;
 
-namespace iTechArtPetsitters.WebUI2
+namespace petsitters
 {
     public class WeatherForecast
     {

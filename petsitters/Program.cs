@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace iTechArtPetsitters.WebUI2
+namespace petsitters
 {
     public class Program
     {
