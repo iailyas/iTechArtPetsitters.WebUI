@@ -1,16 +1,13 @@
+using iTechArtPetsitters.WebUI.Infrastructure.Repositories.Fake.PetsitterData;
 using iTechArtPetsitters.WebUI.PetsittersData;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Infrastructure.Repositories;
+using Domain.Interfaces;
 
 namespace iTechArtPetsitters.WebUI
 {
@@ -26,9 +23,12 @@ namespace iTechArtPetsitters.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
+            
             services.AddControllers();
+            services.AddDbContext<EFUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddSingleton<IPetsitersData,MockPetsitterData>();
+            services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArtPetsitters.WebUI", Version = "v1" });
