@@ -8,6 +8,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Infrastructure.Repositories;
 using Domain.Interfaces;
+using Infrastructure.EFDbContext;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace iTechArtPetsitters.WebUI
 {
@@ -26,7 +29,7 @@ namespace iTechArtPetsitters.WebUI
             
             
             services.AddControllers();
-            services.AddDbContext<EFUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<EFUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
             services.AddSingleton<IPetsitersData,MockPetsitterData>();
             services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddSwaggerGen(c =>

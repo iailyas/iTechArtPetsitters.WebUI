@@ -115,7 +115,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Models\Petsitter.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\MyUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

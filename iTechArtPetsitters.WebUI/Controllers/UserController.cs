@@ -22,7 +22,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<MyUser> Get()
         {
-            return IUserRepository.Get();
+            return UserRepository.Get();
         }
 
         [HttpGet("{id}", Name = "GetUser")]

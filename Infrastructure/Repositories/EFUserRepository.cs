@@ -15,7 +15,7 @@ namespace Infrastructure.Repositories
         //}
         public MyUser Get(Guid Id)
         {
-            return Context.Users.Find(Id);
+            return Context.MyUser.Find(Id);
         }
         public EFUserRepository(EFUserDBContext context)
         {
