@@ -29,7 +29,7 @@ namespace iTechArtPetsitters.WebUI
 
 
             services.AddControllers();
-            services.AddDbContext<EFUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
+            services.AddDbContext<EFMyUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
             services.AddSingleton<IPetsitersData, MockPetsitterData>();
             services.AddTransient<IUserRepository, EFMyUserRepository>();
 

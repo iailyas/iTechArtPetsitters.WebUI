@@ -9,9 +9,9 @@ namespace Infrastructure.Repositories
     //realization of repository with data from EFUserDBContext
     public class EFMyUserRepository : IUserRepository
     {
-        private EFUserDBContext Context;
+        private EFMyUserDBContext Context;
         //contructor
-        public EFMyUserRepository(EFUserDBContext context)
+        public EFMyUserRepository(EFMyUserDBContext context)
         {
             Context = context;
         }
