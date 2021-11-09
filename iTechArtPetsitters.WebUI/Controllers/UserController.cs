@@ -1,11 +1,7 @@
 ﻿using Domain.Interfaces;
 using Domain.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
 {
@@ -18,15 +14,15 @@ namespace iTechArtPetsitters.WebUI.Controllers
         {
             UserRepository = todoRepository;
         }
-
+        //returns all users
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<MyUser> Get()
         {
             return UserRepository.Get();
         }
-
+        //returns user by id
         [HttpGet("{id}", Name = "GetUser")]
-        public IActionResult Get(Guid Id)
+        public IActionResult Get(long Id)
         {
             MyUser user = UserRepository.Get(Id);
 
@@ -37,7 +33,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
             return new ObjectResult(user);
         }
-
+        //creating new record
         [HttpPost]
         public IActionResult Create([FromBody] MyUser user)
         {
@@ -48,9 +44,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
             UserRepository.Create(user);
             return CreatedAtRoute("GetTodoItem", new { id = user.id }, user);
         }
-
+        //replaces all records with data from request
         [HttpPut("{id}")]
-        public IActionResult Update(Guid Id, [FromBody] MyUser updatedUser)
+        public IActionResult Update(long Id, [FromBody] MyUser updatedUser)
         {
             if (updatedUser == null || updatedUser.id != Id)
             {
@@ -66,9 +62,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
             UserRepository.Update(updatedUser);
             return RedirectToRoute("GetAllUsers");
         }
-
+        //delete record by id
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid Id)
+        public IActionResult Delete(long Id)
         {
             var deletedUser = UserRepository.Delete(Id);
 

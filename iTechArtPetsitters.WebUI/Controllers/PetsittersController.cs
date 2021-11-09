@@ -9,14 +9,15 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     [ApiController]
 
-    
+
     public class PetsittersController : ControllerBase
     {
         private IPetsitersData _petsitterData;
-        public PetsittersController(IPetsitersData petsitterData) 
+        public PetsittersController(IPetsitersData petsitterData)
         {
             _petsitterData = petsitterData;
         }
+        //returns all petsitters
         [HttpGet]
         [Route("api/[controller]")]
 
@@ -24,37 +25,37 @@ namespace iTechArtPetsitters.WebUI.Controllers
         {
             return Ok(_petsitterData.GetPetsitters());
         }
-
+        //returns petsitter by id
         [HttpGet]
         [Route("api/[controller]/{id}")]
 
         public IActionResult GetPetsitter(Guid id)
         {
             var petsitter = _petsitterData.GetPetsitter(id);
-            if (petsitter != null) 
+            if (petsitter != null)
             {
-             return Ok(petsitter);
+                return Ok(petsitter);
             }
             return NotFound($"Employee with id: {id} not found");
-            
-        }
 
+        }
+        //creating new record
         [HttpPost]
         [Route("api/[controller]")]
 
         public IActionResult AddPersitter(Petsitter petsitter)
         {
             _petsitterData.AddPetsitter(petsitter);
-            return Created(HttpContext.Request.Scheme+"://"+HttpContext.Request.Host+HttpContext.Request.Path+"/"+petsitter.Id,petsitter);
+            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + petsitter.Id, petsitter);
 
         }
-
+        //delete record by id
         [HttpDelete]
         [Route("api/[controller]/{id}")]
 
         public IActionResult DeletePersitter(Guid id)
         {
-            var petsitter=_petsitterData.GetPetsitter(id);
+            var petsitter = _petsitterData.GetPetsitter(id);
             if (petsitter != null)
             {
                 _petsitterData.DeletePetsitter(petsitter);
@@ -62,10 +63,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return NotFound($"Employee with id: {id} not found");
 
         }
+        //update existing record by id
         [HttpPatch]
         [Route("api/[controller]/{id}")]
 
-        public IActionResult EditPersitter(Guid id,Petsitter petsitter)
+        public IActionResult EditPersitter(Guid id, Petsitter petsitter)
         {
             var existingPetsitter = _petsitterData.GetPetsitter(id);
             if (existingPetsitter != null)
