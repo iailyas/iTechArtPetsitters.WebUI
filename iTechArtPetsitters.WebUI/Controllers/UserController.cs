@@ -23,17 +23,18 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return UserRepository.Get();
         }
         //returns user by id
-        [HttpGet("{id::long}", Name = "GetUser")]
-        public IActionResult Get(long Id)
+        [HttpGet("/user22/{id}")]
+        public IActionResult Get(long id)
         {
-            MyUser user = UserRepository.Get(Id);
+            //MyUser user = UserRepository.Get(Id);
 
-            if (user == null)
-            {
-                return NotFound();
-            }
+            //if (user == null)
+            //{
+            //    return NotFound(Id.ToString());
+            //}
 
-            return new ObjectResult(user);
+            //return new ObjectResult(user);
+            return Ok("Test");
         }
         //creating new record
         [HttpPost]
