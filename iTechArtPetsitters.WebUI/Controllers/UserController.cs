@@ -23,18 +23,19 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return UserRepository.Get();
         }
         //returns user by id
+        //Case sensitivity {id} and long id
         [HttpGet("/user22/{id}")]
         public IActionResult Get(long id)
         {
-            //MyUser user = UserRepository.Get(Id);
+            MyUser user = UserRepository.Get(id);
 
-            //if (user == null)
-            //{
-            //    return NotFound(Id.ToString());
-            //}
+            if (user == null)
+            {
+                return NotFound(id.ToString());
+            }
 
-            //return new ObjectResult(user);
-            return Ok("Test");
+            return new ObjectResult(user);
+           
         }
         //creating new record
         [HttpPost]
@@ -49,14 +50,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public IActionResult Update(long Id, [FromBody] MyUser updatedUser)
+        public IActionResult Update(long id, [FromBody] MyUser updatedUser)
         {
-            if (updatedUser == null || updatedUser.id != Id)
+            if (updatedUser == null || updatedUser.id != id)
             {
                 return BadRequest();
             }
 
-            var user = UserRepository.Get(Id);
+            var user = UserRepository.Get(id);
             if (user == null)
             {
                 return NotFound();
@@ -67,9 +68,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //delete record by id
         [HttpDelete("{id::long}")]
-        public IActionResult Delete(long Id)
+        public IActionResult Delete(long id)
         {
-            var deletedUser = UserRepository.Delete(Id);
+            var deletedUser = UserRepository.Delete(id);
 
             if (deletedUser == null)
             {
