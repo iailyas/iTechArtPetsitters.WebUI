@@ -12,6 +12,6 @@ namespace Infrastructure.EFDbContext
         public EFMyUserDBContext(DbContextOptions<EFMyUserDBContext> options) : base(options)
         { }
         public DbSet<MyUser> Users { get; set; }
-       // public object MyUser { get;  set; }
+       
     }
 }

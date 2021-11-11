@@ -1,6 +1,7 @@
 using DomainNew.Interfaces;
 using Infrastructure.EFDbContext;
 using Infrastructure.Repositories;
+using InfrastructureNew.EFDbContext;
 using iTechArtPetsitters.WebUI.Infrastructure.Repositories.Fake.PetsitterData;
 using iTechArtPetsitters.WebUI.PetsittersData;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +31,7 @@ namespace iTechArtPetsitters.WebUI
 
             services.AddControllers();
             services.AddDbContext<EFMyUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
+            services.AddDbContext<EFServiceDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
             services.AddSingleton<IPetsitersData, MockPetsitterData>();
             services.AddTransient<IUserRepository, EFMyUserRepository>();
 
