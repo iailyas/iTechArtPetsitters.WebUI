@@ -1,7 +1,7 @@
-﻿using Domain.Models;
+﻿using DomainNew.Models;
 using System.Collections.Generic;
 
-namespace Domain.Interfaces
+namespace DomainNew.Interfaces
 {
     //main operations for model(MyUser) 
     public interface IUserRepository

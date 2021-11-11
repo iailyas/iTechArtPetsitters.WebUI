@@ -1,7 +1,7 @@
 ﻿
 
 
-using Domain.Models;
+using DomainNew.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.EFDbContext

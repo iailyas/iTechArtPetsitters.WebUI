@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainNew.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureNew.EFDbContext
 {
-    class EFServiceDBContext
+    //context class (for access to the data in tables)
+    class EFServiceDBContext : DbContext
     {
+        public EFServiceDBContext(DbContextOptions<EFServiceDBContext> options) : base(options) { }
+        public DbSet<Service> Services { get; set; }
+
     }
+
 }
+
+

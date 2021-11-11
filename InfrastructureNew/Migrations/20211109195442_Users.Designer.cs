@@ -20,7 +20,7 @@ namespace InfrastructureNew.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Domain.Models.MyUser", b =>
+            modelBuilder.Entity("DomainNew.Models.MyUser", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()

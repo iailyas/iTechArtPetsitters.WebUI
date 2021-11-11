@@ -1,4 +1,4 @@
-﻿namespace Domain.Models
+﻿namespace DomainNew.Models
 {
     //model of data
     public class MyUser

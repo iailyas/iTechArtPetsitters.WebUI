@@ -1,5 +1,5 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
+﻿using DomainNew.Interfaces;
+using DomainNew.Models;
 using Infrastructure.EFDbContext;
 using System.Collections.Generic;
 using System.Linq;
