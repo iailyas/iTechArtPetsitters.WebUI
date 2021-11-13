@@ -6,10 +6,13 @@ using System.Linq;
 
 namespace Infrastructure.Repositories
 {
+    //_ or "c" UNIT OF WORK
+    //without _
+    //service
     //realization of repository with data from EFUserDBContext
     public class EFMyUserRepository : IUserRepository
     {
-        private EFMyUserDBContext Context;
+        private EFMyUserDBContext Context; //_ or "c"
         //contructor
         public EFMyUserRepository(EFMyUserDBContext context)
         {
@@ -26,7 +29,7 @@ namespace Infrastructure.Repositories
             return Context.Users.Find(id);
         }
 
-        void IUserRepository.Create(MyUser _user)
+        void IUserRepository.Create(MyUser _user) //without _
         {
             Context.Users.Add(_user);
             Context.SaveChanges();
