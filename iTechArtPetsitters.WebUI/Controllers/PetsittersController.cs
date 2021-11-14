@@ -10,7 +10,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
 
 
-    public class PetsittersController : ControllerBase
+    public class PetsittersController : Controller
     {
         private IPetsitersData _petsitterData;
         public PetsittersController(IPetsitersData petsitterData)

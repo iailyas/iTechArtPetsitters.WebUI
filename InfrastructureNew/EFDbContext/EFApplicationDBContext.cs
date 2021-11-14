@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainNew.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureNew.EFDbContext
 {
-    class EFApplicationDBContext
+    public class EFApplicationDBContext : DbContext
     {
+        public EFApplicationDBContext(DbContextOptions<EFApplicationDBContext> options) : base(options)
+        { }
+        public DbSet<Application> Applications { get; set; }
     }
 }

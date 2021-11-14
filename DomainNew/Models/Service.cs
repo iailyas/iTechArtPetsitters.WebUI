@@ -2,7 +2,7 @@
 {
     public class Service
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string description { get; set; }
         public decimal price { get; set; }
 

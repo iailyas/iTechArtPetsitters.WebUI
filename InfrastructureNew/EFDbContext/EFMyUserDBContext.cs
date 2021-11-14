@@ -1,7 +1,4 @@
-﻿
-
-
-using DomainNew.Models;
+﻿using DomainNew.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.EFDbContext
@@ -12,6 +9,6 @@ namespace Infrastructure.EFDbContext
         public EFMyUserDBContext(DbContextOptions<EFMyUserDBContext> options) : base(options)
         { }
         public DbSet<MyUser> Users { get; set; }
-       
+
     }
 }

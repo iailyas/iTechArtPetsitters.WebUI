@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace InfrastructureNew.Repositories
 {
-    class EFServiceRepository
+    public class EFServiceRepository
     {
         public class EFMyUserRepository : IServiceRepository
         {

@@ -6,7 +6,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PetController : ControllerBase
+    public class PetController : Controller
     {
         IPetRepository PetRepository;
 

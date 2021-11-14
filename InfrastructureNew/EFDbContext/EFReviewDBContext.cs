@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainNew.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureNew.EFDbContext
 {
-    class EFReviewDBContext
+    public class EFReviewDBContext : DbContext
     {
+        public EFReviewDBContext(DbContextOptions<EFReviewDBContext> options) : base(options)
+        { }
+        public DbSet<Review> Reviews { get; set; }
     }
 }
