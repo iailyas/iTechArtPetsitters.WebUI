@@ -1,5 +1,7 @@
 ﻿using DomainNew.Models;
+using InfrastructureNew.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace InfrastructureNew.EFDbContext
 {

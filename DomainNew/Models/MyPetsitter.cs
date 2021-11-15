@@ -1,10 +1,13 @@
-﻿namespace DomainNew.Models
+﻿using System.Collections.Generic;
+
+namespace DomainNew.Models
 {
     public class MyPetsitter
     {
-        public long id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string picture { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Picture { get; set; }
+        IList<Review> Reviews { get; set; }
     }
 }

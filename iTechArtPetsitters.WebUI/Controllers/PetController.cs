@@ -8,7 +8,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class PetController : Controller
     {
-        IPetRepository PetRepository;
+        private IPetRepository PetRepository;
 
         public PetController(IPetRepository petRepository)
         {
@@ -22,7 +22,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             PetRepository.Create(pet);
-            return CreatedAtRoute("GetService", new { id = pet.id }, pet);
+            return CreatedAtRoute("GetPet", new { id = pet.Id }, pet);
         }
 
         [HttpDelete("{id::long}")]

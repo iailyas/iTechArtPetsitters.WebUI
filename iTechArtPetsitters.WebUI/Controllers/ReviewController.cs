@@ -13,14 +13,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ReviewController : Controller
     {
-        IReviewRepository ReviewRepository;
+        private IReviewRepository ReviewRepository;
         public ReviewController(IReviewRepository reviewRepository)
         {
             ReviewRepository = reviewRepository;
         }
 
         
-        [HttpGet(Name = "GetAll")]
+        [HttpGet(Name = "GetAllReviews")]
         public IEnumerable<Review> Get()
         {
             return ReviewRepository.Get();
@@ -47,7 +47,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             ReviewRepository.Create(review);
-            return CreatedAtRoute("GetService", new { id = review.id }, review);
+            return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
         }
        
         [HttpDelete("{id::long}")]

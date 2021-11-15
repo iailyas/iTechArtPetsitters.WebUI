@@ -12,6 +12,7 @@ namespace DomainNew.Interfaces
         void Create(Service _service);
         void Update(Service _service);
         Service Delete(long id);
+
     }
 
 }

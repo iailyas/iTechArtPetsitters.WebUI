@@ -10,14 +10,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ApplicationController : Controller
     {
-        IApplicationRepository ApplicationRepository;
+        private IApplicationRepository ApplicationRepository;
 
         public ApplicationController(IApplicationRepository applicationRepository)
         {
             ApplicationRepository = applicationRepository;
         }
         
-        [HttpGet(Name = "GetAllServices")]
+        [HttpGet(Name = "GetAllApplications")]
         public IEnumerable<Application> Get()
         {
             return ApplicationRepository.Get();
@@ -45,7 +45,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             ApplicationRepository.Create(application);
-            return CreatedAtRoute("GetService", new { id = application.id }, application);
+            return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
         }
        
        

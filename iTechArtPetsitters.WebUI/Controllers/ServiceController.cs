@@ -14,7 +14,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     
     public class ServiceController : Controller
     {
-        IServiceRepository ServiceRepository;
+        private IServiceRepository ServiceRepository;
 
         public ServiceController(IServiceRepository serviceRepository)
         {
@@ -52,13 +52,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             ServiceRepository.Create(service);
-            return CreatedAtRoute("GetService", new { id = service.id }, service);
+            return CreatedAtRoute("GetService", new { id = service.Id }, service);
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
         public IActionResult Update(long id, [FromBody] Service UpdatedService)
         {
-            if (UpdatedService == null || UpdatedService.id != id)
+            if (UpdatedService == null || UpdatedService.Id != id)
             {
                 return BadRequest();
             }

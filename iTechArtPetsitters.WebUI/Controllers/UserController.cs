@@ -18,7 +18,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //returns all users
         [HttpGet(Name = "GetAllUsers")]
-        public IEnumerable<MyUser> Get()
+        public IEnumerable<User> Get()
         {
             return UserRepository.Get();
         }
@@ -27,7 +27,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet("/user22/{id}")]
         public IActionResult Get(long id)
         {
-            MyUser user = UserRepository.Get(id);
+            User user = UserRepository.Get(id);
 
             if (user == null)
             {
@@ -39,20 +39,20 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public IActionResult Create([FromBody] MyUser user)
+        public IActionResult Create([FromBody] User user)
         {
             if (user == null)
             {
                 return BadRequest();
             }
             UserRepository.Create(user);
-            return CreatedAtRoute("GetUser", new { id = user.id }, user);
+            return CreatedAtRoute("GetUser", new { id = user.Id }, user);
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public IActionResult Update(long id, [FromBody] MyUser updatedUser)
+        public IActionResult Update(long id, [FromBody] User updatedUser)
         {
-            if (updatedUser == null || updatedUser.id != id)
+            if (updatedUser == null || updatedUser.Id != id)
             {
                 return BadRequest();
             }

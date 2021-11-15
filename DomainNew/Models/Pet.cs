@@ -2,11 +2,12 @@
 {
     public class Pet
     {
-        public long id { get; set; }
-        public string name { get; set; }
-        public string breed { get; set; }
-        public float weight { get; set; }
-        public string adress { get; set; }
-        public int user_id { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Breed { get; set; }
+        public float Weight { get; set; }
+        public string Adress { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

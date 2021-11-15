@@ -2,6 +2,7 @@ using DomainNew.Interfaces;
 using Infrastructure.EFDbContext;
 using Infrastructure.Repositories;
 using InfrastructureNew.EFDbContext;
+using InfrastructureNew.Repositories;
 using iTechArtPetsitters.WebUI.Infrastructure.Repositories.Fake.PetsitterData;
 using iTechArtPetsitters.WebUI.PetsittersData;
 using Microsoft.AspNetCore.Builder;
@@ -30,11 +31,23 @@ namespace iTechArtPetsitters.WebUI
 
 
             services.AddControllers();
+            //contexts
             services.AddDbContext<EFMyUserDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
             services.AddDbContext<EFServiceDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
             services.AddDbContext<EFPetDBContext>(options=>options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<EFApplicationDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<EFReviewDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            //repositories
             services.AddSingleton<IPetsitersData, MockPetsitterData>();
             services.AddTransient<IUserRepository, EFMyUserRepository>();
+            services.AddTransient<IApplicationRepository, EFApplicationRepository>();
+            services.AddTransient<IPetRepository, EFPetRepository>();
+            services.AddTransient<IReviewRepository, EFReviewRepository>();
+            services.AddTransient<IServiceRepository, EFServiceRepository>();
+            
+
+
+
 
             services.AddSwaggerGen(c =>
             {

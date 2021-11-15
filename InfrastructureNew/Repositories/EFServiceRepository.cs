@@ -6,13 +6,12 @@ using System.Linq;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFServiceRepository
+    public class EFServiceRepository:IServiceRepository
     {
-        public class EFMyUserRepository : IServiceRepository
-        {
+        
             private EFServiceDBContext Context;
             //contructor
-            public EFMyUserRepository(EFServiceDBContext context)
+            public EFServiceRepository(EFServiceDBContext context)
             {
                 Context = context;
             }
@@ -52,6 +51,6 @@ namespace InfrastructureNew.Repositories
 
                 return service;
             }
-        }
+        
     }
 }

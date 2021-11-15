@@ -2,9 +2,12 @@
 {
     public class Application
     {
-        public long id { get; set; }
-        public int pet_id { get; set; }
-        public int petsitter_id { get; set; }
-        public int service_id { get; set; }
+        public long Id { get; set; }
+        public int PetId { get; set; }
+        public Pet Pet { get; set; }
+        public int PetsitterId { get; set; }
+        public MyPetsitter Petsitter { get; set; }
+        public int ServiceId { get; set; }
+        public Service Service { get; set; }
     }
 }

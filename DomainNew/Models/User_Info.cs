@@ -2,8 +2,8 @@
 {
     public class User_Info
     {
-        public long id { get; set; }
-        public string f_name { get; set; }
-        public string l_name { get; set; }
+        public long Id { get; set; }
+        public string F_name { get; set; }
+        public string L_name { get; set; }
     }
 }

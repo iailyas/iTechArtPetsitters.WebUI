@@ -19,32 +19,32 @@ namespace Infrastructure.Repositories
             Context = context;
         }
 
-        IEnumerable<MyUser> IUserRepository.Get()
+        IEnumerable<User> IUserRepository.Get()
         {
             return Context.Users.ToList();
         }
 
-        MyUser IUserRepository.Get(long id)
+        User IUserRepository.Get(long id)
         {
             return Context.Users.Find(id);
         }
 
-        void IUserRepository.Create(MyUser _user) //without _
+        void IUserRepository.Create(User _user) //without _
         {
             Context.Users.Add(_user);
             Context.SaveChanges();
         }
 
-        void IUserRepository.Update(MyUser _user)
+        void IUserRepository.Update(User _user)
         {
-            MyUser currentUser = _user;
+            User currentUser = _user;
             Context.Update(currentUser);
             Context.SaveChanges();
         }
 
-        MyUser IUserRepository.Delete(long id)
+        User IUserRepository.Delete(long id)
         {
-            MyUser user = Context.Users.Find(id);
+            User user = Context.Users.Find(id);
 
             if (user != null)
             {
