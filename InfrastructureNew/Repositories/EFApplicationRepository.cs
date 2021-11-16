@@ -8,9 +8,9 @@ namespace InfrastructureNew.Repositories
 {
     public class EFApplicationRepository : IApplicationRepository
     {
-        private EFApplicationDBContext context;
+        private EFMainDbContext context;
 
-        public EFApplicationRepository(EFApplicationDBContext context)
+        public EFApplicationRepository(EFMainDbContext context)
         {
             this.context = context;
         }

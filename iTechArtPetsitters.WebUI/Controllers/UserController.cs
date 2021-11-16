@@ -46,7 +46,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             UserRepository.Create(user);
-            return CreatedAtRoute("GetUser", new { id = user.Id }, user);
+            //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
+            return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]

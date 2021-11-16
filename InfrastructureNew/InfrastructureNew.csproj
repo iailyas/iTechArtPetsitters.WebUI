@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Migrations\EFApplicationDB\" />
+    <Folder Include="Migrations\EFPetDB\" />
+    <Folder Include="Migrations\EFReviewDB\" />
+    <Folder Include="Migrations\EFServiceDB\" />
     <Folder Include="Migration\" />
     <Folder Include="Repositories\Drafts\" />
   </ItemGroup>

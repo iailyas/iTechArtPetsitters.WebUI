@@ -45,7 +45,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             ApplicationRepository.Create(application);
-            return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
+            //return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
+            return Ok();
         }
        
        

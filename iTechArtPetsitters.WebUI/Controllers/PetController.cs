@@ -22,7 +22,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             PetRepository.Create(pet);
-            return CreatedAtRoute("GetPet", new { id = pet.Id }, pet);
+            //return CreatedAtRoute("GetPet", new { id = pet.Id }, pet);
+            return Ok();
         }
 
         [HttpDelete("{id::long}")]

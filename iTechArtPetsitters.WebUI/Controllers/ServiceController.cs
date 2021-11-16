@@ -52,7 +52,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             ServiceRepository.Create(service);
-            return CreatedAtRoute("GetService", new { id = service.Id }, service);
+            //return CreatedAtRoute("GetService", new { id = service.Id }, service);
+            return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]

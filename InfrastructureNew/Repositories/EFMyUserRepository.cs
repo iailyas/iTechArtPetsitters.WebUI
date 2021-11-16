@@ -1,6 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using Infrastructure.EFDbContext;
+using InfrastructureNew.EFDbContext;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,9 +13,9 @@ namespace Infrastructure.Repositories
     //realization of repository with data from EFUserDBContext
     public class EFMyUserRepository : IUserRepository
     {
-        private EFMyUserDBContext Context; //_ or "c"
+        private EFMainDbContext Context; //_ or "c"
         //contructor
-        public EFMyUserRepository(EFMyUserDBContext context)
+        public EFMyUserRepository(EFMainDbContext context)
         {
             Context = context;
         }

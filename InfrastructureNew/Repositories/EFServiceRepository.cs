@@ -9,9 +9,9 @@ namespace InfrastructureNew.Repositories
     public class EFServiceRepository:IServiceRepository
     {
         
-            private EFServiceDBContext Context;
+            private EFMainDbContext Context;
             //contructor
-            public EFServiceRepository(EFServiceDBContext context)
+            public EFServiceRepository(EFMainDbContext context)
             {
                 Context = context;
             }

@@ -6,9 +6,9 @@ namespace InfrastructureNew.Repositories
 {
     public class EFPetRepository : IPetRepository
     {
-        private EFPetDBContext Context;
+        private EFMainDbContext Context;
 
-        public EFPetRepository(EFPetDBContext context)
+        public EFPetRepository(EFMainDbContext context)
         {
             Context = context;
         }

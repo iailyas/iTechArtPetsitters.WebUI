@@ -4,16 +4,14 @@ using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace InfrastructureNew.Migrations.EFApplicationDB
+namespace InfrastructureNew.Migrations
 {
-    [DbContext(typeof(EFApplicationDBContext))]
-    [Migration("20211115202342_Applications")]
-    partial class Applications
+    [DbContext(typeof(EFMainDbContext))]
+    partial class EFMainDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,7 +73,7 @@ namespace InfrastructureNew.Migrations.EFApplicationDB
 
                     b.HasKey("Id");
 
-                    b.ToTable("MyPetsitter");
+                    b.ToTable("Petsitters");
                 });
 
             modelBuilder.Entity("DomainNew.Models.Pet", b =>
@@ -107,7 +105,38 @@ namespace InfrastructureNew.Migrations.EFApplicationDB
 
                     b.HasIndex("UserId1");
 
-                    b.ToTable("Pet");
+                    b.ToTable("Pets");
+                });
+
+            modelBuilder.Entity("DomainNew.Models.Review", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PetsitterId")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("PetsitterId1")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("UserId1")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PetsitterId1");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("DomainNew.Models.Service", b =>
@@ -125,7 +154,7 @@ namespace InfrastructureNew.Migrations.EFApplicationDB
 
                     b.HasKey("Id");
 
-                    b.ToTable("Service");
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("DomainNew.Models.User", b =>
@@ -149,7 +178,7 @@ namespace InfrastructureNew.Migrations.EFApplicationDB
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("DomainNew.Models.Application", b =>
@@ -178,6 +207,21 @@ namespace InfrastructureNew.Migrations.EFApplicationDB
                     b.HasOne("DomainNew.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DomainNew.Models.Review", b =>
+                {
+                    b.HasOne("DomainNew.Models.MyPetsitter", "Petsitter")
+                        .WithMany()
+                        .HasForeignKey("PetsitterId1");
+
+                    b.HasOne("DomainNew.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("Petsitter");
 
                     b.Navigation("User");
                 });

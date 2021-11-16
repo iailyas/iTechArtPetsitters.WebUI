@@ -47,7 +47,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
             ReviewRepository.Create(review);
-            return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
+            //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
+            return Ok();
         }
        
         [HttpDelete("{id::long}")]

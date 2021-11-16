@@ -8,9 +8,9 @@ namespace InfrastructureNew.Repositories
 {
     public class EFReviewRepository : IReviewRepository
     {
-        private EFReviewDBContext context;
+        private EFMainDbContext context;
 
-        public EFReviewRepository(EFReviewDBContext context)
+        public EFReviewRepository(EFMainDbContext context)
         {
             this.context = context;
         }
