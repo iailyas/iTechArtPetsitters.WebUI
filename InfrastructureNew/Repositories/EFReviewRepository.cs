@@ -3,6 +3,7 @@ using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
@@ -14,20 +15,20 @@ namespace InfrastructureNew.Repositories
         {
             this.context = context;
         }
-        public void Create(Review review)
+        public async Task CreateAsync(Review review)
         {
-            context.Reviews.Add(review);
-            context.SaveChanges();
+            await context.Reviews.AddAsync(review);
+            await context.SaveChangesAsync();
         }
 
-        public Review Delete(long id)
+        public async Task<Review> DeleteAsync(long id)
         {
-            Review review = context.Reviews.Find(id);
+            Review review = await context.Reviews.FindAsync(id);
 
             if (review != null)
             {
                 context.Remove(review);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
 
             return review;
@@ -38,9 +39,9 @@ namespace InfrastructureNew.Repositories
             return context.Reviews; /// .ToList?
         }
 
-        public Review Get(long id)
+        public async Task<Review> GetAsync(long id)
         {
-            return context.Reviews.Find(id);
+            return await context.Reviews.FindAsync(id);
         }
 
         

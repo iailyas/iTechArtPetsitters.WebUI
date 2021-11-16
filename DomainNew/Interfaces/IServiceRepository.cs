@@ -1,5 +1,6 @@
 ﻿using DomainNew.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
@@ -8,10 +9,10 @@ namespace DomainNew.Interfaces
     public interface IServiceRepository
     {
         IEnumerable<Service> Get();
-        Service Get(long id);
-        void Create(Service _service);
-        void Update(Service _service);
-        Service Delete(long id);
+        Task<Service> GetAsync(long id);
+        Task CreateAsync(Service _service);
+        Task UpdateAsunc(Service _service);
+        Task<Service> DeleteAsync(long id);
 
     }
 

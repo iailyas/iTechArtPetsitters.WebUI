@@ -1,10 +1,11 @@
 ﻿using DomainNew.Models;
+using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
    public interface IPetRepository
     {
-        void Create(Pet pet);
-        Pet Delete(long id);
+        Task CreateAsync(Pet pet);
+        Task<Pet> DeleteAsync(long id);
     }
 }

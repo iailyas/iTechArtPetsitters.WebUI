@@ -31,9 +31,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         //returns service by id
         //Case sensitivity {id} and long id
         [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        public async Task<IActionResult> GetAsync(long id)
         {
-            Service service = ServiceRepository.Get(id);
+            Service service = await ServiceRepository.GetAsync(id);
 
             if (service == null)
             {
@@ -45,39 +45,39 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public IActionResult Create([FromBody] Service service)
+        public async  Task<IActionResult> CreateAsync([FromBody] Service service)
         {
             if (service == null)
             {
                 return BadRequest();
             }
-            ServiceRepository.Create(service);
+            await ServiceRepository .CreateAsync(service);
             //return CreatedAtRoute("GetService", new { id = service.Id }, service);
             return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public IActionResult Update(long id, [FromBody] Service UpdatedService)
+        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] Service UpdatedService)
         {
             if (UpdatedService == null || UpdatedService.Id != id)
             {
                 return BadRequest();
             }
 
-            var user = ServiceRepository.Get(id);
+            var user = await ServiceRepository.GetAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            ServiceRepository.Update(UpdatedService);
+            await ServiceRepository.UpdateAsunc(UpdatedService);
             return RedirectToRoute("GetAllServices");
         }
         //delete record by id
         [HttpDelete("{id::long}")]
-        public IActionResult Delete(long id)
+        public async Task<IActionResult> Delete(long id)
         {
-            var DeletedService = ServiceRepository.Delete(id);
+            var DeletedService = await ServiceRepository.DeleteAsync(id);
 
             if (DeletedService == null)
             {

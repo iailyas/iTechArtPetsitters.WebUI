@@ -1,6 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
+using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
@@ -13,20 +14,20 @@ namespace InfrastructureNew.Repositories
             Context = context;
         }
 
-        public void Create(Pet pet)
+        public async Task CreateAsync(Pet pet)
         {
-            Context.Add(pet);
-            Context.SaveChanges();
+            await Context.AddAsync(pet);
+            await Context.SaveChangesAsync();
         }
 
-        public Pet Delete(long id)
+        public async Task<Pet> DeleteAsync(long id)
         {
-            Pet pet = Context.Pets.Find(id);
+            Pet pet = await Context.Pets.FindAsync(id);
 
             if (pet != null)
             {
                 Context.Remove(pet);
-                Context.SaveChanges();
+                await Context.SaveChangesAsync();
             }
 
             return pet;

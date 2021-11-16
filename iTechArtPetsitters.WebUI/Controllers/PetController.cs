@@ -1,6 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
 {
@@ -15,21 +16,21 @@ namespace iTechArtPetsitters.WebUI.Controllers
             PetRepository = petRepository;
         }
         [HttpPost]
-        public IActionResult Create([FromBody] Pet pet)
+        public async Task<IActionResult> CreateAsync([FromBody] Pet pet)
         {
             if (pet == null)
             {
                 return BadRequest();
             }
-            PetRepository.Create(pet);
+            await PetRepository.CreateAsync(pet);
             //return CreatedAtRoute("GetPet", new { id = pet.Id }, pet);
             return Ok();
         }
 
         [HttpDelete("{id::long}")]
-        public IActionResult Delete(long id)
+        public async  Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedPet = PetRepository.Delete(id);
+            var DeletedPet = await PetRepository .DeleteAsync(id);
 
             if (DeletedPet == null)
             {

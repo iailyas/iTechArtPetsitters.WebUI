@@ -1,13 +1,14 @@
 ﻿using DomainNew.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
     public interface IApplicationRepository
     {
         IEnumerable<Application> Get();
-        Application Get(long id);
-        void Create(Application application);
-        Application Delete(long id);
+        Task<Application> GetAsync(long id);
+        Task CreateAsync(Application application);
+        Task<Application> DeleteAsync(long id);
     }
 }

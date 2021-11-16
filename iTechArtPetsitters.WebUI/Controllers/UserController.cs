@@ -2,6 +2,7 @@
 using DomainNew.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
 {
@@ -25,9 +26,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         //returns user by id
         //Case sensitivity {id} and long id
         [HttpGet("/user22/{id}")]
-        public IActionResult Get(long id)
+        public async Task<IActionResult> GetAsync(long id)
         {
-            User user = UserRepository.Get(id);
+            User user = await UserRepository.GetAsync(id);
 
             if (user == null)
             {
@@ -39,39 +40,39 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public IActionResult Create([FromBody] User user)
+        public async Task<IActionResult> CreateAsync([FromBody] User user)
         {
             if (user == null)
             {
                 return BadRequest();
             }
-            UserRepository.Create(user);
+            await UserRepository.CreateAsync(user);
             //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
             return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public IActionResult Update(long id, [FromBody] User updatedUser)
+        public async Task<IActionResult> UpdateAsync(long id, [FromBody] User updatedUser)
         {
             if (updatedUser == null || updatedUser.Id != id)
             {
                 return BadRequest();
             }
 
-            var user = UserRepository.Get(id);
+            var user = await UserRepository.GetAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            UserRepository.Update(updatedUser);
+            await UserRepository .UpdateAsync(updatedUser);
             return RedirectToRoute("GetAllUsers");
         }
         //delete record by id
         [HttpDelete("{id::long}")]
-        public IActionResult Delete(long id)
+        public async Task<IActionResult> DeleteAsync(long id)
         {
-            var deletedUser = UserRepository.Delete(id);
+            var deletedUser = await UserRepository.DeleteAsync(id);
 
             if (deletedUser == null)
             {

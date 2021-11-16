@@ -1,5 +1,6 @@
 ﻿using DomainNew.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
@@ -7,9 +8,9 @@ namespace DomainNew.Interfaces
     public interface IUserRepository
     {
         IEnumerable<User> Get();
-        User Get(long id);
-        void Create(User _user);
-        void Update(User _user);
-        User Delete(long id);
+        Task<User> GetAsync(long id);
+        Task CreateAsync(User _user);
+        Task UpdateAsync(User _user);
+        Task<User> DeleteAsync(long id);
     }
 }

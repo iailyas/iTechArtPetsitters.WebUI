@@ -3,6 +3,7 @@ using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
@@ -20,33 +21,33 @@ namespace InfrastructureNew.Repositories
                 return Context.Services.ToList();
             }
 
-            public Service Get(long id)
+            public async Task<Service> GetAsync(long id)
             {
-                return Context.Services.Find(id);
+                return await Context.Services.FindAsync(id);
             }
 
-            public void Create(Service _service)
+            public async Task CreateAsync(Service _service)
             {
-                Context.Services.Add(_service);
-                Context.SaveChanges();
+                await Context.Services.AddAsync(_service);
+                await Context.SaveChangesAsync();
             }
 
-            public void Update(Service _service)
+            public async Task UpdateAsunc(Service _service)
             {
                 Service currentService = _service;
                 Context.Update(currentService);
-                Context.SaveChanges();
+                await Context.SaveChangesAsync();
 
             }
 
-            public Service Delete(long id)
+            public async Task<Service> DeleteAsync(long id)
             {
-                Service service = Context.Services.Find(id);
+                Service service = await Context.Services.FindAsync(id);
 
                 if (service != null)
                 {
                     Context.Remove(service);
-                    Context.SaveChanges();
+                    await Context.SaveChangesAsync();
                 }
 
                 return service;

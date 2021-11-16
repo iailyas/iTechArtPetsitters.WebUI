@@ -27,9 +27,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         
         [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        public async Task<IActionResult> GetAsync(long id)
         {
-            Review review = ReviewRepository.Get(id);
+            Review review = await ReviewRepository .GetAsync(id);
 
             if (review == null)
             {
@@ -40,21 +40,21 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         }
         [HttpPost]
-        public IActionResult Create([FromBody] Review review)
+        public async Task<IActionResult> CreateAsync([FromBody] Review review)
         {
             if (review == null)
             {
                 return BadRequest();
             }
-            ReviewRepository.Create(review);
+            await ReviewRepository.CreateAsync(review);
             //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
             return Ok();
         }
        
         [HttpDelete("{id::long}")]
-        public IActionResult Delete(long id)
+        public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedReview = ReviewRepository.Delete(id);
+            var DeletedReview = await ReviewRepository.DeleteAsync(id);
 
             if (DeletedReview == null)
             {
