@@ -6,7 +6,7 @@ namespace DomainNew.Interfaces
 {
     public interface IReviewRepository
     {
-        IEnumerable<Review> Get();
+        Task<IEnumerable<Review>> GetAsync();
         Task<Review> GetAsync(long id);
         Task CreateAsync(Review review);
         Task<Review> DeleteAsync(long id);

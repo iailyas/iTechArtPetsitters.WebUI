@@ -1,6 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,9 +17,9 @@ namespace InfrastructureNew.Repositories
             {
                 Context = context;
             }
-            public IEnumerable<Service> Get()
+            public async Task<IEnumerable<Service>> GetAsync()
             {
-                return Context.Services.ToList();
+                return await Context.Services.ToListAsync();
             }
 
             public async Task<Service> GetAsync(long id)

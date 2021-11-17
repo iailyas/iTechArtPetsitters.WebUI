@@ -24,9 +24,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         //returns all services
         [HttpGet(Name = "GetAllServices")]
-        public IEnumerable<Service> Get()
+        public async Task<IEnumerable<Service>> GetAsync()
         {
-            return ServiceRepository.Get();
+            return await ServiceRepository.GetAsync();
         }
         //returns service by id
         //Case sensitivity {id} and long id

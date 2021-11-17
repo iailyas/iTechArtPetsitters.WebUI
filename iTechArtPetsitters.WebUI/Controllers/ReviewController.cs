@@ -21,9 +21,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         
         [HttpGet(Name = "GetAllReviews")]
-        public IEnumerable<Review> Get()
+        public async Task<IEnumerable<Review>> GetAsync()
         {
-            return ReviewRepository.Get();
+            return await  ReviewRepository.GetAsync();
         }
         
         [HttpGet("{id}")]

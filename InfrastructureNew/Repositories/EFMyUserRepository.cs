@@ -2,6 +2,7 @@
 using DomainNew.Models;
 using Infrastructure.EFDbContext;
 using InfrastructureNew.EFDbContext;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,9 +22,9 @@ namespace Infrastructure.Repositories
             Context = context;
         }
 
-        IEnumerable<User> IUserRepository.Get()
+        async Task<IEnumerable<User>> IUserRepository.GetAsync()
         {
-            return Context.Users.ToList();
+            return await Context.Users.ToListAsync();
         }
 
         async Task<User> IUserRepository.GetAsync(long id)

@@ -6,7 +6,7 @@ namespace DomainNew.Interfaces
 {
     public interface IApplicationRepository
     {
-        IEnumerable<Application> Get();
+        Task<IEnumerable<Application>> GetAsync();
         Task<Application> GetAsync(long id);
         Task CreateAsync(Application application);
         Task<Application> DeleteAsync(long id);

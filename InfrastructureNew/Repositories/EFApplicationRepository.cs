@@ -1,6 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace InfrastructureNew.Repositories
 {
     public class EFApplicationRepository : IApplicationRepository
     {
-        private EFMainDbContext context;
+        private readonly EFMainDbContext context;
 
         public EFApplicationRepository(EFMainDbContext context)
         {
@@ -34,9 +35,9 @@ namespace InfrastructureNew.Repositories
             return application;
         }
 
-        public IEnumerable<Application> Get()
+        public async Task<IEnumerable<Application>> GetAsync()
         {
-            return context.Applications.ToList();
+            return await context.Applications.ToListAsync();
         }
 
         public async Task<Application> GetAsync(long id)

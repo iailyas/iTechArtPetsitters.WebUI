@@ -18,9 +18,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         
         [HttpGet(Name = "GetAllApplications")]
-        public IEnumerable<Application> Get()
+        public async Task<IEnumerable<Application>> GetAsync()
         {
-            return ApplicationRepository.Get();
+            return await ApplicationRepository.GetAsync();
         }
         
         [HttpGet("{id}")]

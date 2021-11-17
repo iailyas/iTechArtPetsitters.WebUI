@@ -19,9 +19,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //returns all users
         [HttpGet(Name = "GetAllUsers")]
-        public IEnumerable<User> Get()
+        public async Task<IEnumerable<User>> GetAsync()
         {
-            return UserRepository.Get();
+            return await UserRepository.GetAsync();
         }
         //returns user by id
         //Case sensitivity {id} and long id

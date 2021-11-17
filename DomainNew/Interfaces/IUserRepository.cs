@@ -7,7 +7,7 @@ namespace DomainNew.Interfaces
     //main operations for model(MyUser) 
     public interface IUserRepository
     {
-        IEnumerable<User> Get();
+        Task<IEnumerable<User>> GetAsync();
         Task<User> GetAsync(long id);
         Task CreateAsync(User _user);
         Task UpdateAsync(User _user);

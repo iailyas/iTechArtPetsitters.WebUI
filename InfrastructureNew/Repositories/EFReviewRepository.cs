@@ -1,6 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -34,9 +35,9 @@ namespace InfrastructureNew.Repositories
             return review;
         }
 
-       public IEnumerable<Review> Get()
+       public async  Task<IEnumerable<Review>> GetAsync()
         {
-            return context.Reviews; /// .ToList?
+            return await context.Reviews.ToListAsync();
         }
 
         public async Task<Review> GetAsync(long id)
