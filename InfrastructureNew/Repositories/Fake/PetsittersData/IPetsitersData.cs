@@ -9,15 +9,15 @@ namespace iTechArtPetsitters.WebUI.Infrastructure.Repositories.Fake.PetsitterDat
 {
     public interface IPetsitersData
     {
-        List<Petsitter> GetPetsitters();
+        List<PetsitterFake> GetPetsitters();
 
-        Petsitter GetPetsitter(Guid id);
+        PetsitterFake GetPetsitter(Guid id);
 
-        Petsitter AddPetsitter(Petsitter Petsitter);
+        PetsitterFake AddPetsitter(PetsitterFake Petsitter);
 
-        void DeletePetsitter(Petsitter Petsitter);
+        void DeletePetsitter(PetsitterFake Petsitter);
 
-        Petsitter EditPetsitter(Petsitter petsitter);
+        PetsitterFake EditPetsitter(PetsitterFake petsitter);
 
     }
 }

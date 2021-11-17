@@ -40,7 +40,7 @@ namespace iTechArtPetsitters.WebUI
             //services.AddDbContext<EFMainDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             //repositories
             services.AddSingleton<IPetsitersData, MockPetsitterData>();
-            services.AddTransient<IUserRepository, EFMyUserRepository>();
+            services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddTransient<IApplicationRepository, EFApplicationRepository>();
             services.AddTransient<IPetRepository, EFPetRepository>();
             services.AddTransient<IReviewRepository, EFReviewRepository>();

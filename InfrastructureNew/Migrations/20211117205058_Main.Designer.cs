@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfrastructureNew.Migrations
 {
     [DbContext(typeof(EFMainDbContext))]
-    [Migration("20211116184142_MainContext")]
-    partial class MainContext
+    [Migration("20211117205058_Main")]
+    partial class Main
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,27 +57,6 @@ namespace InfrastructureNew.Migrations
                     b.ToTable("Applications");
                 });
 
-            modelBuilder.Entity("DomainNew.Models.MyPetsitter", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Picture")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Petsitters");
-                });
-
             modelBuilder.Entity("DomainNew.Models.Pet", b =>
                 {
                     b.Property<long>("Id")
@@ -108,6 +87,27 @@ namespace InfrastructureNew.Migrations
                     b.HasIndex("UserId1");
 
                     b.ToTable("Pets");
+                });
+
+            modelBuilder.Entity("DomainNew.Models.Petsitter", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Picture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Petsitters");
                 });
 
             modelBuilder.Entity("DomainNew.Models.Review", b =>
@@ -189,7 +189,7 @@ namespace InfrastructureNew.Migrations
                         .WithMany()
                         .HasForeignKey("PetId1");
 
-                    b.HasOne("DomainNew.Models.MyPetsitter", "Petsitter")
+                    b.HasOne("DomainNew.Models.Petsitter", "Petsitter")
                         .WithMany()
                         .HasForeignKey("PetsitterId1");
 
@@ -215,7 +215,7 @@ namespace InfrastructureNew.Migrations
 
             modelBuilder.Entity("DomainNew.Models.Review", b =>
                 {
-                    b.HasOne("DomainNew.Models.MyPetsitter", "Petsitter")
+                    b.HasOne("DomainNew.Models.Petsitter", "Petsitter")
                         .WithMany()
                         .HasForeignKey("PetsitterId1");
 

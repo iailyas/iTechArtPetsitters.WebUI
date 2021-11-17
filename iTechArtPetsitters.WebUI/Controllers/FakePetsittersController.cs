@@ -10,10 +10,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
 
 
-    public class PetsittersController : Controller
+    public class FakePetsittersController : Controller
     {
         private IPetsitersData _petsitterData;
-        public PetsittersController(IPetsitersData petsitterData)
+        public FakePetsittersController(IPetsitersData petsitterData)
         {
             _petsitterData = petsitterData;
         }
@@ -43,7 +43,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpPost]
         [Route("api/[controller]")]
 
-        public IActionResult AddPersitter(Petsitter petsitter)
+        public IActionResult AddPersitter(PetsitterFake petsitter)
         {
             _petsitterData.AddPetsitter(petsitter);
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + petsitter.Id, petsitter);
@@ -67,7 +67,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpPatch]
         [Route("api/[controller]/{id}")]
 
-        public IActionResult EditPersitter(Guid id, Petsitter petsitter)
+        public IActionResult EditPersitter(Guid id, PetsitterFake petsitter)
         {
             var existingPetsitter = _petsitterData.GetPetsitter(id);
             if (existingPetsitter != null)

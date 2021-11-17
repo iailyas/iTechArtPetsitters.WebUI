@@ -10,44 +10,44 @@ namespace iTechArtPetsitters.WebUI.PetsittersData
 {
     public class MockPetsitterData : IPetsitersData
     {
-        private List<Petsitter> petsitters = new List<Petsitter>()
+        private List<PetsitterFake> petsitters = new List<PetsitterFake>()
         {
-            new Petsitter()
+            new PetsitterFake()
             {
             Id=Guid.NewGuid(),
             Name="Petsitter 1"
             },
-            new Petsitter()
+            new PetsitterFake()
             {
             Id=Guid.NewGuid(),
             Name="Petsitter 2"
             }
         };
-        public Petsitter AddPetsitter(Petsitter Petsitter)
+        public PetsitterFake AddPetsitter(PetsitterFake Petsitter)
         {
             Petsitter.Id = Guid.NewGuid();
             petsitters.Add(Petsitter);
             return Petsitter;
         }
 
-        public void DeletePetsitter(Petsitter Petsitter)
+        public void DeletePetsitter(PetsitterFake Petsitter)
         {
             petsitters.Remove(Petsitter);
         }
 
-        public Petsitter EditPetsitter(Petsitter petsitter)
+        public PetsitterFake EditPetsitter(PetsitterFake petsitter)
         {
             var ExistingPetsitter = GetPetsitter(petsitter.Id);
             ExistingPetsitter.Name = petsitter.Name;
             return ExistingPetsitter;
         }
 
-        public Petsitter GetPetsitter(Guid id)
+        public PetsitterFake GetPetsitter(Guid id)
         {
             return petsitters.SingleOrDefault((x=> x.Id==id));
         }
 
-        public List<Petsitter> GetPetsitters()
+        public List<PetsitterFake> GetPetsitters()
         {
             return petsitters;
         }

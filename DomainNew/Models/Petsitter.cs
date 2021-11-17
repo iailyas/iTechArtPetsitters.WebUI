@@ -1,20 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-namespace iTechArtPetsitters.WebUI.Domain.Models
+namespace DomainNew.Models
 {
-    //not in database (first model ever)
     public class Petsitter
     {
-
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
-        //public long Id { get; set; }
-        //public string CustomerName { get; set; }
-        //public string Text { get; set; }
-
-
-
-
+        public string Description { get; set; }
+        public string Picture { get; set; }
+        IList<Review> Reviews { get; set; }
     }
 }
-
