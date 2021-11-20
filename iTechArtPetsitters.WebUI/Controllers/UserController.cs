@@ -11,24 +11,24 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        IUserRepository UserRepository;
+        IUserService UserService;
 
-        public UserController(IUserRepository todoRepository)
+        public UserController(IUserService user)
         {
-            UserRepository = todoRepository;
+            UserService = user;
         }
         //returns all users
         [HttpGet(Name = "GetAllUsers")]
         public async Task<IEnumerable<User>> GetAsync()
         {
-            return await UserRepository.GetAsync();
+            return await UserService.GetAsync();
         }
         //returns user by id
         //Case sensitivity {id} and long id
         [HttpGet("/user22/{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            User user = await UserRepository.GetAsync(id);
+            User user = await UserService.GetAsync(id);
 
             if (user == null)
             {
@@ -46,7 +46,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await UserRepository.CreateAsync(user);
+            await UserService.CreateAsync(user);
             //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
             return Ok();
         }
@@ -59,20 +59,20 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
 
-            var user = await UserRepository.GetAsync(id);
+            var user = await UserService.GetAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            await UserRepository .UpdateAsync(updatedUser);
+            await UserService .UpdateAsync(updatedUser);
             return RedirectToRoute("GetAllUsers");
         }
         //delete record by id
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var deletedUser = await UserRepository.DeleteAsync(id);
+            var deletedUser = await UserService.DeleteAsync(id);
 
             if (deletedUser == null)
             {

@@ -2,13 +2,12 @@
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFReviewRepository : IReviewRepository
+    public class EFReviewRepository : IReviewService
     {
         private EFMainDbContext context;
 
@@ -35,7 +34,7 @@ namespace InfrastructureNew.Repositories
             return review;
         }
 
-       public async  Task<IEnumerable<Review>> GetAsync()
+        public async Task<IEnumerable<Review>> GetAsync()
         {
             return await context.Reviews.ToListAsync();
         }
@@ -45,6 +44,6 @@ namespace InfrastructureNew.Repositories
             return await context.Reviews.FindAsync(id);
         }
 
-        
+
     }
 }

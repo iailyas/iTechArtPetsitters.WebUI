@@ -1,39 +1,36 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
-    public class ServiceController : Controller
-    {
-        private IServiceRepository ServiceRepository;
 
-        public ServiceController(IServiceRepository serviceRepository)
+    public class PetsittingServiceController : Controller
+    {
+        private IPetsittingServiceService PetsittingServiceService;
+
+        public PetsittingServiceController(IPetsittingServiceService service)
         {
-            ServiceRepository = serviceRepository;
+            PetsittingServiceService = service;
         }
 
 
         //returns all services
         [HttpGet(Name = "GetAllServices")]
-        public async Task<IEnumerable<Service>> GetAsync()
+        public async Task<IEnumerable<PetsittingService>> GetAsync()
         {
-            return await ServiceRepository.GetAsync();
+            return await PetsittingServiceService.GetAsync();
         }
         //returns service by id
         //Case sensitivity {id} and long id
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Service service = await ServiceRepository.GetAsync(id);
+            PetsittingService service = await PetsittingServiceService.GetAsync(id);
 
             if (service == null)
             {
@@ -45,39 +42,39 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public async  Task<IActionResult> CreateAsync([FromBody] Service service)
+        public async Task<IActionResult> CreateAsync([FromBody] PetsittingService service)
         {
             if (service == null)
             {
                 return BadRequest();
             }
-            await ServiceRepository .CreateAsync(service);
+            await PetsittingServiceService.CreateAsync(service);
             //return CreatedAtRoute("GetService", new { id = service.Id }, service);
             return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] Service UpdatedService)
+        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] PetsittingService UpdatedService)
         {
             if (UpdatedService == null || UpdatedService.Id != id)
             {
                 return BadRequest();
             }
 
-            var user = await ServiceRepository.GetAsync(id);
+            var user = await PetsittingServiceService.GetAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            await ServiceRepository.UpdateAsunc(UpdatedService);
+            await PetsittingServiceService.UpdateAsunc(UpdatedService);
             return RedirectToRoute("GetAllServices");
         }
         //delete record by id
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> Delete(long id)
         {
-            var DeletedService = await ServiceRepository.DeleteAsync(id);
+            var DeletedService = await PetsittingServiceService.DeleteAsync(id);
 
             if (DeletedService == null)
             {

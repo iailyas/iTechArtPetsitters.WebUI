@@ -3,12 +3,11 @@ using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFApplicationRepository : IApplicationRepository
+    public class EFApplicationRepository : IApplicationService
     {
         private readonly EFMainDbContext context;
 
@@ -28,8 +27,8 @@ namespace InfrastructureNew.Repositories
 
             if (application != null)
             {
-               context.Remove(application);
-               await context.SaveChangesAsync();
+                context.Remove(application);
+                await context.SaveChangesAsync();
             }
 
             return application;

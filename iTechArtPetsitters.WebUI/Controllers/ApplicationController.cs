@@ -10,23 +10,23 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ApplicationController : Controller
     {
-        private IApplicationRepository ApplicationRepository;
+        private IApplicationService ApplicationService;
 
-        public ApplicationController(IApplicationRepository applicationRepository)
+        public ApplicationController(IApplicationService applicationRepository)
         {
-            ApplicationRepository = applicationRepository;
+            ApplicationService = applicationRepository;
         }
         
         [HttpGet(Name = "GetAllApplications")]
         public async Task<IEnumerable<Application>> GetAsync()
         {
-            return await ApplicationRepository.GetAsync();
+            return await ApplicationService.GetAsync();
         }
         
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Application application = await ApplicationRepository.GetAsync(id);
+            Application application = await ApplicationService.GetAsync(id);
 
             if (application == null)
             {
@@ -44,7 +44,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await ApplicationRepository.CreateAsync(application);
+            await ApplicationService.CreateAsync(application);
             //return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
             return Ok();
         }
@@ -54,7 +54,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedApplication = await ApplicationRepository .DeleteAsync(id);
+            var DeletedApplication = await ApplicationService .DeleteAsync(id);
 
             if (DeletedApplication == null)
             {

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
-    public interface IReviewRepository
+    public interface IReviewService
     {
         Task<IEnumerable<Review>> GetAsync();
         Task<Review> GetAsync(long id);

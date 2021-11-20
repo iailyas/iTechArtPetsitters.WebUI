@@ -1,7 +1,5 @@
 ﻿using DomainNew.Models;
-using InfrastructureNew.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace InfrastructureNew.EFDbContext
 {
@@ -9,7 +7,7 @@ namespace InfrastructureNew.EFDbContext
     public class EFServiceDBContext : DbContext
     {
         public EFServiceDBContext(DbContextOptions<EFServiceDBContext> options) : base(options) { }
-        public DbSet<Service> Services { get; set; }
+        public DbSet<PetsittingService> Services { get; set; }
 
     }
 

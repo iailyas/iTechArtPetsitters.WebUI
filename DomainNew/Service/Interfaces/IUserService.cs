@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DomainNew.Interfaces
+namespace DomainNew.Service.Interfaces
 {
-    //main operations for model(MyUser) 
-    public interface IUserRepository
+    interface IUserService
     {
         Task<IEnumerable<User>> GetAsync();
         Task<User> GetAsync(long id);

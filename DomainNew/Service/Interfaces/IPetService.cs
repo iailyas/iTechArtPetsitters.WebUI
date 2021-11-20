@@ -1,9 +1,9 @@
 ﻿using DomainNew.Models;
 using System.Threading.Tasks;
 
-namespace DomainNew.Interfaces
+namespace DomainNew.Service.Interfaces
 {
-   public interface IPetService
+    interface IPetService
     {
         Task CreateAsync(Pet pet);
         Task<Pet> DeleteAsync(long id);

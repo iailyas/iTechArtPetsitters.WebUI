@@ -12,7 +12,7 @@ namespace InfrastructureNew.EFDbContext
         public DbSet<User> Users { get; set; }
         public DbSet<Pet> Pets { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<Service> Services { get; set; }
+        public DbSet<PetsittingService> Services { get; set; }
 
     }
 }

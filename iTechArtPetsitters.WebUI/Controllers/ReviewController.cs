@@ -1,10 +1,7 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
@@ -13,23 +10,23 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ReviewController : Controller
     {
-        private IReviewRepository ReviewRepository;
-        public ReviewController(IReviewRepository reviewRepository)
+        private IReviewService ReviewService;
+        public ReviewController(IReviewService review)
         {
-            ReviewRepository = reviewRepository;
+            ReviewService = review;
         }
 
-        
+
         [HttpGet(Name = "GetAllReviews")]
         public async Task<IEnumerable<Review>> GetAsync()
         {
-            return await  ReviewRepository.GetAsync();
+            return await ReviewService.GetAsync();
         }
-        
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Review review = await ReviewRepository .GetAsync(id);
+            Review review = await ReviewService.GetAsync(id);
 
             if (review == null)
             {
@@ -46,15 +43,15 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await ReviewRepository.CreateAsync(review);
+            await ReviewService.CreateAsync(review);
             //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
             return Ok();
         }
-       
+
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedReview = await ReviewRepository.DeleteAsync(id);
+            var DeletedReview = await ReviewService.DeleteAsync(id);
 
             if (DeletedReview == null)
             {

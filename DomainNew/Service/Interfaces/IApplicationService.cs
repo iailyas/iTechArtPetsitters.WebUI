@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DomainNew.Interfaces
+namespace DomainNew.Service.Interfaces
 {
-    public interface IApplicationService
+    interface IApplicationService
     {
         Task<IEnumerable<Application>> GetAsync();
         Task<Application> GetAsync(long id);

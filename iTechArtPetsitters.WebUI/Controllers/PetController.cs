@@ -9,11 +9,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class PetController : Controller
     {
-        private IPetRepository PetRepository;
+        private IPetService PetService;
 
-        public PetController(IPetRepository petRepository)
+        public PetController(IPetService petRepository)
         {
-            PetRepository = petRepository;
+            PetService = petRepository;
         }
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] Pet pet)
@@ -22,7 +22,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await PetRepository.CreateAsync(pet);
+            await PetService.CreateAsync(pet);
             //return CreatedAtRoute("GetPet", new { id = pet.Id }, pet);
             return Ok();
         }
@@ -30,7 +30,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async  Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedPet = await PetRepository .DeleteAsync(id);
+            var DeletedPet = await PetService .DeleteAsync(id);
 
             if (DeletedPet == null)
             {
