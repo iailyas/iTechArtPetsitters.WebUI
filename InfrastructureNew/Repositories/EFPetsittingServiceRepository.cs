@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFPetsittingServiceRepository : IPetsittingServiceService
+    public class EFPetsittingServiceRepository : IPetsittingRepository
     {
 
         private EFMainDbContext Context;
@@ -16,33 +16,33 @@ namespace InfrastructureNew.Repositories
         {
             Context = context;
         }
-        public async Task<IEnumerable<PetsittingService>> GetAsync()
+        public async Task<IEnumerable<PetsittingJob>> GetAsync()
         {
             return await Context.Services.ToListAsync();
         }
 
-        public async Task<PetsittingService> GetAsync(long id)
+        public async Task<PetsittingJob> GetAsync(long id)
         {
             return await Context.Services.FindAsync(id);
         }
 
-        public async Task CreateAsync(PetsittingService _service)
+        public async Task CreateAsync(PetsittingJob _service)
         {
             await Context.Services.AddAsync(_service);
             await Context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsunc(PetsittingService _service)
+        public async Task UpdateAsunc(PetsittingJob _service)
         {
-            PetsittingService currentService = _service;
+            PetsittingJob currentService = _service;
             Context.Update(currentService);
             await Context.SaveChangesAsync();
 
         }
 
-        public async Task<PetsittingService> DeleteAsync(long id)
+        public async Task<PetsittingJob> DeleteAsync(long id)
         {
-            PetsittingService service = await Context.Services.FindAsync(id);
+            PetsittingJob service = await Context.Services.FindAsync(id);
 
             if (service != null)
             {

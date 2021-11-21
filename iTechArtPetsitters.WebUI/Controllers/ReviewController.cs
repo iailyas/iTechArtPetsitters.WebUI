@@ -10,8 +10,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ReviewController : Controller
     {
-        private IReviewService ReviewService;
-        public ReviewController(IReviewService review)
+        private IReviewRepository ReviewService;
+        public ReviewController(IReviewRepository review)
         {
             ReviewService = review;
         }

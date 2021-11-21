@@ -1,14 +1,16 @@
-﻿using DomainNew.Models;
+﻿using DomainNew.Interfaces;
+using DomainNew.Models;
+using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class UserService : Interfaces.IUserService
+    public class UserService : IUserService
     {
-        private readonly DomainNew.Interfaces.IUserService repository;
+        private readonly IUserRepository repository;
 
-        public UserService(DomainNew.Interfaces.IUserService repostory)
+        public UserService(IUserRepository repostory)
         {
             this.repository = repostory;
         }
@@ -35,7 +37,7 @@ namespace DomainNew.Service
 
         public async Task UpdateAsync(User user)
         {
-            return await repository.UpdateAsync(user);
+            await repository.UpdateAsync(user);
         }
     }
 }

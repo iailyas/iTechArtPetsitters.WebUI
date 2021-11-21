@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
-    public interface IApplicationService
+    public interface IApplicationRepository
     {
         Task<IEnumerable<Application>> GetAsync();
         Task<Application> GetAsync(long id);

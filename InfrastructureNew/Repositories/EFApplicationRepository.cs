@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFApplicationRepository : IApplicationService
+    public class EFApplicationRepository : IApplicationRepository
     {
         private readonly EFMainDbContext context;
 

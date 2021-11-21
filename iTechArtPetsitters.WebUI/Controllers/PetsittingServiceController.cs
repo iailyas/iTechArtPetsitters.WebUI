@@ -11,9 +11,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     public class PetsittingServiceController : Controller
     {
-        private IPetsittingServiceService PetsittingServiceService;
+        private IPetsittingRepository PetsittingServiceService;
 
-        public PetsittingServiceController(IPetsittingServiceService service)
+        public PetsittingServiceController(IPetsittingRepository service)
         {
             PetsittingServiceService = service;
         }
@@ -21,7 +21,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         //returns all services
         [HttpGet(Name = "GetAllServices")]
-        public async Task<IEnumerable<PetsittingService>> GetAsync()
+        public async Task<IEnumerable<PetsittingJob>> GetAsync()
         {
             return await PetsittingServiceService.GetAsync();
         }
@@ -30,7 +30,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            PetsittingService service = await PetsittingServiceService.GetAsync(id);
+            PetsittingJob service = await PetsittingServiceService.GetAsync(id);
 
             if (service == null)
             {
@@ -42,7 +42,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] PetsittingService service)
+        public async Task<IActionResult> CreateAsync([FromBody] PetsittingJob service)
         {
             if (service == null)
             {
@@ -54,7 +54,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] PetsittingService UpdatedService)
+        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] PetsittingJob UpdatedService)
         {
             if (UpdatedService == null || UpdatedService.Id != id)
             {

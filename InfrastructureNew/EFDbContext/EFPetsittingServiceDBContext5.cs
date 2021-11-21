@@ -7,7 +7,7 @@ namespace InfrastructureNew.EFDbContext
     public class EFServiceDBContext : DbContext
     {
         public EFServiceDBContext(DbContextOptions<EFServiceDBContext> options) : base(options) { }
-        public DbSet<PetsittingService> Services { get; set; }
+        public DbSet<PetsittingJob> Services { get; set; }
 
     }
 

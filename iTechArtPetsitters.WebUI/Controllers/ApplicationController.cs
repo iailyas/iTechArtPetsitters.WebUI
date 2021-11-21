@@ -10,9 +10,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ApplicationController : Controller
     {
-        private IApplicationService ApplicationService;
+        private IApplicationRepository ApplicationService;
 
-        public ApplicationController(IApplicationService applicationRepository)
+        public ApplicationController(IApplicationRepository applicationRepository)
         {
             ApplicationService = applicationRepository;
         }

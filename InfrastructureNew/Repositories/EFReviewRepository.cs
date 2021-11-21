@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFReviewRepository : IReviewService
+    public class EFReviewRepository : IReviewRepository
     {
         private EFMainDbContext context;
 

@@ -8,6 +8,6 @@
         public int PetsitterId { get; set; }
         public Petsitter Petsitter { get; set; }
         public int ServiceId { get; set; }
-        public PetsittingService Service { get; set; }
+        public PetsittingJob Service { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
-   public interface IPetService
+   public interface IPetRepository
     {
         Task CreateAsync(Pet pet);
         Task<Pet> DeleteAsync(long id);

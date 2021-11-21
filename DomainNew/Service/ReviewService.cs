@@ -1,5 +1,6 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
+using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,9 +8,9 @@ namespace DomainNew.Service
 {
     public class ReviewService : IReviewService
     {
-        private readonly IReviewService repository;
+        private readonly IReviewRepository repository;
 
-        public ReviewService(IReviewService repository)
+        public ReviewService(IReviewRepository repository)
         {
             this.repository = repository;
         }

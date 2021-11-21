@@ -1,6 +1,6 @@
 ﻿namespace DomainNew.Models
 {
-    public class PetsittingService
+    public class PetsittingJob
     {
         public long Id { get; set; }
         public string Description { get; set; }

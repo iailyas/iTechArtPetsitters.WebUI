@@ -1,14 +1,16 @@
-﻿using DomainNew.Models;
+﻿using DomainNew.Interfaces;
+using DomainNew.Models;
+using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class ApplicationService : Interfaces.IApplicationService
+    public class ApplicationService : IApplicationService
     {
-        private readonly DomainNew.Interfaces.IApplicationService repository;
+        private readonly IApplicationRepository repository;
 
-        public ApplicationService(DomainNew.Interfaces.IApplicationService repository)
+        public ApplicationService(DomainNew.Interfaces.IApplicationRepository repository)
         {
             this.repository = repository;
         }
