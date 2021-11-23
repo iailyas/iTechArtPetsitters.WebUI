@@ -40,7 +40,7 @@ namespace DomainNew.Service
 
         public async Task UpdateAsunc(PetsittingJob service)
         {
-           await repository.UpdateAsunc(service);
+           await repository.UpdateAsync(service);
         }
     }
 }

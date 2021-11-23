@@ -10,7 +10,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class PetController : Controller
     {
-        private IPetService PetService;
+        private readonly IPetService PetService;
 
         public PetController(IPetService petRepository)
         {

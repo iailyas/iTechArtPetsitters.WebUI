@@ -12,7 +12,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     public class PetsittingServiceController : Controller
     {
-        private IPetsittingServiceService PetsittingServiceService;
+        private readonly IPetsittingServiceService PetsittingServiceService;
 
         public PetsittingServiceController(IPetsittingServiceService service)
         {

@@ -11,7 +11,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ApplicationController : Controller
     {
-        private IApplicationService ApplicationService;
+        private readonly IApplicationService ApplicationService;
 
         public ApplicationController(IApplicationService applicationRepository)
         {
@@ -19,7 +19,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         
         [HttpGet(Name = "GetAllApplications")]
-        public async Task<IEnumerable<Petsitter>> GetAsync()
+        public async Task<IEnumerable<Application>> GetAsync()
         {
             return await ApplicationService.GetAsync();
         }
@@ -27,7 +27,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Petsitter application = await ApplicationService.GetAsync(id);
+            Application application = await ApplicationService.GetAsync(id);
 
             if (application == null)
             {
@@ -39,7 +39,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] Petsitter application)
+        public async Task<IActionResult> CreateAsync([FromBody] Application application)
         {
             if (application == null)
             {
@@ -64,7 +64,23 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
             return new ObjectResult(DeletedApplication);
         }
+        [HttpPut("{id::long}")]
+        public async Task<IActionResult> SelectApplication(long id, [FromBody] Application UpdatedApplication)
+        {
+            if (UpdatedApplication == null || UpdatedApplication.Id != id)
+            {
+                return BadRequest();
+            }
 
+            var user = await ApplicationService.GetAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            await ApplicationService.SelectApplication(UpdatedApplication);
+            return RedirectToRoute("GetAllServices");
+        }
 
     }
 }

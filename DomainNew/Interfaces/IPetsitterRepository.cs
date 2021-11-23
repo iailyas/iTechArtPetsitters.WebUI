@@ -13,5 +13,6 @@ namespace DomainNew.Interfaces
         Task<Petsitter> GetAsync(long id);
         Task CreateAsync(Petsitter petsitter);
         Task<Petsitter> DeleteAsync(long id);
+        Task<Petsitter> SetApplication(long id);
     }
 }

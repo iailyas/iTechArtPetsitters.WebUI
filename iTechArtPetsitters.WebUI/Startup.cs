@@ -44,6 +44,7 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IPetRepository, EFPetRepository>();
             services.AddTransient<IReviewRepository, EFReviewRepository>();
             services.AddTransient<IPetsittingRepository, EFPetsittingServiceRepository>();
+            services.AddTransient<IPetsitterRepository, EFPetsitterRepository>();
             //services.AddTransient<IPetsitterRepository, EFPetsittingServiceRepository>();
 
 

@@ -34,5 +34,10 @@ namespace DomainNew.Service
         {
             return await repository.GetAsync(id);
         }
+
+        public Task<Petsitter> SetApplication(long id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

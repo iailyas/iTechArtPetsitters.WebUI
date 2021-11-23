@@ -12,7 +12,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     public class FakePetsittersController : Controller
     {
-        private IPetsitersData _petsitterData;
+        private readonly IPetsitersData _petsitterData;
         public FakePetsittersController(IPetsitersData petsitterData)
         {
             _petsitterData = petsitterData;

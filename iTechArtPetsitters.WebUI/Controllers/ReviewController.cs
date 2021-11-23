@@ -1,5 +1,6 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
+using DomainNew.Service;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ReviewController : Controller
     {
-        private IReviewService ReviewService;
+        private readonly IReviewService ReviewService;
         public ReviewController(IReviewService review)
         {
             ReviewService = review;
@@ -67,6 +68,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return await ReviewService.ShowReviews(id);
 
         }
+        
 
     }
 }

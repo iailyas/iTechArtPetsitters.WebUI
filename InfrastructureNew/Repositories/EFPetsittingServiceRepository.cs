@@ -32,7 +32,7 @@ namespace InfrastructureNew.Repositories
             await Context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsunc(PetsittingJob _service)
+        public async Task UpdateAsync(PetsittingJob _service)
         {
             PetsittingJob currentService = _service;
             Context.Update(currentService);
@@ -52,6 +52,5 @@ namespace InfrastructureNew.Repositories
 
             return service;
         }
-
     }
 }

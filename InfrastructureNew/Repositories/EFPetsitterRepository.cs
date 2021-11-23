@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    class EFPetsitterRepository : IPetsitterRepository
+    public class EFPetsitterRepository : IPetsitterRepository
     {
         private readonly EFMainDbContext context;
 
@@ -48,6 +48,9 @@ namespace InfrastructureNew.Repositories
             return await context.Petsitters.FindAsync(id);
         }
 
-        
+        public Task<Petsitter> SetApplication(long id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
