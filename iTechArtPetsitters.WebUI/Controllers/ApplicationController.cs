@@ -10,15 +10,15 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ApplicationController : Controller
     {
-        private IApplicationRepository ApplicationService;
+        private IApplicationService ApplicationService;
 
-        public ApplicationController(IApplicationRepository applicationRepository)
+        public ApplicationController(IApplicationService applicationRepository)
         {
             ApplicationService = applicationRepository;
         }
         
         [HttpGet(Name = "GetAllApplications")]
-        public async Task<IEnumerable<Application>> GetAsync()
+        public async Task<IEnumerable<Petsitter>> GetAsync()
         {
             return await ApplicationService.GetAsync();
         }
@@ -26,7 +26,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Application application = await ApplicationService.GetAsync(id);
+            Petsitter application = await ApplicationService.GetAsync(id);
 
             if (application == null)
             {
@@ -38,7 +38,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] Application application)
+        public async Task<IActionResult> CreateAsync([FromBody] Petsitter application)
         {
             if (application == null)
             {

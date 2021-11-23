@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Service.Interfaces
 {
-    public interface IApplicationService
+    public interface IPetsitterService
     {
         Task<IEnumerable<Petsitter>> GetAsync();
         Task<Petsitter> GetAsync(long id);
-        Task CreateAsync(Petsitter application);
+        Task CreateAsync(Petsitter petsitter);
         Task<Petsitter> DeleteAsync(long id);
     }
 }

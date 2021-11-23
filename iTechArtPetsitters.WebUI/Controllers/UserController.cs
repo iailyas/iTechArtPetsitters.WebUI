@@ -11,9 +11,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        IUserRepository UserService;
+        private readonly IUserService UserService;
 
-        public UserController(IUserRepository user)
+        public UserController(IUserService user)
         {
             UserService = user;
         }

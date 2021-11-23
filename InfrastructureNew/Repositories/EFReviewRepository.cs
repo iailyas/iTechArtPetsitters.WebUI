@@ -3,11 +3,12 @@ using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFReviewRepository : IReviewRepository
+    public class EFReviewRepository : IReviewService
     {
         private EFMainDbContext context;
 
@@ -42,6 +43,11 @@ namespace InfrastructureNew.Repositories
         public async Task<Review> GetAsync(long id)
         {
             return await context.Reviews.FindAsync(id);
+        }
+        public async Task<IList<Review>> ShowReviews(long id)
+        {
+
+            return await context.Reviews.Where(r => r.PetsitterId == id).ToListAsync();
         }
 
 

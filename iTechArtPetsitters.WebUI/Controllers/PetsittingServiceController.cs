@@ -11,9 +11,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     public class PetsittingServiceController : Controller
     {
-        private IPetsittingRepository PetsittingServiceService;
+        private IPetsittingService PetsittingServiceService;
 
-        public PetsittingServiceController(IPetsittingRepository service)
+        public PetsittingServiceController(IPetsittingService service)
         {
             PetsittingServiceService = service;
         }

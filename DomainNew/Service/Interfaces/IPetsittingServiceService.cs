@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Service.Interfaces
 {
-    interface IPetsittingServiceService
+    public interface IPetsittingServiceService
     {
         Task<IEnumerable<PetsittingJob>> GetAsync();
         Task<PetsittingJob> GetAsync(long id);

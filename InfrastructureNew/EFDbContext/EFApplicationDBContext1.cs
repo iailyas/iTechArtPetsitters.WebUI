@@ -7,6 +7,6 @@ namespace InfrastructureNew.EFDbContext
     {
         public EFApplicationDBContext(DbContextOptions<EFApplicationDBContext> options) : base(options)
         { }
-        public DbSet<Application> Applications { get; set; }
+        public DbSet<Petsitter> Applications { get; set; }
     }
 }

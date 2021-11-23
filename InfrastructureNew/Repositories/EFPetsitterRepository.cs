@@ -2,46 +2,52 @@
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFApplicationRepository : IApplicationService
+    class EFPetsitterRepository : IPetsitterRepository
     {
         private readonly EFMainDbContext context;
 
-        public EFApplicationRepository(EFMainDbContext context)
+        public EFPetsitterRepository(EFMainDbContext context)
         {
             this.context = context;
         }
-        public async Task CreateAsync(Petsitter application)
+
+        public async Task CreateAsync(Petsitter petsitter)
         {
-            context.Applications.Add(application);
+            context.Petsitters.Add(petsitter);
             await context.SaveChangesAsync();
         }
 
         public async Task<Petsitter> DeleteAsync(long id)
         {
-            Petsitter application = await context.Applications.FindAsync(id);
+            Petsitter petsitter = await context.Petsitters.FindAsync(id);
 
-            if (application != null)
+            if (petsitter != null)
             {
-                context.Remove(application);
+                context.Remove(petsitter);
                 await context.SaveChangesAsync();
             }
 
-            return application;
+            return petsitter;
         }
 
         public async Task<IEnumerable<Petsitter>> GetAsync()
         {
-            return await context.Applications.ToListAsync();
+            return await context.Petsitters.ToListAsync();
         }
 
         public async Task<Petsitter> GetAsync(long id)
         {
-            return await context.Applications.FindAsync(id);
+            return await context.Petsitters.FindAsync(id);
         }
+
+        
     }
 }

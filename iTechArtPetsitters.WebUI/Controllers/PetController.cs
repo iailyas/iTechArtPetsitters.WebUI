@@ -9,9 +9,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class PetController : Controller
     {
-        private IPetRepository PetService;
+        private IPetService PetService;
 
-        public PetController(IPetRepository petRepository)
+        public PetController(IPetService petRepository)
         {
             PetService = petRepository;
         }
@@ -30,7 +30,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async  Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedPet = await PetService .DeleteAsync(id);
+            var DeletedPet = await PetService.DeleteAsync(id);
 
             if (DeletedPet == null)
             {

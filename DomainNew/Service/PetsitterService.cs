@@ -1,22 +1,23 @@
-﻿using DomainNew.Models;
+﻿using DomainNew.Interfaces;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class PetsitterApplication : IApplicationService
+    public class PetsitterService : IPetsitterService
     {
-        private readonly IApplicationService repository;
+        private readonly IPetsitterRepository repository;
 
-        public PetsitterApplication(IApplicationService repository)
+        public PetsitterService(IPetsitterRepository repository)
         {
             this.repository = repository;
         }
 
-        public async Task CreateAsync(Petsitter application)
+        public async Task CreateAsync(Petsitter petsitter)
         {
-            await repository.CreateAsync(application);
+            await repository.CreateAsync(petsitter);
         }
 
         public async Task<Petsitter> DeleteAsync(long id)

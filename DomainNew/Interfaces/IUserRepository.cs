@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace DomainNew.Interfaces
 {
     //main operations for model(MyUser) 
-    public interface IUserRepository
+    public interface IUserService
     {
         Task<IEnumerable<User>> GetAsync();
         Task<User> GetAsync(long id);

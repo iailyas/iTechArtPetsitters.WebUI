@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Service.Interfaces
 {
-    interface IUserService
+    public interface IUserService
     {
         Task<IEnumerable<User>> GetAsync();
         Task<User> GetAsync(long id);

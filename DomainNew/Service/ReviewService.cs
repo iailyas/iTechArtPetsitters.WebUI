@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class ReviewService : IReviewService
+    public class ReviewService : Interfaces.IReviewService
     {
-        private readonly IReviewRepository repository;
+        private readonly DomainNew.Interfaces.IReviewService repository;
 
-        public ReviewService(IReviewRepository repository)
+        public ReviewService(DomainNew.Interfaces.IReviewService repository)
         {
             this.repository = repository;
         }
