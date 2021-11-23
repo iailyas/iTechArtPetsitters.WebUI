@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using DomainNew.Interfaces;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,9 +8,9 @@ namespace DomainNew.Service
 {
     public class PetsitterApplication : IApplicationService
     {
-        private readonly IApplicationService repository;
+        private readonly IApplicationRepository repository;
 
-        public PetsitterApplication(IApplicationService repository)
+        public PetsitterApplication(IApplicationRepository repository)
         {
             this.repository = repository;
         }

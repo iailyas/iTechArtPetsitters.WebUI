@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFPetRepository : IPetService
+    public class EFPetRepository : IPetRepository
     {
         private EFMainDbContext Context;
 

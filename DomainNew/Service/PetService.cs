@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class PetService : Interfaces.IPetService
+    public class PetService : IPetService
     {
-        private readonly DomainNew.Interfaces.IPetService repository;
+        private readonly IPetRepository repository;
 
-        public PetService(DomainNew.Interfaces.IPetService repository)
+        public PetService(IPetRepository repository)
         {
             this.repository = repository;
         }

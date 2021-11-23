@@ -1,5 +1,6 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
+using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     public class PetsittingServiceController : Controller
     {
-        private IPetsittingService PetsittingServiceService;
+        private IPetsittingServiceService PetsittingServiceService;
 
-        public PetsittingServiceController(IPetsittingService service)
+        public PetsittingServiceController(IPetsittingServiceService service)
         {
             PetsittingServiceService = service;
         }

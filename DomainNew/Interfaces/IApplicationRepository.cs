@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Interfaces
 {
-    public interface IApplicationService
+    public interface IApplicationRepository
     {
         Task<IEnumerable<Petsitter>> GetAsync();
         Task<Petsitter> GetAsync(long id);

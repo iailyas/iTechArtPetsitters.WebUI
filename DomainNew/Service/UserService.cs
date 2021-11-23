@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class UserService : Interfaces.IUserService
+    public class UserService : IUserService
     {
-        private readonly DomainNew.Interfaces.IUserService repository;
+        private readonly IUserRepository repository;
 
-        public UserService(DomainNew.Interfaces.IUserService repostory)
+        public UserService(IUserRepository repostory)
         {
             this.repository = repostory;
         }

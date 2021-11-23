@@ -1,5 +1,6 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
+using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

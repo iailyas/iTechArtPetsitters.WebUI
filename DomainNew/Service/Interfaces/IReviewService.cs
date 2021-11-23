@@ -10,5 +10,6 @@ namespace DomainNew.Service.Interfaces
         Task<Review> GetAsync(long id);
         Task CreateAsync(Review review);
         Task<Review> DeleteAsync(long id);
+        Task<IList<Review>> ShowReviews(long id);
     }
 }

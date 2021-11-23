@@ -6,7 +6,7 @@ namespace DomainNew.Interfaces
 {
 
     //main operations for model(Service) 
-    public interface IPetsittingService
+    public interface IPetsittingRepository
     {
         Task<IEnumerable<PetsittingJob>> GetAsync();
         Task<PetsittingJob> GetAsync(long id);

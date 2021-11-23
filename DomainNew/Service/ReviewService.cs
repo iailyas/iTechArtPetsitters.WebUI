@@ -4,13 +4,14 @@ using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+
 namespace DomainNew.Service
 {
-    public class ReviewService : Interfaces.IReviewService
+    public class ReviewService : IReviewService
     {
-        private readonly DomainNew.Interfaces.IReviewService repository;
+        private readonly IReviewRepository repository;
 
-        public ReviewService(DomainNew.Interfaces.IReviewService repository)
+        public ReviewService(IReviewRepository repository)
         {
             this.repository = repository;
         }
@@ -34,5 +35,10 @@ namespace DomainNew.Service
         {
             return await GetAsync(id);
         }
+        public async Task<IList<Review>> ShowReviews(long id)
+        {
+            return await repository.ShowReviews(id);
+        }
+
     }
 }
