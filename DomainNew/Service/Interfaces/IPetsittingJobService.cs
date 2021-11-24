@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DomainNew.Interfaces
+namespace DomainNew.Service.Interfaces
 {
-
-    //main operations for model(Service) 
-    public interface IPetsittingServiceRepository
+    public interface IPetsittingJobService
     {
         Task<IEnumerable<PetsittingJob>> GetAsync();
         Task<PetsittingJob> GetAsync(long id);
         Task CreateAsync(PetsittingJob _service);
-        Task UpdateAsync(PetsittingJob _service);
+        Task UpdateAsunc(PetsittingJob _service);
         Task<PetsittingJob> DeleteAsync(long id);
     }
-
 }

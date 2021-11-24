@@ -10,14 +10,16 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class PetsittingServiceController : Controller
+    public class PetsittingJobServiceController : Controller
     {
-        private readonly IPetsittingServiceService PetsittingServiceService;
+        private readonly IPetsittingJobService PetsittingServiceService;
 
-        public PetsittingServiceController(IPetsittingServiceService service)
+        public PetsittingJobServiceController(IPetsittingJobService petsittingServiceService)
         {
-            PetsittingServiceService = service;
+            PetsittingServiceService = petsittingServiceService;
         }
+
+
 
 
         //returns all services

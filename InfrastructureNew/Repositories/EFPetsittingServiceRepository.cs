@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    public class EFPetsittingServiceRepository : IPetsittingServiceRepository
+    public class EFPetsittingServiceRepository : IPetsittingJobRepository
     {
 
         private EFMainDbContext Context;

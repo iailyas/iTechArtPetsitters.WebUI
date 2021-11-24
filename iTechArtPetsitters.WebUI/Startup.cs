@@ -36,14 +36,14 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IApplicationRepository, EFApplicationRepository>();
             services.AddTransient<IPetRepository, EFPetRepository>();
             services.AddTransient<IPetsitterRepository, EFPetsitterRepository>();
-            services.AddTransient<IPetsittingServiceRepository, EFPetsittingServiceRepository>();
+            services.AddTransient<IPetsittingJobRepository, EFPetsittingServiceRepository>();
             services.AddTransient<IReviewRepository, EFReviewRepository>();
             services.AddTransient<IUserRepository, EFUserRepository>();
             //services
             services.AddTransient<IApplicationService, ApplicationService>();
             services.AddTransient<IPetService, PetService>();
             services.AddTransient<IPetsitterService, PetsitterService>();
-            services.AddTransient<IPetsittingServiceService, PetsittingServiceService>();
+            services.AddTransient<IPetsittingJobService, PetsittingJobService>();
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<IUserService, UserService>();
 

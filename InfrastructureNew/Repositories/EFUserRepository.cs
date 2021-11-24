@@ -56,5 +56,10 @@ namespace Infrastructure.Repositories
 
             return user;
         }
+
+        public async Task<PetsittingJob> ViewAllServices(long id)
+        {
+            return await context.Services.FindAsync(id);
+        }
     }
 }

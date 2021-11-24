@@ -13,11 +13,15 @@ namespace iTechArtPetsitters.WebUI.Controllers
     public class UserController : Controller
     {
         private readonly IUserService UserService;
+        private readonly IPetsittingJobService petsittingJob;
 
-        public UserController(IUserService user)
+        public UserController(IUserService userService, IPetsittingJobService petsittingJob)
         {
-            UserService = user;
+            UserService = userService;
+            this.petsittingJob = petsittingJob;
         }
+
+
         //returns all users
         [HttpGet(Name = "GetAllUsers")]
         public async Task<IEnumerable<User>> GetAsync()
@@ -26,7 +30,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //returns user by id
         //Case sensitivity {id} and long id
-        [HttpGet("/user22/{id}")]
+        [HttpGet("/user/{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
             User user = await UserService.GetAsync(id);
@@ -81,6 +85,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
             }
 
             return new ObjectResult(deletedUser);
+        }
+        [HttpGet("/job/{id}")]
+        public async Task<PetsittingJob> GetJobByPetsitterId(long id)
+        {
+
+            return await petsittingJob.GetAsync(id);
+
         }
     }
 }

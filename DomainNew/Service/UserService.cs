@@ -39,5 +39,10 @@ namespace DomainNew.Service
         {
             await repository.UpdateAsync(user);
         }
+
+        public async Task<PetsittingJob> ViewAllServices(long id)
+        {
+            return await repository.ViewAllServices(id);
+        }
     }
 }

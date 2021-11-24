@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace DomainNew.Service
 {
 
-    public class PetsittingServiceService : IPetsittingServiceService
+    public class PetsittingJobService : IPetsittingJobService
     {
-        private readonly IPetsittingServiceRepository repository;
+        private readonly IPetsittingJobRepository repository;
 
-        public PetsittingServiceService(IPetsittingServiceRepository repository)
+        public PetsittingJobService(IPetsittingJobRepository repository)
         {
             this.repository = repository;
         }
