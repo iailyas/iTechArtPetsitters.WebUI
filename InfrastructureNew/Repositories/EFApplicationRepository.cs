@@ -24,7 +24,7 @@ namespace InfrastructureNew.Repositories
 
         public async Task<Application> DeleteAsync(long id)
         {
-            Application application = await context.Applications.Find(id);
+            Application application = await context.Applications.FindAsync(id);
 
             if (application != null)
             {

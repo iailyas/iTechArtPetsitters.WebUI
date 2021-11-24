@@ -1,9 +1,9 @@
 using DomainNew.Interfaces;
+using DomainNew.Service;
+using DomainNew.Service.Interfaces;
 using Infrastructure.Repositories;
 using InfrastructureNew.EFDbContext;
 using InfrastructureNew.Repositories;
-using iTechArtPetsitters.WebUI.Infrastructure.Repositories.Fake.PetsitterData;
-using iTechArtPetsitters.WebUI.PetsittersData;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,20 +32,22 @@ namespace iTechArtPetsitters.WebUI
             services.AddControllers();
             //contexts
             services.AddDbContext<EFMainDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            //services.AddDbContext<EFMainDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
-            //services.AddDbContext<EFMainDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));//set this on appsettings.json
-            //services.AddDbContext<EFMainDBContext>(options=>options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            //services.AddDbContext<EFMainDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            //services.AddDbContext<EFMainDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             //repositories
-            services.AddSingleton<IPetsitersData, MockPetsitterData>();
-            services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddTransient<IApplicationRepository, EFApplicationRepository>();
             services.AddTransient<IPetRepository, EFPetRepository>();
-            services.AddTransient<IReviewRepository, EFReviewRepository>();
-            services.AddTransient<IPetsittingRepository, EFPetsittingServiceRepository>();
             services.AddTransient<IPetsitterRepository, EFPetsitterRepository>();
-            //services.AddTransient<IPetsitterRepository, EFPetsittingServiceRepository>();
+            services.AddTransient<IPetsittingServiceRepository, EFPetsittingServiceRepository>();
+            services.AddTransient<IReviewRepository, EFReviewRepository>();
+            services.AddTransient<IUserRepository, EFUserRepository>();
+            //services
+            services.AddTransient<IApplicationService, ApplicationService>();
+            services.AddTransient<IPetService, PetService>();
+            services.AddTransient<IPetsitterService, PetsitterService>();
+            services.AddTransient<IPetsittingServiceService, PetsittingServiceService>();
+            services.AddTransient<IReviewService, ReviewService>();
+            services.AddTransient<IUserService, UserService>();
+
+
 
 
 

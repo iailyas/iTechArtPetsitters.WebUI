@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfrastructureNew.Migrations
 {
     [DbContext(typeof(EFMainDbContext))]
-    [Migration("20211117205058_Main")]
+    [Migration("20211124123758_Main")]
     partial class Main
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,6 +110,24 @@ namespace InfrastructureNew.Migrations
                     b.ToTable("Petsitters");
                 });
 
+            modelBuilder.Entity("DomainNew.Models.PetsittingJob", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Services");
+                });
+
             modelBuilder.Entity("DomainNew.Models.Review", b =>
                 {
                     b.Property<long>("Id")
@@ -139,24 +157,6 @@ namespace InfrastructureNew.Migrations
                     b.HasIndex("UserId1");
 
                     b.ToTable("Reviews");
-                });
-
-            modelBuilder.Entity("DomainNew.Models.Service", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("DomainNew.Models.User", b =>
@@ -193,7 +193,7 @@ namespace InfrastructureNew.Migrations
                         .WithMany()
                         .HasForeignKey("PetsitterId1");
 
-                    b.HasOne("DomainNew.Models.Service", "Service")
+                    b.HasOne("DomainNew.Models.PetsittingJob", "Service")
                         .WithMany()
                         .HasForeignKey("ServiceId1");
 

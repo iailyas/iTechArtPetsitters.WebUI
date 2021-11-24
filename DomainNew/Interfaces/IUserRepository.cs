@@ -9,8 +9,9 @@ namespace DomainNew.Interfaces
     {
         Task<IEnumerable<User>> GetAsync();
         Task<User> GetAsync(long id);
-        Task CreateAsync(User _user);
-        Task UpdateAsync(User _user);
+        Task CreateAsync(User user);
+        Task UpdateAsync(User user);
         Task<User> DeleteAsync(long id);
+        Task<IEnumerable<PetsittingJob>> ViewAllServices(long id);
     }
 }

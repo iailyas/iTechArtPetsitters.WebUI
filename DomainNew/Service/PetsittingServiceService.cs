@@ -10,9 +10,9 @@ namespace DomainNew.Service
 
     public class PetsittingServiceService : IPetsittingServiceService
     {
-        private readonly IPetsittingRepository repository;
+        private readonly IPetsittingServiceRepository repository;
 
-        public PetsittingServiceService(IPetsittingRepository repository)
+        public PetsittingServiceService(IPetsittingServiceRepository repository)
         {
             this.repository = repository;
         }

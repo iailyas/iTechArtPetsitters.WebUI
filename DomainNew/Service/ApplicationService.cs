@@ -10,6 +10,7 @@ namespace DomainNew.Service
     {
         private readonly IApplicationRepository repository;
 
+
         public ApplicationService(IApplicationRepository repository)
         {
             this.repository = repository;
