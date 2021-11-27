@@ -1,5 +1,4 @@
-﻿using DomainNew.Interfaces;
-using DomainNew.Models;
+﻿using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -17,13 +16,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
         {
             ApplicationService = applicationRepository;
         }
-        
+
         [HttpGet(Name = "GetAllApplications")]
         public async Task<IEnumerable<Application>> GetAsync()
         {
             return await ApplicationService.GetAsync();
         }
-        
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
@@ -37,7 +36,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return new ObjectResult(application);
 
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] Application application)
         {
@@ -49,13 +48,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
             //return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
             return Ok();
         }
-       
-       
-       
+
+
+
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedApplication = await ApplicationService .DeleteAsync(id);
+            var DeletedApplication = await ApplicationService.DeleteAsync(id);
 
             if (DeletedApplication == null)
             {

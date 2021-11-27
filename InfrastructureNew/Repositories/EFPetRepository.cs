@@ -1,6 +1,8 @@
 ﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
@@ -13,7 +15,15 @@ namespace InfrastructureNew.Repositories
         {
             Context = context;
         }
+        public async Task<IEnumerable<Pet>> GetAsync()
+        {
+            return await Context.Pets.ToListAsync();
+        }
 
+        public async Task<Pet> GetAsync(long id)
+        {
+            return await Context.Pets.FindAsync(id);
+        }
         public async Task CreateAsync(Pet pet)
         {
             await Context.AddAsync(pet);

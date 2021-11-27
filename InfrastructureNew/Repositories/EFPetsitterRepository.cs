@@ -4,8 +4,6 @@ using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
@@ -48,9 +46,5 @@ namespace InfrastructureNew.Repositories
             return await context.Petsitters.FindAsync(id);
         }
 
-        public Task<Petsitter> SetApplication(long id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

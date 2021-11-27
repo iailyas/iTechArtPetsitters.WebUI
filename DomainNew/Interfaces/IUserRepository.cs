@@ -12,6 +12,5 @@ namespace DomainNew.Interfaces
         Task CreateAsync(User user);
         Task UpdateAsync(User user);
         Task<User> DeleteAsync(long id);
-        Task<PetsittingJob> ViewAllServices(long id);
     }
 }

@@ -1,6 +1,4 @@
-﻿using DomainNew.Interfaces;
-using DomainNew.Models;
-using DomainNew.Service;
+﻿using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -62,13 +60,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
             return new ObjectResult(DeletedReview);
         }
-        [HttpGet("{id}/Petsitter")]
-        public async Task<IEnumerable<Review>> ShowReviews(long id)
-        {
-            return await ReviewService.ShowReviews(id);
 
-        }
-        
 
     }
 }

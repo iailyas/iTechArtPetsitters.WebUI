@@ -1,5 +1,4 @@
 ﻿using DomainNew.Models;
-using DomainNew.Service;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,19 +10,19 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class PetsitterController : Controller
     {
-        private readonly  IPetsitterService PetsitterService;
+        private readonly IPetsitterService PetsitterService;
 
         public PetsitterController(IPetsitterService repository)
         {
             this.PetsitterService = repository;
         }
-        
+
         [HttpGet(Name = "GetAllPetsitters")]
         public async Task<IEnumerable<Petsitter>> GetAsync()
         {
             return await PetsitterService.GetAsync();
         }
-        
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
@@ -37,7 +36,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return new ObjectResult(petsitter);
 
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] Petsitter petsitter)
         {
@@ -48,7 +47,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             await PetsitterService.CreateAsync(petsitter);
             return Ok();
         }
-        
+
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> Delete(long id)
         {

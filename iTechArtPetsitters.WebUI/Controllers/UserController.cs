@@ -1,5 +1,4 @@
-﻿using DomainNew.Interfaces;
-using DomainNew.Models;
+﻿using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
 {
-    
+
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
@@ -41,7 +40,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             }
 
             return new ObjectResult(user);
-           
+
         }
         //creating new record
         [HttpPost]
@@ -70,7 +69,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return NotFound();
             }
 
-            await UserService .UpdateAsync(updatedUser);
+            await UserService.UpdateAsync(updatedUser);
             return RedirectToRoute("GetAllUsers");
         }
         //delete record by id
@@ -86,12 +85,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
             return new ObjectResult(deletedUser);
         }
-        [HttpGet("/job/{id}")]
-        public async Task<PetsittingJob> GetJobByPetsitterId(long id)
-        {
-
-            return await petsittingJob.GetAsync(id);
-
-        }
+       
     }
 }
