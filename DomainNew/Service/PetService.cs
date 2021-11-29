@@ -11,7 +11,7 @@ namespace DomainNew.Service
     public class PetService : IPetService
     {
         private readonly IPetRepository repository;
-        private readonly UserUpdateCommand userUpdate;
+        private readonly UserUpdateProfile userUpdate;
         public PetService(IPetRepository repository)
         {
             this.repository = repository;

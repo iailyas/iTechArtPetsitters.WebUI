@@ -1,7 +1,6 @@
-﻿namespace Domain.Commands.User
+﻿namespace Domain.Commands.UserCommand
 {
-    //model for AutoMapper
-    public class RegisterUserCommand
+    public class UpdateUserCommand
     {
         public long Id { get; set; }
         public string Email { get; set; }

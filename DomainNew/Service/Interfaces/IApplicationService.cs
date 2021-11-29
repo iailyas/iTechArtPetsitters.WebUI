@@ -8,8 +8,8 @@ namespace DomainNew.Service.Interfaces
     {
         Task<IEnumerable<Application>> GetAsync();
         Task<Application> GetAsync(long id);
-        Task CreateAsync(Application application);
+        Task CreateAsync(AddApplicationCommand addApplicationCommand);
         Task<Application> DeleteAsync(long id);
-        Task SelectApplication(Application application);
+        Task SelectApplication(AddApplicationCommand addApplicationCommand);
     }
 }

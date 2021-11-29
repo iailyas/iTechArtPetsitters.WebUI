@@ -32,7 +32,7 @@ namespace iTechArtPetsitters.WebUI
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>
             {
-                mc.AddProfile(new UserUpdateCommand());
+                mc.AddProfile(new UserUpdateProfile());
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

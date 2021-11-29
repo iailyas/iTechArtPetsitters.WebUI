@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.User;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -44,21 +45,21 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] User user)
+        public async Task<IActionResult> CreateAsync([FromBody] RegisterUserCommand registerUserCommand)
         {
-            if (user == null)
+            if (registerUserCommand == null)
             {
                 return BadRequest();
             }
-            await userService.Register(user);
+            await userService.Register(registerUserCommand);
             //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
             return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public async Task<IActionResult> UpdateAsync(long id, [FromBody] User updatedUser)
+        public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdateUserCommand updateUserCommand)
         {
-            if (updatedUser == null || updatedUser.Id != id)
+            if (updateUserCommand == null || updateUserCommand.Id != id)
             {
                 return BadRequest();
             }
@@ -69,7 +70,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return NotFound();
             }
 
-            await userService.UpdateAsync(updatedUser);
+            await userService.UpdateAsync(updateUserCommand);
             return RedirectToRoute("GetAllUsers");
         }
         //delete record by id

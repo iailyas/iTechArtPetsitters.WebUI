@@ -6,7 +6,7 @@ namespace DomainNew.Service.Interfaces
 {
     public interface IPetService
     {
-        Task CreateAsync(Pet pet);
+        Task CreateAsync(AddPetCommand addPetCommand);
         Task<IEnumerable<Pet>> GetAsync();
         Task<Pet> GetAsync(long id);
         Task<Pet> DeleteAsync(long id);
