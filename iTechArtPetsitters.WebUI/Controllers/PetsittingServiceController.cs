@@ -56,9 +56,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] PetsittingJob UpdatedService)
+        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] PetsittingJob updatedService)
         {
-            if (UpdatedService == null || UpdatedService.Id != id)
+            if (updatedService == null || updatedService.Id != id)
             {
                 return BadRequest();
             }
@@ -69,7 +69,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return NotFound();
             }
 
-            await PetsittingServiceService.UpdateAsunc(UpdatedService);
+            await PetsittingServiceService.UpdateAsunc(updatedService);
             return RedirectToRoute("GetAllServices");
         }
         //delete record by id

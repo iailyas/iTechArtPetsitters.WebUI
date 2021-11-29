@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using DomainNew.Commands;
+using DomainNew.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,8 +9,8 @@ namespace DomainNew.Service.Interfaces
     {
         Task<IEnumerable<User>> GetAsync();
         Task<User> GetAsync(long id);
-        Task CreateAsync(User _user);
-        Task UpdateAsync(User _user);
+        Task Register(UserUpdateCommand user);
+        Task UpdateAsync(UserUpdateCommand user);
         Task<User> DeleteAsync(long id);
         
     }

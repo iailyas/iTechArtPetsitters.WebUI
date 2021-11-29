@@ -15,7 +15,7 @@ namespace DomainNew.Service
             this.repository = repostory;
         }
 
-        public async Task CreateAsync(User user)
+        public async Task Register(User user)
         {
             await repository.CreateAsync(user);
         }

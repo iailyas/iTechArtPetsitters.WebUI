@@ -11,12 +11,12 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        private readonly IUserService UserService;
+        private readonly IUserService userService;
         private readonly IPetsittingJobService petsittingJob;
 
         public UserController(IUserService userService, IPetsittingJobService petsittingJob)
         {
-            UserService = userService;
+            this.userService = userService;
             this.petsittingJob = petsittingJob;
         }
 
@@ -25,14 +25,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet(Name = "GetAllUsers")]
         public async Task<IEnumerable<User>> GetAsync()
         {
-            return await UserService.GetAsync();
+            return await userService.GetAsync();
         }
         //returns user by id
         //Case sensitivity {id} and long id
         [HttpGet("/user/{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            User user = await UserService.GetAsync(id);
+            User user = await userService.GetAsync(id);
 
             if (user == null)
             {
@@ -50,7 +50,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await UserService.CreateAsync(user);
+            await userService.Register(user);
             //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
             return Ok();
         }
@@ -63,20 +63,20 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return BadRequest();
             }
 
-            var user = await UserService.GetAsync(id);
+            var user = await userService.GetAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            await UserService.UpdateAsync(updatedUser);
+            await userService.UpdateAsync(updatedUser);
             return RedirectToRoute("GetAllUsers");
         }
         //delete record by id
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var deletedUser = await UserService.DeleteAsync(id);
+            var deletedUser = await userService.DeleteAsync(id);
 
             if (deletedUser == null)
             {

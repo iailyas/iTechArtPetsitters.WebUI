@@ -1,21 +1,12 @@
 ﻿using AutoMapper;
-using DomainNew.Interfaces;
-using DomainNew.Service.Interfaces;
 
 namespace DomainNew.Commands
 {
-    public class UserUpdateCommand
+    public class UserUpdateCommand : Profile
     {
-        public IUserService Configure(IUserRepository repository)
+        public UserUpdateCommand
         {
-
-            // 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<IUserRepository, IUserService>());
-            // 
-            var mapper = new Mapper(config);
-            // 
-            var user = mapper.Map<IUserService>(repository.GetAsync());
-            return user;
+         CreateMap<User, RegisterUserCommand>();
         }
-    }
+}
 }

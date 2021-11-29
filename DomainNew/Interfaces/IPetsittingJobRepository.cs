@@ -10,8 +10,8 @@ namespace DomainNew.Interfaces
     {
         Task<IEnumerable<PetsittingJob>> GetAsync();
         Task<PetsittingJob> GetAsync(long id);
-        Task CreateAsync(PetsittingJob _service);
-        Task UpdateAsync(PetsittingJob _service);
+        Task CreateAsync(PetsittingJob service);
+        Task UpdateAsync(PetsittingJob service);
         Task<PetsittingJob> DeleteAsync(long id);
     }
 

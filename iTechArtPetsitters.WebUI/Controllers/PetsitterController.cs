@@ -10,23 +10,23 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class PetsitterController : Controller
     {
-        private readonly IPetsitterService PetsitterService;
+        private readonly IPetsitterService petsitterService;
 
         public PetsitterController(IPetsitterService repository)
         {
-            this.PetsitterService = repository;
+            this.petsitterService = repository;
         }
 
         [HttpGet(Name = "GetAllPetsitters")]
         public async Task<IEnumerable<Petsitter>> GetAsync()
         {
-            return await PetsitterService.GetAsync();
+            return await petsitterService.GetAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Petsitter petsitter = await PetsitterService.GetAsync(id);
+            Petsitter petsitter = await petsitterService.GetAsync(id);
 
             if (petsitter == null)
             {
@@ -44,14 +44,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await PetsitterService.CreateAsync(petsitter);
+            await petsitterService.CreateAsync(petsitter);
             return Ok();
         }
 
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> Delete(long id)
         {
-            var DeletedPetsitter = await PetsitterService.DeleteAsync(id);
+            var DeletedPetsitter = await petsitterService.DeleteAsync(id);
 
             if (DeletedPetsitter == null)
             {

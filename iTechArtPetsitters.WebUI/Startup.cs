@@ -1,3 +1,5 @@
+using AutoMapper;
+using DomainNew.Commands;
 using DomainNew.Interfaces;
 using DomainNew.Service;
 using DomainNew.Service.Interfaces;
@@ -27,7 +29,14 @@ namespace iTechArtPetsitters.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Auto Mapper Configurations
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new UserUpdateCommand());
+            });
 
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             services.AddControllers();
             //contexts

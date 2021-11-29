@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTechArtPetsitters.WebUI", "iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI.csproj", "{49E8EED0-5503-4A99-A95E-5C869D494268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainNew", "DomainNew\DomainNew.csproj", "{AB9ED921-B54D-4231-B0A0-31754E3417D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "DomainNew\Domain.csproj", "{AB9ED921-B54D-4231-B0A0-31754E3417D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureNew", "InfrastructureNew\InfrastructureNew.csproj", "{DBEB0F54-B961-4821-AD2B-6F755EDD5294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "InfrastructureNew\Infrastructure.csproj", "{DBEB0F54-B961-4821-AD2B-6F755EDD5294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

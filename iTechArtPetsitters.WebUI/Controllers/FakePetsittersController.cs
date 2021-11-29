@@ -12,10 +12,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     public class FakePetsittersController : Controller
     {
-        private readonly IPetsitersData _petsitterData;
+        private readonly IPetsitersData petsitterData;
         public FakePetsittersController(IPetsitersData petsitterData)
         {
-            _petsitterData = petsitterData;
+            petsitterData = petsitterData;
         }
         //returns all petsitters
         [HttpGet]
@@ -23,7 +23,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         public IActionResult GetPetsitters()
         {
-            return Ok(_petsitterData.GetPetsitters());
+            return Ok(petsitterData.GetPetsitters());
         }
         //returns petsitter by id
         [HttpGet]
@@ -31,7 +31,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         public IActionResult GetPetsitter(Guid id)
         {
-            var petsitter = _petsitterData.GetPetsitter(id);
+            var petsitter = petsitterData.GetPetsitter(id);
             if (petsitter != null)
             {
                 return Ok(petsitter);
@@ -45,7 +45,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         public IActionResult AddPersitter(PetsitterFake petsitter)
         {
-            _petsitterData.AddPetsitter(petsitter);
+            petsitterData.AddPetsitter(petsitter);
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + petsitter.Id, petsitter);
 
         }
@@ -55,10 +55,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         public IActionResult DeletePersitter(Guid id)
         {
-            var petsitter = _petsitterData.GetPetsitter(id);
+            var petsitter = petsitterData.GetPetsitter(id);
             if (petsitter != null)
             {
-                _petsitterData.DeletePetsitter(petsitter);
+                petsitterData.DeletePetsitter(petsitter);
             }
             return NotFound($"Employee with id: {id} not found");
 
@@ -69,11 +69,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         public IActionResult EditPersitter(Guid id, PetsitterFake petsitter)
         {
-            var existingPetsitter = _petsitterData.GetPetsitter(id);
+            var existingPetsitter = petsitterData.GetPetsitter(id);
             if (existingPetsitter != null)
             {
                 petsitter.Id = existingPetsitter.Id;
-                _petsitterData.EditPetsitter(petsitter);
+                petsitterData.EditPetsitter(petsitter);
             }
             return NotFound($"Employee with id: {id} not found");
 

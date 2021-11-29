@@ -10,23 +10,23 @@ namespace iTechArtPetsitters.WebUI.Controllers
     [ApiController]
     public class ReviewController : Controller
     {
-        private readonly IReviewService ReviewService;
+        private readonly IReviewService reviewService;
         public ReviewController(IReviewService review)
         {
-            ReviewService = review;
+            reviewService = review;
         }
 
 
         [HttpGet(Name = "GetAllReviews")]
         public async Task<IEnumerable<Review>> GetAsync()
         {
-            return await ReviewService.GetAsync();
+            return await reviewService.GetAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Review review = await ReviewService.GetAsync(id);
+            Review review = await reviewService.GetAsync(id);
 
             if (review == null)
             {
@@ -43,7 +43,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-            await ReviewService.CreateAsync(review);
+            await reviewService.CreateAsync(review);
             //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
             return Ok();
         }
@@ -51,7 +51,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedReview = await ReviewService.DeleteAsync(id);
+            var DeletedReview = await reviewService.DeleteAsync(id);
 
             if (DeletedReview == null)
             {
