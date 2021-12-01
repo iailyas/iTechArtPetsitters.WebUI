@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.ApplicationCommand;
+using DomainNew.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,6 +11,6 @@ namespace DomainNew.Service.Interfaces
         Task<Application> GetAsync(long id);
         Task CreateAsync(AddApplicationCommand addApplicationCommand);
         Task<Application> DeleteAsync(long id);
-        Task SelectApplication(AddApplicationCommand addApplicationCommand);
+        Task SelectApplication(SelectApplicationCommand addApplicationCommand);
     }
 }

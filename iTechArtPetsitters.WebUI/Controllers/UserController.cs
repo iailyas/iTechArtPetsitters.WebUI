@@ -1,4 +1,4 @@
-﻿using Domain.Commands.User;
+﻿using Domain.Commands.UserCommand;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -13,12 +13,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
     public class UserController : Controller
     {
         private readonly IUserService userService;
-        private readonly IPetsittingJobService petsittingJob;
+        
 
-        public UserController(IUserService userService, IPetsittingJobService petsittingJob)
+        public UserController(IUserService userService)
         {
             this.userService = userService;
-            this.petsittingJob = petsittingJob;
         }
 
 

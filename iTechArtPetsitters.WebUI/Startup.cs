@@ -1,4 +1,10 @@
 using AutoMapper;
+using Domain.Commands.ApplicationCommand;
+using Domain.Commands.PetCommand;
+using Domain.Commands.PetsitterCommand;
+using Domain.Commands.PetsittingJobCommand;
+using Domain.Commands.ReviewCommand;
+using Domain.Commands.UserInfoCommand;
 using DomainNew.Commands;
 using DomainNew.Interfaces;
 using DomainNew.Service;
@@ -33,6 +39,13 @@ namespace iTechArtPetsitters.WebUI
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new UserUpdateProfile());
+                mc.AddProfile(new ApplicationMapProfile());
+                mc.AddProfile(new PetMapProfile()); 
+                mc.AddProfile(new PetsitterMapProfile()); 
+                mc.AddProfile(new PetsittingJobMapProfile());
+                mc.AddProfile(new ReviewMapProfile());
+                mc.AddProfile(new UserInfoMapProfile());
+                
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

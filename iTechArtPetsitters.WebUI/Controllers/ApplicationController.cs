@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.ApplicationCommand;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -38,13 +39,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] Application application)
+        public async Task<IActionResult> CreateAsync([FromBody] AddApplicationCommand addApplicationCommand)
         {
-            if (application == null)
+            if (addApplicationCommand == null)
             {
                 return BadRequest();
             }
-            await ApplicationService.CreateAsync(application);
+            await ApplicationService.CreateAsync(addApplicationCommand);
             //return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
             return Ok();
         }
@@ -64,9 +65,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return new ObjectResult(DeletedApplication);
         }
         [HttpPut("{id::long}")]
-        public async Task<IActionResult> SelectApplication(long id, [FromBody] Application UpdatedApplication)
+        public async Task<IActionResult> SelectApplication(long id, [FromBody] SelectApplicationCommand selectApplicationCommand)
         {
-            if (UpdatedApplication == null || UpdatedApplication.Id != id)
+            if (selectApplicationCommand == null || selectApplicationCommand.Id != id)
             {
                 return BadRequest();
             }
@@ -77,7 +78,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return NotFound();
             }
 
-            await ApplicationService.SelectApplication(UpdatedApplication);
+            await ApplicationService.SelectApplication(selectApplicationCommand);
             return RedirectToRoute("GetAllServices");
         }
 

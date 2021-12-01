@@ -5,9 +5,9 @@ namespace Domain.Commands.ReviewCommand
 {
     public class ReviewMapProfile:Profile
     {
-        ReviewMapProfile() 
+        public ReviewMapProfile() 
         {
-            CreateMap<Review, AddReviewCommand>().ReverseMap();
+            CreateMap<Review,AddReviewCommand >();
         }
     }
 }

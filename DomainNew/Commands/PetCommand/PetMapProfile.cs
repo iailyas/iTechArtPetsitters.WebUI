@@ -5,7 +5,7 @@ namespace Domain.Commands.PetCommand
 {
     public class PetMapProfile : Profile
     {
-        PetMapProfile()
+        public PetMapProfile()
         {
             CreateMap<Pet, AddPetCommand>().ReverseMap();
         }

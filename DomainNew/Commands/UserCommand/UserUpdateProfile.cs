@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Domain.Commands.UserCommand;
 using DomainNew.Models;
 
 namespace DomainNew.Commands

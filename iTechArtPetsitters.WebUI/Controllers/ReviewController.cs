@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.ReviewCommand;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -37,13 +38,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] Review review)
+        public async Task<IActionResult> CreateAsync([FromBody] AddReviewCommand addReviewCommand)
         {
-            if (review == null)
+            if (addReviewCommand== null)
             {
                 return BadRequest();
             }
-            await reviewService.CreateAsync(review);
+            await reviewService.CreateAsync(addReviewCommand);
             //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
             return Ok();
         }

@@ -1,6 +1,14 @@
-﻿namespace Domain.Commands.ApplicationCommand
+﻿using AutoMapper;
+using DomainNew.Models;
+
+namespace Domain.Commands.ApplicationCommand
 {
-    public class ApplicationMapProfile
+    public class ApplicationMapProfile:Profile
     {
+        public ApplicationMapProfile() 
+        {
+            CreateMap<Application,AddApplicationCommand>().ReverseMap();
+            CreateMap<Application, SelectApplicationCommand>().ReverseMap();
+        }
     }
 }

@@ -1,6 +1,14 @@
-﻿namespace Domain.Commands.PetsittingJobCommand
+﻿using AutoMapper;
+using DomainNew.Models;
+
+namespace Domain.Commands.PetsittingJobCommand
 {
-    class PetsittingJobMapProfile
+    public class PetsittingJobMapProfile:Profile
     {
+        public PetsittingJobMapProfile()
+        {
+            CreateMap<PetsittingJob, AddPetsittingJobCommand>().ReverseMap();
+            CreateMap<PetsittingJob, UpdatePetsittingJobCommand>().ReverseMap();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using DomainNew.Interfaces;
+﻿using AutoMapper;
+using Domain.Commands.UserInfoCommand;
+using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System;
@@ -12,14 +14,17 @@ namespace DomainNew.Service
     public class UserInfoService:IUserInfoService
     {
         private readonly IUserInfoRepository repository;
+        private readonly IMapper mapper;
 
-        public UserInfoService(IUserInfoRepository repository)
+        public UserInfoService(IUserInfoRepository repository,IMapper mapper)
         {
             this.repository = repository;
+            this.mapper = mapper;
         }
 
-        public async Task CreateAsync(UserInfo userInfo)
+        public async Task CreateAsync(AddUserInfoCommand addUserInfoCommand)
         {
+            UserInfo userInfo = mapper.Map<UserInfo>(addUserInfoCommand);
             await repository.CreateAsync(userInfo);
         }
 

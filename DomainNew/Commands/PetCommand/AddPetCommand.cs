@@ -1,4 +1,6 @@
-﻿namespace Domain.Commands.PetCommand
+﻿using DomainNew.Models;
+
+namespace Domain.Commands.PetCommand
 {
     public class AddPetCommand
     {

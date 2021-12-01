@@ -1,4 +1,6 @@
-﻿using DomainNew.Interfaces;
+﻿using AutoMapper;
+using Domain.Commands.PetsitterCommand;
+using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
@@ -9,14 +11,17 @@ namespace DomainNew.Service
     public class PetsitterService : IPetsitterService
     {
         private readonly IPetsitterRepository repository;
+        private readonly IMapper mapper;
 
-        public PetsitterService(IPetsitterRepository repository)
+        public PetsitterService(IPetsitterRepository repository,IMapper mapper)
         {
             this.repository = repository;
+            this.mapper = mapper;
         }
 
-        public async Task CreateAsync(Petsitter petsitter)
+        public async Task CreateAsync(AddPetsitterCommand addPetsitterCommand)
         {
+            Petsitter petsitter = mapper.Map<Petsitter>(addPetsitterCommand);
             await repository.CreateAsync(petsitter);
         }
 

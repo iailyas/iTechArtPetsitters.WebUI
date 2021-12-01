@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Application\" />
-    <Folder Include="Commands\UserInfo\" />
-    <Folder Include="Commands\Review\" />
-    <Folder Include="Commands\PetsittingJob\" />
-    <Folder Include="Commands\Petsitter\" />
-    <Folder Include="Commands\Pet\" />
     <Folder Include="Entities\" />
   </ItemGroup>
 

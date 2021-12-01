@@ -1,4 +1,6 @@
-﻿using DomainNew.Commands;
+﻿using AutoMapper;
+using Domain.Commands.PetCommand;
+using DomainNew.Commands;
 using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
@@ -11,10 +13,11 @@ namespace DomainNew.Service
     public class PetService : IPetService
     {
         private readonly IPetRepository repository;
-        private readonly UserUpdateProfile userUpdate;
-        public PetService(IPetRepository repository)
+        private readonly IMapper mapper;
+        public PetService(IPetRepository repository, IMapper mapper)
         {
             this.repository = repository;
+            this.mapper = mapper;
         }
         public async Task<IEnumerable<Pet>> GetAsync()
         {
@@ -26,8 +29,9 @@ namespace DomainNew.Service
             return await repository.GetAsync(id);
         }
 
-        public async Task CreateAsync(Pet pet)
+        public async Task CreateAsync(AddPetCommand addPetCommand)
         {
+            Pet pet = mapper.Map<Pet>(addPetCommand);
             await repository.CreateAsync(pet);
         }
 

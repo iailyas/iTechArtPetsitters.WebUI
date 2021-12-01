@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.PetsitterCommand;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -38,13 +39,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] Petsitter petsitter)
+        public async Task<IActionResult> CreateAsync([FromBody] AddPetsitterCommand addPetsitterCommand)
         {
-            if (petsitter == null)
+            if (addPetsitterCommand == null)
             {
                 return BadRequest();
             }
-            await petsitterService.CreateAsync(petsitter);
+            await petsitterService.CreateAsync(addPetsitterCommand);
             return Ok();
         }
 

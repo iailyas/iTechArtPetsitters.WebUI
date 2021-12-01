@@ -1,4 +1,6 @@
-﻿using DomainNew.Interfaces;
+﻿using AutoMapper;
+using Domain.Commands.ReviewCommand;
+using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
@@ -10,14 +12,17 @@ namespace DomainNew.Service
     public class ReviewService : IReviewService
     {
         private readonly IReviewRepository repository;
+        private readonly IMapper mapper;
 
-        public ReviewService(IReviewRepository repository)
+        public ReviewService(IReviewRepository repository,IMapper mapper)
         {
             this.repository = repository;
+            this.mapper = mapper;
         }
 
-        public async Task CreateAsync(Review review)
+        public async Task CreateAsync(AddReviewCommand addReviewCommand)
         {
+            Review review = mapper.Map<Review>(addReviewCommand);
             await repository.CreateAsync(review);
         }
 

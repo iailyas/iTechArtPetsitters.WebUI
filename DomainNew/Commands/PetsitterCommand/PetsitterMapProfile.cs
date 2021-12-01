@@ -5,7 +5,7 @@ namespace Domain.Commands.PetsitterCommand
 {
     public class PetsitterMapProfile:Profile
     {
-        PetsitterMapProfile() 
+        public PetsitterMapProfile() 
         {
             CreateMap<Petsitter, AddPetsitterCommand>().ReverseMap();
         }

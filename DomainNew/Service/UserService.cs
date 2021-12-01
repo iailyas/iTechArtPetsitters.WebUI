@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using Domain.Commands.User;
-using DomainNew.Commands;
+using Domain.Commands.UserCommand;
 using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;

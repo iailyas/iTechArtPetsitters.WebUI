@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.PetsittingJobCommand;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -44,21 +45,21 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] PetsittingJob service)
+        public async Task<IActionResult> CreateAsync([FromBody] AddPetsittingJobCommand addPetsittingJobCommand)
         {
-            if (service == null)
+            if (addPetsittingJobCommand == null)
             {
                 return BadRequest();
             }
-            await PetsittingServiceService.CreateAsync(service);
+            await PetsittingServiceService.CreateAsync(addPetsittingJobCommand);
             //return CreatedAtRoute("GetService", new { id = service.Id }, service);
             return Ok();
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
-        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] PetsittingJob updatedService)
+        public async Task<IActionResult> UpdateAsoync(long id, [FromBody] UpdatePetsittingJobCommand updatePetsittingJobCommand)
         {
-            if (updatedService == null || updatedService.Id != id)
+            if (updatePetsittingJobCommand == null || updatePetsittingJobCommand.Id != id)
             {
                 return BadRequest();
             }
@@ -69,7 +70,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                 return NotFound();
             }
 
-            await PetsittingServiceService.UpdateAsunc(updatedService);
+            await PetsittingServiceService.UpdateAsunc(updatePetsittingJobCommand);
             return RedirectToRoute("GetAllServices");
         }
         //delete record by id

@@ -5,7 +5,7 @@ namespace Domain.Commands.UserInfoCommand
 {
     public class UserInfoMapProfile:Profile
     {
-        UserInfoMapProfile() 
+        public UserInfoMapProfile() 
         {
             CreateMap<UserInfo, AddUserInfoCommand>().ReverseMap();
         }

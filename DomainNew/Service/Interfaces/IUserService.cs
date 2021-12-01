@@ -1,5 +1,4 @@
-﻿using Domain.Commands.User;
-using DomainNew.Commands;
+﻿using Domain.Commands.UserCommand;
 using DomainNew.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;

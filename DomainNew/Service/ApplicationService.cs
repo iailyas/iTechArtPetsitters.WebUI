@@ -1,4 +1,6 @@
-﻿using DomainNew.Interfaces;
+﻿using AutoMapper;
+using Domain.Commands.ApplicationCommand;
+using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System.Collections.Generic;
@@ -9,16 +11,19 @@ namespace DomainNew.Service
     public class ApplicationService : IApplicationService
     {
         private readonly IApplicationRepository repository;
+        private readonly IMapper mapper;
 
-
-        public ApplicationService(IApplicationRepository repository)
+        public ApplicationService(IApplicationRepository repository, IMapper autoMapper)
         {
             this.repository = repository;
+            this.mapper = autoMapper;
         }
 
-        public async Task CreateAsync(Application application)
+        public async Task CreateAsync(AddApplicationCommand addApplicationCommand)
         {
-            await repository.CreateAsync(application);
+            
+                Application application = mapper.Map<Application>(addApplicationCommand);
+                await repository.CreateAsync(application);
         }
 
         public async Task<Application> DeleteAsync(long id)
@@ -35,8 +40,9 @@ namespace DomainNew.Service
         {
             return await repository.GetAsync(id);
         }
-        public async Task SelectApplication(Application application)
+        public async Task SelectApplication(SelectApplicationCommand selectApplicationCommand)
         {
+            Application application = mapper.Map<Application>(selectApplicationCommand);
             await repository.SelectApplication(application);
         }
     }

@@ -1,4 +1,6 @@
 ﻿
+using AutoMapper;
+using Domain.Commands.PetsittingJobCommand;
 using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
@@ -11,16 +13,18 @@ namespace DomainNew.Service
     public class PetsittingJobService : IPetsittingJobService
     {
         private readonly IPetsittingJobRepository repository;
+        private readonly IMapper mapper;
 
-        public PetsittingJobService(IPetsittingJobRepository repository)
+        public PetsittingJobService(IPetsittingJobRepository repository, IMapper mapper)
         {
             this.repository = repository;
+            this.mapper = mapper;
         }
 
-        public async Task CreateAsync(PetsittingJob service)
+        public async Task CreateAsync(AddPetsittingJobCommand addPetsittingJobCommand)
         {
-
-            await repository.CreateAsync(service);
+            PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(addPetsittingJobCommand);
+            await repository.CreateAsync(petsittingJob);
         }
 
         public async Task<PetsittingJob> DeleteAsync(long id)
@@ -38,9 +42,10 @@ namespace DomainNew.Service
             return await GetAsync(id);
         }
 
-        public async Task UpdateAsunc(PetsittingJob service)
+        public async Task UpdateAsunc(UpdatePetsittingJobCommand updatePetsittingJobCommand)
         {
-           await repository.UpdateAsync(service);
+           PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(updatePetsittingJobCommand);
+           await repository.UpdateAsync(petsittingJob);
         }
     }
 }

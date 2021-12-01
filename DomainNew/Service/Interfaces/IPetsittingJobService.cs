@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Commands.PetsittingJobCommand;
+using DomainNew.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace DomainNew.Service.Interfaces
         Task<IEnumerable<PetsittingJob>> GetAsync();
         Task<PetsittingJob> GetAsync(long id);
         Task CreateAsync(AddPetsittingJobCommand addPetsittingJobCommand);
-        Task UpdateAsunc(AddPetsittingJobCommand addPetsittingJobCommand);
+        Task UpdateAsunc(UpdatePetsittingJobCommand addPetsittingJobCommand);
         Task<PetsittingJob> DeleteAsync(long id);
     }
 }
