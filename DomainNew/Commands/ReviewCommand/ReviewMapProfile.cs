@@ -7,7 +7,7 @@ namespace Domain.Commands.ReviewCommand
     {
         public ReviewMapProfile() 
         {
-            CreateMap<Review,AddReviewCommand >();
+            CreateMap<Review,AddReviewCommand >().ReverseMap();
         }
     }
 }

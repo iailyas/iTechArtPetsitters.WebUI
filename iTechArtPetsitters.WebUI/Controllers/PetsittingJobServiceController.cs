@@ -1,6 +1,8 @@
-﻿using Domain.Commands.PetsittingJobCommand;
+﻿using AutoMapper;
+using Domain.Commands.PetsittingJobCommand;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsittingJobView;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,10 +15,12 @@ namespace iTechArtPetsitters.WebUI.Controllers
     public class PetsittingJobServiceController : Controller
     {
         private readonly IPetsittingJobService PetsittingServiceService;
+        private readonly IMapper mapper;
 
-        public PetsittingJobServiceController(IPetsittingJobService petsittingServiceService)
+        public PetsittingJobServiceController(IPetsittingJobService petsittingServiceService,IMapper mapper)
         {
             PetsittingServiceService = petsittingServiceService;
+            this.mapper = mapper;
         }
 
 
@@ -24,23 +28,24 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         //returns all services
         [HttpGet(Name = "GetAllServices")]
-        public async Task<IEnumerable<PetsittingJob>> GetAsync()
+        public async Task<IEnumerable<PetsittingJobView>> GetAsync()
         {
-            return await PetsittingServiceService.GetAsync();
+            IEnumerable<PetsittingJobView> petsittingJobViews = mapper.Map<List<PetsittingJobView>>(await PetsittingServiceService.GetAsync());
+            return petsittingJobViews;
         }
         //returns service by id
         //Case sensitivity {id} and long id
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            PetsittingJob service = await PetsittingServiceService.GetAsync(id);
+            PetsittingJobView petsittingJobView = mapper.Map<PetsittingJobView>(await PetsittingServiceService.GetAsync(id));
 
-            if (service == null)
+            if (petsittingJobView == null)
             {
                 return NotFound(id.ToString());
             }
 
-            return new ObjectResult(service);
+            return new ObjectResult(petsittingJobView);
 
         }
         //creating new record
@@ -63,9 +68,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
             {
                 return BadRequest();
             }
-
-            var user = await PetsittingServiceService.GetAsync(id);
-            if (user == null)
+            PetsittingJobView petsittingJobView = mapper.Map<PetsittingJobView>(await PetsittingServiceService.GetAsync(id));
+           // var user = await PetsittingServiceService.GetAsync(id);
+            if (petsittingJobView == null)
             {
                 return NotFound();
             }
@@ -77,14 +82,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> Delete(long id)
         {
-            var DeletedService = await PetsittingServiceService.DeleteAsync(id);
+            PetsittingJobView petsittingJobView = mapper.Map<PetsittingJobView>(await PetsittingServiceService.DeleteAsync(id));
 
-            if (DeletedService == null)
+            if (petsittingJobView == null)
             {
                 return BadRequest();
             }
 
-            return new ObjectResult(DeletedService);
+            return new ObjectResult(petsittingJobView);
         }
     }
 }

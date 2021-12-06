@@ -1,6 +1,8 @@
-﻿using Domain.Commands.ReviewCommand;
+﻿using AutoMapper;
+using Domain.Commands.ReviewCommand;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.ReviewView;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,29 +14,32 @@ namespace iTechArtPetsitters.WebUI.Controllers
     public class ReviewController : Controller
     {
         private readonly IReviewService reviewService;
-        public ReviewController(IReviewService review)
+        private readonly IMapper mapper;
+        public ReviewController(IReviewService review,IMapper mapper)
         {
             reviewService = review;
+            this.mapper = mapper;
         }
 
 
         [HttpGet(Name = "GetAllReviews")]
-        public async Task<IEnumerable<Review>> GetAsync()
+        public async Task<IEnumerable<ReviewView>> GetAsync()
         {
-            return await reviewService.GetAsync();
+            IEnumerable<ReviewView> reviewView = mapper.Map<List<ReviewView>>(await reviewService.GetAsync());
+            return reviewView;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Review review = await reviewService.GetAsync(id);
+            ReviewView reviewView = mapper.Map<ReviewView>(await reviewService.GetAsync(id));
 
-            if (review == null)
+            if (reviewView == null)
             {
                 return NotFound(id.ToString());
             }
 
-            return new ObjectResult(review);
+            return new ObjectResult(reviewView);
 
         }
         [HttpPost]
@@ -52,7 +57,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedReview = await reviewService.DeleteAsync(id);
+            ReviewView DeletedReview = mapper.Map<ReviewView>(await reviewService.DeleteAsync(id));
 
             if (DeletedReview == null)
             {

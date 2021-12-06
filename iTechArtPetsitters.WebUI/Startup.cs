@@ -12,6 +12,12 @@ using DomainNew.Service.Interfaces;
 using Infrastructure.Repositories;
 using InfrastructureNew.EFDbContext;
 using InfrastructureNew.Repositories;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.ApplicationView;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsitterView;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsittingJobView;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetView;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.ReviewView;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.UserView;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -45,7 +51,18 @@ namespace iTechArtPetsitters.WebUI
                 mc.AddProfile(new PetsittingJobMapProfile());
                 mc.AddProfile(new ReviewMapProfile());
                 mc.AddProfile(new UserInfoMapProfile());
-                
+                mc.AddProfile(new ApplicationViewMapProfile());
+
+                //Views for controllers
+                mc.AddProfile(new ApplicationViewMapProfile());
+                mc.AddProfile(new PetsitterViewMapProfile());
+                mc.AddProfile(new PetsittingJobViewMapProfile());
+                mc.AddProfile(new PetViewMapProfile());
+                mc.AddProfile(new ReviewViewMapProfile());
+                mc.AddProfile(new UserViewMapProfile());
+
+
+
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

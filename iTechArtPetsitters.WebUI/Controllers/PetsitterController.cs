@@ -1,6 +1,8 @@
-﻿using Domain.Commands.PetsitterCommand;
+﻿using AutoMapper;
+using Domain.Commands.PetsitterCommand;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsitterView;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,29 +14,31 @@ namespace iTechArtPetsitters.WebUI.Controllers
     public class PetsitterController : Controller
     {
         private readonly IPetsitterService petsitterService;
-
-        public PetsitterController(IPetsitterService repository)
+        private readonly IMapper mapper;
+        public PetsitterController(IPetsitterService repository,IMapper mapper)
         {
             this.petsitterService = repository;
+            this.mapper = mapper;
         }
 
         [HttpGet(Name = "GetAllPetsitters")]
-        public async Task<IEnumerable<Petsitter>> GetAsync()
+        public async Task<IEnumerable<PetsitterView>> GetAsync()
         {
-            return await petsitterService.GetAsync();
+            IEnumerable<PetsitterView> petsitterView = mapper.Map<IEnumerable<PetsitterView>>(await petsitterService.GetAsync());
+            return petsitterView;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Petsitter petsitter = await petsitterService.GetAsync(id);
+            PetsitterView petsitterView = mapper.Map<PetsitterView>(await petsitterService.GetAsync(id));
 
-            if (petsitter == null)
+            if (petsitterView == null)
             {
                 return NotFound(id.ToString());
             }
 
-            return new ObjectResult(petsitter);
+            return new ObjectResult(petsitterView);
 
         }
 
@@ -52,14 +56,14 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> Delete(long id)
         {
-            var DeletedPetsitter = await petsitterService.DeleteAsync(id);
+           PetsitterView DeletedPetsitterView = mapper.Map<PetsitterView>(await petsitterService.DeleteAsync(id));
 
-            if (DeletedPetsitter == null)
+            if (DeletedPetsitterView == null)
             {
                 return BadRequest();
             }
 
-            return new ObjectResult(DeletedPetsitter);
+            return new ObjectResult(DeletedPetsitterView);
         }
 
     }

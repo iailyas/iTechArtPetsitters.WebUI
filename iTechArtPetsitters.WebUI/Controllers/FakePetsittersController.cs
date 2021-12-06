@@ -15,7 +15,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         private readonly IPetsitersData petsitterData;
         public FakePetsittersController(IPetsitersData petsitterData)
         {
-            petsitterData = petsitterData;
+            this.petsitterData = petsitterData;
         }
         //returns all petsitters
         [HttpGet]

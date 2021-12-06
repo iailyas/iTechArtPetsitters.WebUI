@@ -1,6 +1,8 @@
-﻿using Domain.Commands.PetCommand;
+﻿using AutoMapper;
+using Domain.Commands.PetCommand;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetView;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,15 +14,18 @@ namespace iTechArtPetsitters.WebUI.Controllers
     public class PetController : Controller
     {
         private readonly IPetService PetService;
+        private readonly IMapper mapper;
 
-        public PetController(IPetService petRepository)
+        public PetController(IPetService petRepository,IMapper mapper)
         {
             PetService = petRepository;
+            this.mapper = mapper;
         }
         [HttpGet(Name = "GetAllPets")]
-        public async Task<IEnumerable<Pet>> GetAsync()
+        public async Task<IEnumerable<PetView>> GetAsync()
         {
-            return await PetService.GetAsync();
+            IEnumerable<PetView> petView = mapper.Map<List<PetView>>(await PetService.GetAsync());
+            return petView;
         }
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] AddPetCommand addPetCommand)
@@ -36,28 +41,28 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            Pet pet = await PetService.GetAsync(id);
+            PetView petView = mapper.Map<PetView>(await PetService.GetAsync(id));
 
-            if (pet == null)
+            if (petView == null)
             {
                 return NotFound(id.ToString());
             }
 
-            return new ObjectResult(pet);
+            return new ObjectResult(petView);
 
         }
 
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
-            var DeletedPet = await PetService.DeleteAsync(id);
+            PetView DeletedPetView = mapper.Map<PetView>(await PetService.DeleteAsync(id));
 
-            if (DeletedPet == null)
+            if (DeletedPetView == null)
             {
                 return BadRequest();
             }
 
-            return new ObjectResult(DeletedPet);
+            return new ObjectResult(DeletedPetView);
         }
     }
 }
