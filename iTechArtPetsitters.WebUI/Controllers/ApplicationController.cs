@@ -5,6 +5,7 @@ using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.ApplicationView;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,7 +32,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return applicationView;
             
         }
-
+      
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {

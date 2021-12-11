@@ -1,0 +1,1342 @@
+2021-12-12 01:08:33.6698 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:08:33.8216 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:08:33.8216 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:08:33.8216 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:08:33.8351 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:08:33.8351 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:08:33.8351 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:08:33.8351 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:08:33.8351 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:08:33.8351 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:08:33.8351 Debug Auto loading done
+2021-12-12 01:08:33.8410 Info Message Template Auto Format enabled
+2021-12-12 01:08:33.8410 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8565 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:08:33.8565 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:08:33.8565 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:08:33.8565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8565 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.8565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8565 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:08:33.8565 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:08:33.8565 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:08:33.8565 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.8565 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.8565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8565 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:08:33.8565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8565 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:08:33.8760 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:08:33.8760 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:08:33.8760 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8760 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:08:33.8760 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:08:33.8760 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8760 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:08:33.8760 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:08:33.8760 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:08:33.8760 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8760 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.8760 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8760 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:08:33.8760 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:08:33.8760 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:08:33.8760 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.8760 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.8760 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.8760 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:08:33.8760 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:08:33.8760 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:08:33.8760 Trace ParseRulesElement
+2021-12-12 01:08:33.8969 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:08:33.8969 Debug --- NLog configuration dump ---
+2021-12-12 01:08:33.8969 Debug Targets:
+2021-12-12 01:08:33.8969 Debug File Target[logfile]
+2021-12-12 01:08:33.8969 Debug Rules:
+2021-12-12 01:08:33.8969 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:08:33.8969 Debug --- End of NLog configuration dump ---
+2021-12-12 01:08:33.9043 Trace FindReachableObject<System.Object>:
+2021-12-12 01:08:33.9043 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:08:33.9043 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:08:33.9043 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:08:33.9043 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:08:33.9043 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:08:33.9043 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9043 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9043 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:08:33.9043 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9043 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:08:33.9043 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:08:33.9043 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9043 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:08:33.9043 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9043 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:08:33.9043 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:08:33.9043 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:08:33.9043 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9043 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.9043 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9043 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:08:33.9043 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:08:33.9043 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:08:33.9043 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:08:33.9043 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:08:33.9043 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:08:33.9043 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:08:33.9043 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:08:33.9043 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:08:33.9043 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:08:33.9043 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:08:33.9204 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.9204 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:08:33.9204 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9204 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.9204 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:08:33.9204 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:08:33.9204 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:08:33.9204 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:08:33.9204 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.9204 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:08:33.9204 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9204 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:08:33.9204 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9204 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:08:33.9204 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:08:33.9204 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:08:33.9204 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9204 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:08:33.9204 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9204 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:08:33.9204 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:08:33.9204 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:08:33.9204 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:08:33.9204 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:08:33.9204 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:08:33.9204 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:08:33.9204 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:08:33.9204 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9204 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:08:33.9204 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:08:33.9204 Trace Initializing File Target[logfile]
+2021-12-12 01:08:33.9204 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:08:33.9204 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:08:33.9204 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:08:33.9204 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:08:33.9204 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:08:33.9204 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:08:33.9204 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:08:33.9204 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:08:33.9204 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:10:32.6313 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:10:32.7027 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:10:32.7027 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:10:32.7027 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:10:32.7027 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:10:32.7027 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:10:32.7027 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:10:32.7027 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:10:32.7027 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:10:32.7027 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:10:32.7027 Debug Auto loading done
+2021-12-12 01:10:32.7027 Info Message Template Auto Format enabled
+2021-12-12 01:10:32.7297 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7324 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:10:32.7324 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:10:32.7324 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:10:32.7324 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7324 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.7324 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7324 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:10:32.7324 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:10:32.7324 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:10:32.7324 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.7475 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:10:32.7475 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:10:32.7475 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:10:32.7475 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:10:32.7475 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:10:32.7475 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:10:32.7475 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:10:32.7475 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:10:32.7475 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.7475 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.7475 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7475 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:10:32.7475 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:10:32.7475 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:10:32.7475 Trace ParseRulesElement
+2021-12-12 01:10:32.7798 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:10:32.7798 Debug --- NLog configuration dump ---
+2021-12-12 01:10:32.7798 Debug Targets:
+2021-12-12 01:10:32.7798 Debug File Target[logfile]
+2021-12-12 01:10:32.7798 Debug Rules:
+2021-12-12 01:10:32.7798 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:10:32.7798 Debug --- End of NLog configuration dump ---
+2021-12-12 01:10:32.7798 Trace FindReachableObject<System.Object>:
+2021-12-12 01:10:32.7798 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:10:32.7798 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:10:32.7798 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:10:32.7798 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:10:32.7798 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:10:32.7798 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.7798 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.7798 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:10:32.7798 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.7798 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:10:32.7798 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:10:32.7798 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.7798 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:10:32.7798 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.7798 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:10:32.7798 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:10:32.7798 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:10:32.7798 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.7798 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.7798 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.7798 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:10:32.7798 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:10:32.7798 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:10:32.7798 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:10:32.7944 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:10:32.7944 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:10:32.7944 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:10:32.7944 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:10:32.7944 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:10:32.7944 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:10:32.7944 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:10:32.7944 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.7944 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:10:32.7944 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.7944 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.8114 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:10:32.8114 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:10:32.8114 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:10:32.8114 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:10:32.8114 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.8114 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:10:32.8114 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.8114 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:10:32.8114 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.8114 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:10:32.8114 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:10:32.8114 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:10:32.8114 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.8114 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:10:32.8114 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.8114 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:10:32.8114 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:10:32.8114 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:10:32.8114 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:10:32.8114 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:10:32.8114 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:10:32.8114 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:10:32.8114 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:10:32.8114 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.8114 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:10:32.8114 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:10:32.8114 Trace Initializing File Target[logfile]
+2021-12-12 01:10:32.8114 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:10:32.8114 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:10:32.8114 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:10:32.8114 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:10:32.8114 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:10:32.8114 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:10:32.8114 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:10:32.8114 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:10:32.8114 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:13:12.4045 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:13:12.4780 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:13:12.4780 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:13:12.4780 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:13:12.4856 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:13:12.4856 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:13:12.4856 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:13:12.4856 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:13:12.4856 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:13:12.4856 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:13:12.4856 Debug Auto loading done
+2021-12-12 01:13:12.4856 Info Message Template Auto Format enabled
+2021-12-12 01:13:12.5046 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5046 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:13:12.5046 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:13:12.5131 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:13:12.5131 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:13:12.5131 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:13:12.5131 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5131 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:13:12.5131 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:13:12.5131 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:13:12.5131 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:13:12.5131 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:13:12.5131 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5131 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:13:12.5131 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:13:12.5131 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:13:12.5285 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5285 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5285 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5285 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:13:12.5285 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:13:12.5285 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:13:12.5285 Trace ParseRulesElement
+2021-12-12 01:13:12.5447 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:13:12.5447 Debug --- NLog configuration dump ---
+2021-12-12 01:13:12.5447 Debug Targets:
+2021-12-12 01:13:12.5447 Debug File Target[logfile]
+2021-12-12 01:13:12.5447 Debug Rules:
+2021-12-12 01:13:12.5447 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:13:12.5447 Debug --- End of NLog configuration dump ---
+2021-12-12 01:13:12.5447 Trace FindReachableObject<System.Object>:
+2021-12-12 01:13:12.5447 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:13:12.5447 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:13:12.5447 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:13:12.5447 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:13:12.5447 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:13:12.5447 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5447 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5447 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:13:12.5447 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5447 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:13:12.5447 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:13:12.5447 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5447 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:13:12.5447 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5597 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:13:12.5597 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:13:12.5597 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:13:12.5597 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5597 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5597 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5597 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:13:12.5597 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:13:12.5597 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:13:12.5597 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:13:12.5597 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:13:12.5597 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:13:12.5597 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:13:12.5756 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:13:12.5756 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5756 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:13:12.5756 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5756 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:13:12.5756 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:13:12.5756 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5756 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:13:12.5756 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5756 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:13:12.5756 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5756 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:13:12.5756 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:13:12.5756 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:13:12.5756 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5756 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:13:12.5756 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5756 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:13:12.5756 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:13:12.5756 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:13:12.5756 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:13:12.5756 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:13:12.5756 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:13:12.5756 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5756 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:13:12.5756 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:13:12.5756 Trace Initializing File Target[logfile]
+2021-12-12 01:13:12.5914 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:13:12.5914 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:13:12.5914 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:13:12.5914 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:13:12.5914 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:13:12.5914 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:13:12.5914 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:13:12.5914 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:13:12.5914 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:18:12.2396 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:18:12.3036 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:18:12.3036 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:18:12.3036 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:18:12.3098 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:18:12.3098 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:18:12.3098 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:18:12.3098 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:18:12.3098 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:18:12.3098 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:18:12.3098 Debug Auto loading done
+2021-12-12 01:18:12.3098 Info Message Template Auto Format enabled
+2021-12-12 01:18:12.3251 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3251 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:18:12.3251 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:18:12.3251 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:18:12.3251 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3251 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3251 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3251 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:18:12.3251 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:18:12.3251 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:18:12.3251 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3251 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3251 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3251 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:18:12.3251 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3251 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:18:12.3446 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:18:12.3446 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:18:12.3446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3446 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:18:12.3446 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:18:12.3446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3446 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:18:12.3446 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:18:12.3446 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:18:12.3446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3446 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3446 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:18:12.3446 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:18:12.3446 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:18:12.3446 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3446 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3446 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:18:12.3446 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:18:12.3446 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:18:12.3446 Trace ParseRulesElement
+2021-12-12 01:18:12.3630 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:18:12.3630 Debug --- NLog configuration dump ---
+2021-12-12 01:18:12.3630 Debug Targets:
+2021-12-12 01:18:12.3630 Debug File Target[logfile]
+2021-12-12 01:18:12.3630 Debug Rules:
+2021-12-12 01:18:12.3630 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:18:12.3630 Debug --- End of NLog configuration dump ---
+2021-12-12 01:18:12.3630 Trace FindReachableObject<System.Object>:
+2021-12-12 01:18:12.3630 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:18:12.3630 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:18:12.3630 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:18:12.3630 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:18:12.3630 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:18:12.3630 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3717 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3717 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:18:12.3717 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3717 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:18:12.3717 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:18:12.3717 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3717 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:18:12.3717 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3717 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:18:12.3717 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:18:12.3717 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:18:12.3717 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3717 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3717 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3717 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:18:12.3717 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:18:12.3717 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:18:12.3717 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:18:12.3717 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:18:12.3717 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:18:12.3717 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:18:12.3717 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:18:12.3717 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:18:12.3717 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:18:12.3717 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:18:12.3717 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3717 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:18:12.3717 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3717 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3717 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:18:12.3717 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:18:12.3717 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:18:12.3717 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:18:12.3717 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3876 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:18:12.3876 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3876 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:18:12.3876 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3876 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:18:12.3876 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:18:12.3876 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:18:12.3876 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3876 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:18:12.3876 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3876 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:18:12.3876 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:18:12.3876 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:18:12.3876 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:18:12.3876 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:18:12.3876 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:18:12.3876 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:18:12.3876 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:18:12.3876 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3876 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:18:12.3876 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:18:12.3876 Trace Initializing File Target[logfile]
+2021-12-12 01:18:12.3876 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:18:12.3876 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:18:12.3876 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:18:12.3876 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:18:12.3876 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:18:12.3876 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:18:12.3876 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:18:12.3876 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:18:12.3876 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:19:50.5116 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:19:50.5832 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:19:50.5832 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:19:50.5832 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:19:50.5832 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:19:50.5832 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:19:50.5832 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:19:50.5832 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:19:50.5922 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:19:50.5922 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:19:50.5922 Debug Auto loading done
+2021-12-12 01:19:50.5922 Info Message Template Auto Format enabled
+2021-12-12 01:19:50.5922 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6072 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:19:50.6072 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:19:50.6072 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:19:50.6072 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6072 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6072 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6072 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:19:50.6072 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:19:50.6072 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:19:50.6072 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6072 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6072 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6072 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:19:50.6072 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6072 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:19:50.6243 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:19:50.6243 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:19:50.6243 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6243 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:19:50.6243 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:19:50.6243 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6243 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:19:50.6243 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:19:50.6243 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:19:50.6243 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6243 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6243 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6243 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:19:50.6243 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:19:50.6243 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:19:50.6243 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6243 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6243 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6243 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:19:50.6243 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:19:50.6243 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:19:50.6243 Trace ParseRulesElement
+2021-12-12 01:19:50.6493 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:19:50.6493 Debug --- NLog configuration dump ---
+2021-12-12 01:19:50.6493 Debug Targets:
+2021-12-12 01:19:50.6493 Debug File Target[logfile]
+2021-12-12 01:19:50.6493 Debug Rules:
+2021-12-12 01:19:50.6546 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:19:50.6546 Debug --- End of NLog configuration dump ---
+2021-12-12 01:19:50.6546 Trace FindReachableObject<System.Object>:
+2021-12-12 01:19:50.6546 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:19:50.6546 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:19:50.6546 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:19:50.6546 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:19:50.6546 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:19:50.6546 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6546 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:19:50.6546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6546 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:19:50.6546 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:19:50.6546 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6546 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:19:50.6546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6546 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:19:50.6546 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:19:50.6546 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:19:50.6546 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6546 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6546 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:19:50.6546 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:19:50.6546 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:19:50.6546 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:19:50.6546 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:19:50.6696 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:19:50.6696 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:19:50.6696 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:19:50.6696 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:19:50.6696 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:19:50.6696 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:19:50.6696 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6696 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:19:50.6696 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6696 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6696 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:19:50.6847 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:19:50.6847 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:19:50.6847 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:19:50.6847 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6847 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:19:50.6847 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6847 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:19:50.6847 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6847 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:19:50.6847 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:19:50.6847 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:19:50.6847 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6847 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:19:50.6847 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6847 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:19:50.6847 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:19:50.6847 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:19:50.6847 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:19:50.6847 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:19:50.6847 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:19:50.6847 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:19:50.6847 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:19:50.6847 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6847 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:19:50.6847 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:19:50.6847 Trace Initializing File Target[logfile]
+2021-12-12 01:19:50.6847 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:19:50.6847 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:19:50.6847 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:19:50.6847 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:19:50.6847 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:19:50.6847 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:19:50.6847 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:19:50.6847 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:19:50.6847 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:20:15.3994 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:20:15.4603 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:20:15.4603 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:20:15.4603 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:20:15.4673 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:20:15.4673 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:20:15.4673 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:20:15.4673 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:20:15.4673 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:20:15.4673 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:20:15.4673 Debug Auto loading done
+2021-12-12 01:20:15.4673 Info Message Template Auto Format enabled
+2021-12-12 01:20:15.4836 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4836 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:20:15.4836 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:20:15.4836 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:20:15.4836 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4836 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.4836 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4836 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:20:15.4836 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:20:15.4970 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:20:15.4970 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.4970 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:20:15.4970 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:20:15.4970 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:20:15.4970 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:20:15.4970 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:20:15.4970 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:20:15.4970 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:20:15.4970 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:20:15.4970 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.4970 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.4970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.4970 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:20:15.4970 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:20:15.4970 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:20:15.4970 Trace ParseRulesElement
+2021-12-12 01:20:15.5247 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:20:15.5247 Debug --- NLog configuration dump ---
+2021-12-12 01:20:15.5247 Debug Targets:
+2021-12-12 01:20:15.5247 Debug File Target[logfile]
+2021-12-12 01:20:15.5247 Debug Rules:
+2021-12-12 01:20:15.5247 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:20:15.5247 Debug --- End of NLog configuration dump ---
+2021-12-12 01:20:15.5305 Trace FindReachableObject<System.Object>:
+2021-12-12 01:20:15.5305 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:20:15.5305 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:20:15.5305 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:20:15.5305 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:20:15.5305 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:20:15.5305 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5305 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5305 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:20:15.5305 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5305 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:20:15.5305 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:20:15.5305 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5305 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:20:15.5305 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5305 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:20:15.5305 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:20:15.5305 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:20:15.5305 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5305 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.5305 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5305 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:20:15.5305 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:20:15.5305 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:20:15.5305 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:20:15.5305 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:20:15.5305 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:20:15.5459 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:20:15.5459 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:20:15.5459 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.5459 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:20:15.5459 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5459 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:20:15.5459 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:20:15.5459 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.5459 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:20:15.5459 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5459 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:20:15.5459 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5459 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:20:15.5459 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:20:15.5459 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:20:15.5459 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5459 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:20:15.5459 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5459 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:20:15.5459 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:20:15.5459 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:20:15.5459 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:20:15.5459 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:20:15.5459 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:20:15.5459 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5459 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:20:15.5459 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:20:15.5459 Trace Initializing File Target[logfile]
+2021-12-12 01:20:15.5459 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:20:15.5459 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:20:15.5596 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:20:15.5596 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:20:15.5596 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:20:15.5596 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:20:15.5596 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:20:15.5596 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:20:15.5596 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:23:05.6167 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:23:05.6936 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:23:05.6936 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:23:05.6936 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:23:05.7060 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:23:05.7060 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:23:05.7060 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:23:05.7060 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:23:05.7060 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:23:05.7060 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:23:05.7060 Debug Auto loading done
+2021-12-12 01:23:05.7060 Info Message Template Auto Format enabled
+2021-12-12 01:23:05.7253 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7253 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:23:05.7322 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:23:05.7322 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:23:05.7322 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:23:05.7322 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:23:05.7322 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7322 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:23:05.7322 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:23:05.7322 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:23:05.7322 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:23:05.7322 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:23:05.7322 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:23:05.7322 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:23:05.7322 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:23:05.7322 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7322 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7322 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7322 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:23:05.7472 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:23:05.7472 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:23:05.7472 Trace ParseRulesElement
+2021-12-12 01:23:05.7635 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:23:05.7635 Debug --- NLog configuration dump ---
+2021-12-12 01:23:05.7635 Debug Targets:
+2021-12-12 01:23:05.7635 Debug File Target[logfile]
+2021-12-12 01:23:05.7635 Debug Rules:
+2021-12-12 01:23:05.7635 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:23:05.7635 Debug --- End of NLog configuration dump ---
+2021-12-12 01:23:05.7635 Trace FindReachableObject<System.Object>:
+2021-12-12 01:23:05.7635 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:23:05.7635 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:23:05.7635 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:23:05.7635 Trace   Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:23:05.7635 Trace   Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:23:05.7635 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7635 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7635 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:23:05.7635 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7635 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:23:05.7635 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:23:05.7635 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7635 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:23:05.7635 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7635 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:23:05.7635 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:23:05.7635 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:23:05.7635 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7635 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7635 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7635 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:23:05.7635 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:23:05.7635 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:23:05.7635 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:23:05.7635 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:23:05.7791 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:23:05.7791 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:23:05.7791 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:23:05.7791 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:23:05.7791 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:23:05.7791 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:23:05.7791 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7791 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:23:05.7791 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7791 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7791 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:23:05.7791 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:23:05.7791 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:23:05.7791 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:23:05.7791 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7791 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:23:05.7791 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7791 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:23:05.7791 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7791 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:23:05.7791 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:23:05.7791 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:23:05.7791 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7791 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:23:05.7791 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7952 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:23:05.7952 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:23:05.7952 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:23:05.7952 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:23:05.7952 Trace Initializing 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'
+2021-12-12 01:23:05.7952 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:23:05.7952 Trace Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:23:05.7952 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:23:05.7952 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7952 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:23:05.7952 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:23:05.7952 Trace Initializing File Target[logfile]
+2021-12-12 01:23:05.7952 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:23:05.7952 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:23:05.7952 Trace  Scanning Property FileName ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:23:05.7952 Trace  Scanning SimpleLayout ''F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/${shortdate}_logfile.txt''
+2021-12-12 01:23:05.7952 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:23:05.7952 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:23:05.7952 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:23:05.7952 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:23:05.7952 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:23:11.3978 Debug Targets for Domain.LoggerManager.LoggerManager by level:
+2021-12-12 01:23:11.3978 Debug Trace =>
+2021-12-12 01:23:11.3978 Debug Debug => logfile
+2021-12-12 01:23:11.3978 Debug Info => logfile
+2021-12-12 01:23:11.3978 Debug Warn => logfile
+2021-12-12 01:23:11.3978 Debug Error => logfile
+2021-12-12 01:23:11.3978 Debug Fatal => logfile
+2021-12-12 01:23:11.4137 Debug FileTarget(Name=logfile): Preparing for new file 'F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/2021-12-12_logfile.txt'
+2021-12-12 01:23:11.4184 Debug Creating file appender: F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/2021-12-12_logfile.txt
+2021-12-12 01:23:11.4184 Trace Opening F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:23:11.4184 Trace Opening F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:23:11.4184 Trace Opening F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:23:11.4184 Trace Opening F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:25:55.3147 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:25:55.3963 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:25:55.3963 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:25:55.3963 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:25:55.4054 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:25:55.4054 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:25:55.4054 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:25:55.4054 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:25:55.4054 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:25:55.4054 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:25:55.4054 Debug Auto loading done
+2021-12-12 01:25:55.4054 Info Message Template Auto Format enabled
+2021-12-12 01:25:55.4247 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4247 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:25:55.4247 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:25:55.4247 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:25:55.4247 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4247 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4247 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4247 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:25:55.4367 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:25:55.4367 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:25:55.4367 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4367 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:25:55.4367 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:25:55.4367 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:25:55.4367 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:25:55.4367 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:25:55.4367 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:25:55.4367 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:25:55.4367 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:25:55.4367 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4367 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4367 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4367 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:25:55.4367 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:25:55.4508 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:25:55.4508 Trace ParseRulesElement
+2021-12-12 01:25:55.4508 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:25:55.4508 Debug --- NLog configuration dump ---
+2021-12-12 01:25:55.4508 Debug Targets:
+2021-12-12 01:25:55.4656 Debug File Target[logfile]
+2021-12-12 01:25:55.4656 Debug Rules:
+2021-12-12 01:25:55.4656 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:25:55.4656 Debug --- End of NLog configuration dump ---
+2021-12-12 01:25:55.4656 Trace FindReachableObject<System.Object>:
+2021-12-12 01:25:55.4656 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:25:55.4656 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:25:55.4656 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:25:55.4656 Trace   Scanning Property FileName ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:25:55.4656 Trace   Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:25:55.4656 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4656 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4656 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:25:55.4656 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4656 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:25:55.4656 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:25:55.4656 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4656 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:25:55.4656 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4656 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:25:55.4656 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:25:55.4656 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:25:55.4656 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4656 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4656 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4656 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:25:55.4656 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:25:55.4656 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:25:55.4656 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:25:55.4656 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:25:55.4656 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:25:55.4862 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:25:55.4862 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:25:55.4862 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:25:55.4862 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:25:55.4862 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:25:55.4862 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4862 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:25:55.4862 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4862 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4862 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:25:55.4862 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:25:55.4862 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:25:55.4862 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:25:55.4862 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4862 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:25:55.4862 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4862 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:25:55.4974 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4974 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:25:55.4974 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:25:55.4974 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:25:55.4974 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4974 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:25:55.4974 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4974 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:25:55.4974 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:25:55.4974 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:25:55.4974 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:25:55.4974 Trace Initializing 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'
+2021-12-12 01:25:55.4974 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:25:55.4974 Trace Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:25:55.4974 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:25:55.4974 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4974 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:25:55.4974 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:25:55.4974 Trace Initializing File Target[logfile]
+2021-12-12 01:25:55.4974 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:25:55.4974 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:25:55.4974 Trace  Scanning Property FileName ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:25:55.4974 Trace  Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:25:55.4974 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:25:55.4974 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:25:55.4974 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:25:55.4974 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:25:55.4974 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:26:00.7889 Debug Targets for Domain.LoggerManager.LoggerManager by level:
+2021-12-12 01:26:00.7889 Debug Trace =>
+2021-12-12 01:26:00.7889 Debug Debug => logfile
+2021-12-12 01:26:00.7889 Debug Info => logfile
+2021-12-12 01:26:00.7889 Debug Warn => logfile
+2021-12-12 01:26:00.7889 Debug Error => logfile
+2021-12-12 01:26:00.7889 Debug Fatal => logfile
+2021-12-12 01:26:00.8041 Debug FileTarget(Name=logfile): Preparing for new file 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt'
+2021-12-12 01:26:00.8041 Debug Creating file appender: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt
+2021-12-12 01:26:00.8107 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:00.8107 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:00.8107 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:00.8107 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:50.3626 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:26:50.4421 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:26:50.4421 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:26:50.4421 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:26:50.4421 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:26:50.4421 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:26:50.4500 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:26:50.4500 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:26:50.4500 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:26:50.4500 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:26:50.4500 Debug Auto loading done
+2021-12-12 01:26:50.4500 Info Message Template Auto Format enabled
+2021-12-12 01:26:50.4684 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4684 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:26:50.4684 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:26:50.4684 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:26:50.4684 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4684 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.4684 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4684 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:26:50.4684 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:26:50.4684 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:26:50.4684 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.4817 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:26:50.4817 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:26:50.4817 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:26:50.4817 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:26:50.4817 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:26:50.4817 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:26:50.4817 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:26:50.4817 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:26:50.4817 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.4817 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.4817 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.4817 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:26:50.4817 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:26:50.4817 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:26:50.4817 Trace ParseRulesElement
+2021-12-12 01:26:50.5086 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:26:50.5086 Debug --- NLog configuration dump ---
+2021-12-12 01:26:50.5086 Debug Targets:
+2021-12-12 01:26:50.5086 Debug File Target[logfile]
+2021-12-12 01:26:50.5086 Debug Rules:
+2021-12-12 01:26:50.5086 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:26:50.5086 Debug --- End of NLog configuration dump ---
+2021-12-12 01:26:50.5156 Trace FindReachableObject<System.Object>:
+2021-12-12 01:26:50.5156 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:26:50.5156 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:26:50.5156 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:26:50.5156 Trace   Scanning Property FileName ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:26:50.5156 Trace   Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:26:50.5156 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5156 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5156 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:26:50.5156 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5156 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:26:50.5156 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:26:50.5156 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5156 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:26:50.5156 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5156 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:26:50.5156 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:26:50.5156 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:26:50.5156 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5156 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.5156 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5156 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:26:50.5156 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:26:50.5156 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:26:50.5156 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:26:50.5156 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:26:50.5156 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:26:50.5323 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:26:50.5323 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:26:50.5323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.5323 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:26:50.5323 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5323 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:26:50.5323 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:26:50.5323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.5323 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:26:50.5323 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5323 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:26:50.5323 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5323 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:26:50.5323 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:26:50.5323 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:26:50.5323 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5323 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:26:50.5323 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5323 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:26:50.5323 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:26:50.5323 Trace Initializing 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'
+2021-12-12 01:26:50.5440 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:26:50.5440 Trace Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:26:50.5440 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:26:50.5440 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5440 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:26:50.5440 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:26:50.5440 Trace Initializing File Target[logfile]
+2021-12-12 01:26:50.5440 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:26:50.5440 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:26:50.5440 Trace  Scanning Property FileName ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:26:50.5440 Trace  Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:26:50.5440 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:26:50.5440 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:26:50.5440 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:26:50.5440 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:26:50.5440 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:26:56.1521 Debug Targets for Domain.LoggerManager.LoggerManager by level:
+2021-12-12 01:26:56.1521 Debug Trace =>
+2021-12-12 01:26:56.1521 Debug Debug => logfile
+2021-12-12 01:26:56.1521 Debug Info => logfile
+2021-12-12 01:26:56.1521 Debug Warn => logfile
+2021-12-12 01:26:56.1521 Debug Error => logfile
+2021-12-12 01:26:56.1521 Debug Fatal => logfile
+2021-12-12 01:26:56.1552 Debug FileTarget(Name=logfile): Preparing for new file 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt'
+2021-12-12 01:26:56.1706 Debug Creating file appender: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt
+2021-12-12 01:26:56.1706 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:56.1706 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:56.1706 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:26:56.1706 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:30:33.9140 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-12-12 01:30:34.0030 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-12-12 01:30:34.0030 Debug Auto loading based on NLog-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:30:34.0030 Debug Search for auto loading files in location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:30:34.0030 Debug Found assembly location directory: 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0' (iTechArtPetsitters.WebUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)
+2021-12-12 01:30:34.0030 Debug Auto loading based on GetEntryAssembly-Assembly found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:30:34.0030 Debug Auto loading based on AppDomain-BaseDirectory found location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:30:34.0130 Debug Start auto loading, location: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI\bin\Debug\net5.0
+2021-12-12 01:30:34.0130 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:30:34.0130 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-12-12 01:30:34.0130 Debug Auto loading done
+2021-12-12 01:30:34.0130 Info Message Template Auto Format enabled
+2021-12-12 01:30:34.0323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0323 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:30:34.0323 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:30:34.0323 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:30:34.0323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0323 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.0323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0442 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:30:34.0442 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:30:34.0442 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:30:34.0442 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.0442 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.0442 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0442 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-12-12 01:30:34.0442 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0442 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:30:34.0442 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-12-12 01:30:34.0442 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'
+2021-12-12 01:30:34.0442 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0603 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:30:34.0603 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:30:34.0603 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0603 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:30:34.0603 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-12-12 01:30:34.0603 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-12-12 01:30:34.0603 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0603 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.0603 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0603 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:30:34.0603 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:30:34.0603 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:30:34.0603 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.0603 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.0603 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.0603 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:30:34.0603 Info Adding target FileTarget(Name=logfile)
+2021-12-12 01:30:34.0603 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-12-12 01:30:34.0603 Trace ParseRulesElement
+2021-12-12 01:30:34.0841 Debug Watching path 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI' filter 'nlog.config' for changes.
+2021-12-12 01:30:34.0841 Debug --- NLog configuration dump ---
+2021-12-12 01:30:34.0841 Debug Targets:
+2021-12-12 01:30:34.0841 Debug File Target[logfile]
+2021-12-12 01:30:34.0841 Debug Rules:
+2021-12-12 01:30:34.0841 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-12-12 01:30:34.0841 Debug --- End of NLog configuration dump ---
+2021-12-12 01:30:34.0920 Trace FindReachableObject<System.Object>:
+2021-12-12 01:30:34.0920 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-12-12 01:30:34.0920 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-12-12 01:30:34.0920 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:30:34.0920 Trace   Scanning Property FileName ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:30:34.0920 Trace   Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:30:34.0920 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.0920 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.0920 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:30:34.0920 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.0920 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:30:34.0920 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:30:34.0920 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.0920 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:30:34.0920 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.0920 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:30:34.0920 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:30:34.0920 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:30:34.0920 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.0920 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.0920 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.0920 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:30:34.0920 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:30:34.0920 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-12-12 01:30:34.0920 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-12-12 01:30:34.0920 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\iTechArtPetsitters.WebUI/nlog.config
+2021-12-12 01:30:34.0920 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-12-12 01:30:34.1059 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${message}
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${level}
+2021-12-12 01:30:34.1059 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-12-12 01:30:34.1059 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.1059 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:30:34.1059 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.1059 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${uppercase}
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${longdate}
+2021-12-12 01:30:34.1059 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-12-12 01:30:34.1059 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.1059 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:30:34.1059 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.1059 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-12-12 01:30:34.1059 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.1059 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-12-12 01:30:34.1059 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-12-12 01:30:34.1059 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-12-12 01:30:34.1059 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.1059 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-12-12 01:30:34.1059 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.1059 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${shortdate}
+2021-12-12 01:30:34.1059 Trace Initializing Layout Renderer: ${literal}
+2021-12-12 01:30:34.1059 Trace Initializing 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'
+2021-12-12 01:30:34.1059 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-12-12 01:30:34.1059 Trace Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:30:34.1059 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-12-12 01:30:34.1059 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.1059 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-12-12 01:30:34.1059 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-12-12 01:30:34.1059 Trace Initializing File Target[logfile]
+2021-12-12 01:30:34.1059 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-12-12 01:30:34.1059 Trace Scanning FileTarget 'File Target[logfile]'
+2021-12-12 01:30:34.1059 Trace  Scanning Property FileName ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt'' NLog.Layouts
+2021-12-12 01:30:34.1059 Trace  Scanning SimpleLayout ''F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\${shortdate}_logfile.txt''
+2021-12-12 01:30:34.1059 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-12-12 01:30:34.1220 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-12-12 01:30:34.1220 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-12-12 01:30:34.1220 Trace File Target[logfile] has 2 layouts
+2021-12-12 01:30:34.1220 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-12-12 01:30:40.1636 Debug Targets for Domain.LoggerManager.LoggerManager by level:
+2021-12-12 01:30:40.1636 Debug Trace =>
+2021-12-12 01:30:40.1636 Debug Debug => logfile
+2021-12-12 01:30:40.1636 Debug Info => logfile
+2021-12-12 01:30:40.1636 Debug Warn => logfile
+2021-12-12 01:30:40.1636 Debug Error => logfile
+2021-12-12 01:30:40.1636 Debug Fatal => logfile
+2021-12-12 01:30:40.1826 Debug FileTarget(Name=logfile): Preparing for new file 'F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt'
+2021-12-12 01:30:40.1874 Debug Creating file appender: F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt
+2021-12-12 01:30:40.1874 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:30:40.1874 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:30:40.1874 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False
+2021-12-12 01:30:40.1874 Trace Opening F:\downloadsOpera\iTechArtPetsitters.WebUI-master\iTechArtPetsitters.WebUI\2021-12-12_logfile.txt with allowFileSharedWriting=False

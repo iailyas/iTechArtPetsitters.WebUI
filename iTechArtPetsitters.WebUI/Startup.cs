@@ -5,6 +5,8 @@ using Domain.Commands.PetsitterCommand;
 using Domain.Commands.PetsittingJobCommand;
 using Domain.Commands.ReviewCommand;
 using Domain.Commands.UserInfoCommand;
+using Domain.Extensions;
+using Domain.LoggerManager;
 using DomainNew.Commands;
 using DomainNew.Interfaces;
 using DomainNew.Service;
@@ -25,7 +27,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-
+using NLog;
+using System;
+using System.IO;
 
 namespace iTechArtPetsitters.WebUI
 {
@@ -33,10 +37,12 @@ namespace iTechArtPetsitters.WebUI
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
+       
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -67,8 +73,11 @@ namespace iTechArtPetsitters.WebUI
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
-
+            //logger
+            services.AddSingleton<ILoggerManager, LoggerManager>();
             services.AddControllers();
+            services.AddLogging();
+            //services.ConfigureLoggerService();
             //contexts
             services.AddDbContext<EFMainDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             //repositories
@@ -99,15 +108,25 @@ namespace iTechArtPetsitters.WebUI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
         {
+            //Error handling middleware
+            app.ConfigureExceptionHandler(logger);
             if (env.IsDevelopment())
             {
+                //error handling
+               
+                app.UseExceptionHandler("/error-development");
+                
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "iTechArtPetsitters.WebUI v1"));
             }
-
+            else
+            {
+               app.UseExceptionHandler("/error");
+            }
+            
             app.UseRouting();
 
             app.UseAuthorization();
