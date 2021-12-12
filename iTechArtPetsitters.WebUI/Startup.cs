@@ -47,6 +47,7 @@ namespace iTechArtPetsitters.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>
             {
@@ -70,9 +71,9 @@ namespace iTechArtPetsitters.WebUI
 
 
             });
-
+          
             IMapper mapper = mapperConfig.CreateMapper();
-            services.AddSingleton(mapper);
+            services.AddSingleton(mapper);          
             //logger
             services.AddSingleton<ILoggerManager, LoggerManager>();
             services.AddControllers();
@@ -98,7 +99,7 @@ namespace iTechArtPetsitters.WebUI
 
 
 
-
+            
 
 
             services.AddSwaggerGen(c =>
@@ -110,8 +111,10 @@ namespace iTechArtPetsitters.WebUI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
         {
+           
             //Error handling middleware
-            app.ConfigureExceptionHandler(logger);
+            
+            
             if (env.IsDevelopment())
             {
                 //error handling
@@ -126,8 +129,12 @@ namespace iTechArtPetsitters.WebUI
             {
                app.UseExceptionHandler("/error");
             }
-            
+            app.UseHttpsRedirection();
             app.UseRouting();
+            // app.ConfigureExceptionHandler(logger);
+            //for custom viewing exeptions JSON
+            app.ConfigureCustomExceptionMiddleware();
+
 
             app.UseAuthorization();
 

@@ -1,10 +1,10 @@
 ﻿using Domain.LoggerManager;
 using Microsoft.AspNetCore.Builder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.Net;
+using Domain.Models;
+using Microsoft.AspNetCore.Diagnostics;
+using Domain.CustomExeptionMiddleware;
 
 namespace Domain.Extensions
 {
@@ -13,7 +13,7 @@ namespace Domain.Extensions
         public static void ConfigureExceptionHandler(this IApplicationBuilder app, ILoggerManager logger)
         {
           
-           
+          
             app.UseExceptionHandler(appError =>
             {
                 appError.Run(async context =>
@@ -32,6 +32,10 @@ namespace Domain.Extensions
                     }
                 });
             });
+        }
+        public static void ConfigureCustomExceptionMiddleware(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<ExeptionMiddleware>();
         }
     }
 }

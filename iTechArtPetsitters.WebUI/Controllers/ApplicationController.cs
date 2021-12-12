@@ -36,12 +36,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            ApplicationView applicationView = mapper.Map<ApplicationView>(await ApplicationService.GetAsync(id));            
-
-            if (applicationView == null)
-            {
-                return NotFound(id.ToString());
-            }
+            ApplicationView applicationView = mapper.Map<ApplicationView>(await ApplicationService.GetAsync(id));        
 
             return new ObjectResult(applicationView);
 
@@ -50,10 +45,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] AddApplicationCommand addApplicationCommand)
         {
-            if (addApplicationCommand == null)
-            {
-                return BadRequest();
-            }
             await ApplicationService.CreateAsync(addApplicationCommand);
             //return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
             return Ok();
@@ -66,27 +57,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
         {
             ApplicationView applicationView = mapper.Map<ApplicationView>(await ApplicationService.DeleteAsync(id));
 
-            if (applicationView == null)
-            {
-                return BadRequest();
-            }
-
             return new ObjectResult(applicationView);
         }
         [HttpPut("{id::long}")]
         public async Task<IActionResult> SelectApplication(long id, [FromBody] SelectApplicationCommand selectApplicationCommand)
         {
-            if (selectApplicationCommand == null || selectApplicationCommand.Id != id)
-            {
-                return BadRequest();
-            }
-
-            var user = await ApplicationService.GetAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
             await ApplicationService.SelectApplication(selectApplicationCommand);
             return RedirectToRoute("GetAllServices");
         }
