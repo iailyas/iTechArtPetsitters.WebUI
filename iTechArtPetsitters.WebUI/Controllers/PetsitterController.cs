@@ -32,12 +32,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> GetAsync(long id)
         {
             PetsitterView petsitterView = mapper.Map<PetsitterView>(await petsitterService.GetAsync(id));
-
-            if (petsitterView == null)
-            {
-                return NotFound(id.ToString());
-            }
-
             return new ObjectResult(petsitterView);
 
         }
@@ -45,10 +39,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] AddPetsitterCommand addPetsitterCommand)
         {
-            if (addPetsitterCommand == null)
-            {
-                return BadRequest();
-            }
             await petsitterService.CreateAsync(addPetsitterCommand);
             return Ok();
         }
@@ -57,12 +47,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> Delete(long id)
         {
            PetsitterView DeletedPetsitterView = mapper.Map<PetsitterView>(await petsitterService.DeleteAsync(id));
-
-            if (DeletedPetsitterView == null)
-            {
-                return BadRequest();
-            }
-
             return new ObjectResult(DeletedPetsitterView);
         }
 

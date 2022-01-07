@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers
 {
@@ -16,24 +12,24 @@ namespace iTechArtPetsitters.WebUI.Controllers
     {
         [HttpGet]
         [Route("/error-development")]
-public IActionResult HandleErrorDevelopment(
+        public IActionResult HandleErrorDevelopment(
     [FromServices] IHostEnvironment hostEnvironment)
-{
-    if (!hostEnvironment.IsDevelopment())
-    {
-        return NotFound();
-    }
+        {
+            if (!hostEnvironment.IsDevelopment())
+            {
+                return NotFound();
+            }
 
-    var exceptionHandlerFeature =
-        HttpContext.Features.Get<IExceptionHandlerFeature>()!;
+            var exceptionHandlerFeature =
+                HttpContext.Features.Get<IExceptionHandlerFeature>()!;
 
-    return Problem(
-        detail: exceptionHandlerFeature.Error.StackTrace,
-        title: exceptionHandlerFeature.Error.Message);
-}
-         [HttpGet]
-[Route("/error")]
-public IActionResult HandleError() =>
-    Problem();
+            return Problem(
+                detail: exceptionHandlerFeature.Error.StackTrace,
+                title: exceptionHandlerFeature.Error.Message);
+        }
+        [HttpGet]
+        [Route("/error")]
+        public IActionResult HandleError() =>
+   Problem();
     }
 }

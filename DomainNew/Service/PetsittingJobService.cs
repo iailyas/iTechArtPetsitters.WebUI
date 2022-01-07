@@ -4,6 +4,7 @@ using Domain.Commands.PetsittingJobCommand;
 using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -24,6 +25,10 @@ namespace DomainNew.Service
         public async Task CreateAsync(AddPetsittingJobCommand addPetsittingJobCommand)
         {
             PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(addPetsittingJobCommand);
+            if (petsittingJob==null) 
+            {
+                throw new Exception("Exception while creating new PetsittingJob");
+            }
             await repository.CreateAsync(petsittingJob);
         }
 
@@ -34,17 +39,31 @@ namespace DomainNew.Service
 
         public async Task<IEnumerable<PetsittingJob>> GetAsync()
         {
-            return await repository.GetAsync();
+            var petsittingJobs= await repository.GetAsync();
+            if (petsittingJobs == null)
+            {
+                throw new Exception("Exception while accessing Petsitting job.");
+            }
+            return petsittingJobs;
         }
 
         public async Task<PetsittingJob> GetAsync(long id)
         {
-            return await GetAsync(id);
+            var petsittingJob= await GetAsync(id);
+            if (petsittingJob == null)
+            {
+               throw new Exception("Exception while accessing a Petsitters's job");
+            }
+            return petsittingJob;
         }
 
-        public async Task UpdateAsunc(UpdatePetsittingJobCommand updatePetsittingJobCommand)
+        public async Task UpdateAsync(UpdatePetsittingJobCommand updatePetsittingJobCommand)
         {
-           PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(updatePetsittingJobCommand);
+            if (updatePetsittingJobCommand == null)
+            {
+                throw new Exception("Exeption while updating PetsittingJob");
+            }
+            PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(updatePetsittingJobCommand);
            await repository.UpdateAsync(petsittingJob);
         }
     }

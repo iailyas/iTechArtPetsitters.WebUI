@@ -38,12 +38,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> GetAsync(long id)
         {
             UserView userView = mapper.Map<UserView>(await userService.GetAsync(id));
-
-            if (userView == null)
-            {
-                return NotFound(id.ToString());
-            }
-
             return new ObjectResult(userView);
 
         }
@@ -51,10 +45,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] RegisterUserCommand registerUserCommand)
         {
-            if (registerUserCommand == null)
-            {
-                return BadRequest();
-            }
             await userService.Register(registerUserCommand);
             //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
             return Ok();
@@ -63,17 +53,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpPut("{id::long}")]
         public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdateUserCommand updateUserCommand)
         {
-            if (updateUserCommand == null || updateUserCommand.Id != id)
-            {
-                return BadRequest();
-            }
             UserView userView = mapper.Map<UserView>(await userService.GetAsync(id));
-            
-            if (userView == null)
-            {
-                return NotFound();
-            }
-
             await userService.UpdateAsync(updateUserCommand);
             return RedirectToRoute("GetAllUsers");
         }
@@ -82,12 +62,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> DeleteAsync(long id)
         {
             UserView deletedUser = mapper.Map<UserView>(await userService.DeleteAsync(id));
-
-            if (deletedUser == null)
-            {
-                return BadRequest();
-            }
-
             return new ObjectResult(deletedUser);
         }
        

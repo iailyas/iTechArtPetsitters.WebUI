@@ -3,6 +3,7 @@ using Domain.Commands.PetsitterCommand;
 using DomainNew.Interfaces;
 using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,6 +23,10 @@ namespace DomainNew.Service
         public async Task CreateAsync(AddPetsitterCommand addPetsitterCommand)
         {
             Petsitter petsitter = mapper.Map<Petsitter>(addPetsitterCommand);
+            if (petsitter==null) 
+            {
+                throw new Exception("Exception while creating new Petsitter");
+            }
             await repository.CreateAsync(petsitter);
         }
 
@@ -32,12 +37,22 @@ namespace DomainNew.Service
 
         public async Task<IEnumerable<Petsitter>> GetAsync()
         {
-            return await repository.GetAsync();
+            var Petsitters = await repository.GetAsync();
+            if (Petsitters==null) 
+            {
+                throw new Exception("Exception while accessing Petsitters");
+            }
+            return Petsitters;
         }
 
         public async Task<Petsitter> GetAsync(long id)
         {
-            return await repository.GetAsync(id);
+            var petsitter = await repository.GetAsync(id);
+            if (petsitter == null)
+            {
+                throw new Exception("Exception while while fetching Pet from the storage.");
+            }
+            return petsitter;
         }
 
         public Task<Petsitter> SetApplication(long id)

@@ -25,6 +25,12 @@ namespace DomainNew.Service
         public async Task CreateAsync(AddUserInfoCommand addUserInfoCommand)
         {
             UserInfo userInfo = mapper.Map<UserInfo>(addUserInfoCommand);
+
+            if (userInfo == null)
+            {
+                throw new Exception("Exception while creating a UserInfo.");
+            }
+
             await repository.CreateAsync(userInfo);
         }
 
@@ -35,12 +41,22 @@ namespace DomainNew.Service
 
         public async Task<IEnumerable<UserInfo>> GetAsync()
         {
-            return await repository.GetAsync();
+            var usersInfo = await repository.GetAsync();
+            if (usersInfo == null)
+            {
+                throw new Exception("Exception while accessing UsersInfo.");
+            }
+            return usersInfo;
         }
 
         public async Task<UserInfo> GetAsync(long id)
         {
-            return await GetAsync(id);
+            var userInfo = await repository.GetAsync(id);
+            if (userInfo == null)
+            {
+                throw new Exception("Exception while accessing UserInfo.");
+            }
+            return userInfo;
         }
     }
 }

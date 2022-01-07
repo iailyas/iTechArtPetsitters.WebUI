@@ -10,7 +10,7 @@ namespace DomainNew.Service.Interfaces
         Task<IEnumerable<PetsittingJob>> GetAsync();
         Task<PetsittingJob> GetAsync(long id);
         Task CreateAsync(AddPetsittingJobCommand addPetsittingJobCommand);
-        Task UpdateAsunc(UpdatePetsittingJobCommand addPetsittingJobCommand);
+        Task UpdateAsync(UpdatePetsittingJobCommand addPetsittingJobCommand);
         Task<PetsittingJob> DeleteAsync(long id);
     }
 }

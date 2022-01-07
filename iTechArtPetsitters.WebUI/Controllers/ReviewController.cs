@@ -33,22 +33,12 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> GetAsync(long id)
         {
             ReviewView reviewView = mapper.Map<ReviewView>(await reviewService.GetAsync(id));
-
-            if (reviewView == null)
-            {
-                return NotFound(id.ToString());
-            }
-
             return new ObjectResult(reviewView);
 
         }
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] AddReviewCommand addReviewCommand)
         {
-            if (addReviewCommand== null)
-            {
-                return BadRequest();
-            }
             await reviewService.CreateAsync(addReviewCommand);
             //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
             return Ok();
@@ -58,12 +48,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> DeleteAsync(long id)
         {
             ReviewView DeletedReview = mapper.Map<ReviewView>(await reviewService.DeleteAsync(id));
-
-            if (DeletedReview == null)
-            {
-                return BadRequest();
-            }
-
             return new ObjectResult(DeletedReview);
         }
 
