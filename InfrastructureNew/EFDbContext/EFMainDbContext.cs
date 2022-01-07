@@ -1,4 +1,5 @@
-﻿using DomainNew.Models;
+﻿using Domain.Models.Authentication;
+using DomainNew.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureNew.EFDbContext
@@ -14,6 +15,6 @@ namespace InfrastructureNew.EFDbContext
         public DbSet<Review> Reviews { get; set; }
         public DbSet<PetsittingJob> Services { get; set; }
         public DbSet<UserInfo> InformationAboutUser { get; set; }
-
+       
     }
 }

@@ -24,7 +24,7 @@ namespace DomainNew.Service
             IEnumerable<Pet> Pets = await repository.GetAsync();
             if (Pets == null)
             {
-                throw new Exception("Violation Exception while accessing a Pet.");
+                throw new Exception("Exception while accessing a Pet.");
             }
             return Pets;
         }

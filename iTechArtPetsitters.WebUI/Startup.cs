@@ -7,6 +7,7 @@ using Domain.Commands.ReviewCommand;
 using Domain.Commands.UserInfoCommand;
 using Domain.Extensions;
 using Domain.LoggerManager;
+using Domain.Models.Authentication;
 using DomainNew.Commands;
 using DomainNew.Interfaces;
 using DomainNew.Service;
@@ -20,8 +21,10 @@ using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsittingJobView;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetView;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.ReviewView;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.UserView;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,19 +45,19 @@ namespace iTechArtPetsitters.WebUI
         }
 
         public IConfiguration Configuration { get; }
-       
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new UserUpdateProfile());
                 mc.AddProfile(new ApplicationMapProfile());
-                mc.AddProfile(new PetMapProfile()); 
-                mc.AddProfile(new PetsitterMapProfile()); 
+                mc.AddProfile(new PetMapProfile());
+                mc.AddProfile(new PetsitterMapProfile());
                 mc.AddProfile(new PetsittingJobMapProfile());
                 mc.AddProfile(new ReviewMapProfile());
                 mc.AddProfile(new UserInfoMapProfile());
@@ -71,9 +74,9 @@ namespace iTechArtPetsitters.WebUI
 
 
             });
-          
+
             IMapper mapper = mapperConfig.CreateMapper();
-            services.AddSingleton(mapper);          
+            services.AddSingleton(mapper);
             //logger
             services.AddSingleton<ILoggerManager, LoggerManager>();
             services.AddControllers();
@@ -96,38 +99,89 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<IUserService, UserService>();
 
+            // For Identity  
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddDefaultTokenProviders();
 
 
+            // Adding Authentication  
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
 
-            
+            // Adding Jwt Bearer  
+            .AddJwtBearer(options =>
+            {
+                options.SaveToken = true;
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["JWT:ValidAudience"],
+                    ValidIssuer = Configuration["JWT:ValidIssuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                };
+            });
+
 
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArtPetsitters.WebUI", Version = "v1" });
+                // To Enable authorization using Swagger (JWT)    
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
+                            new string[] {}
+
+                    }
+                });
+            
+        
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArtPetsitters.WebUI", Version = "v1" });
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
         {
-           
+
             //Error handling middleware
-            
-            
+
+
             if (env.IsDevelopment())
             {
                 //error handling
-               
+
                 app.UseExceptionHandler("/error-development");
-                
+
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "iTechArtPetsitters.WebUI v1"));
             }
             else
             {
-               app.UseExceptionHandler("/error");
+                app.UseExceptionHandler("/error");
             }
             app.UseHttpsRedirection();
             app.UseRouting();
