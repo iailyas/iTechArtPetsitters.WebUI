@@ -1,5 +1,4 @@
-﻿
-using DomainNew.Interfaces;
+﻿using DomainNew.Interfaces;
 using DomainNew.Models;
 using InfrastructureNew.EFDbContext;
 using Microsoft.EntityFrameworkCore;

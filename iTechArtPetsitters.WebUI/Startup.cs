@@ -24,6 +24,7 @@ using iTechArtPetsitters.WebUI.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -81,6 +82,9 @@ namespace iTechArtPetsitters.WebUI
             services.AddSingleton(mapper);
             //logger
             services.AddSingleton<ILoggerManager, LoggerManager>();
+            //for current user service
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddControllers();
             services.AddLogging();
             //services.ConfigureLoggerService();

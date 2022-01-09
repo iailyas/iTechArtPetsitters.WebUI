@@ -62,7 +62,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
                     expiration = token.ValidTo
                 });
             }
-            return Unauthorized();
+            throw new ValidationException("Wrong password.");
         }
         [HttpPost]
         [Route("register")]
