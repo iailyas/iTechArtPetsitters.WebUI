@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Commands.ReviewCommand;
-using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.ReviewView;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     {
         private readonly IReviewService reviewService;
         private readonly IMapper mapper;
-        public ReviewController(IReviewService review,IMapper mapper)
+        public ReviewController(IReviewService review, IMapper mapper)
         {
             reviewService = review;
             this.mapper = mapper;
@@ -40,7 +39,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] AddReviewCommand addReviewCommand)
         {
             await reviewService.CreateAsync(addReviewCommand);
-            //return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
             return Ok();
         }
 

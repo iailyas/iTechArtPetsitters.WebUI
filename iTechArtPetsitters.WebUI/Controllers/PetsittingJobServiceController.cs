@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Commands.PetsittingJobCommand;
-using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsittingJobView;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +16,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         private readonly IPetsittingJobService PetsittingServiceService;
         private readonly IMapper mapper;
 
-        public PetsittingJobServiceController(IPetsittingJobService petsittingServiceService,IMapper mapper)
+        public PetsittingJobServiceController(IPetsittingJobService petsittingServiceService, IMapper mapper)
         {
             PetsittingServiceService = petsittingServiceService;
             this.mapper = mapper;
@@ -47,7 +46,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] AddPetsittingJobCommand addPetsittingJobCommand)
         {
             await PetsittingServiceService.CreateAsync(addPetsittingJobCommand);
-            //return CreatedAtRoute("GetService", new { id = service.Id }, service);
+
             return Ok();
         }
         //replaces all records with data from request
@@ -55,7 +54,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdatePetsittingJobCommand updatePetsittingJobCommand)
         {
             PetsittingJobView petsittingJobView = mapper.Map<PetsittingJobView>(await PetsittingServiceService.GetAsync(id));
-           // var user = await PetsittingServiceService.GetAsync(id);
             await PetsittingServiceService.UpdateAsync(updatePetsittingJobCommand);
             return RedirectToRoute("GetAllServices");
         }

@@ -21,19 +21,19 @@ namespace DomainNew.Service
         }
 
         public async Task CreateAsync(AddApplicationCommand addApplicationCommand)
-        {      
+        {
             if (addApplicationCommand == null)
             {
                 throw new Exception("Exception while fetching Application by id from the storage.");
-            }      
-                Application application = mapper.Map<Application>(addApplicationCommand);
-           
+            }
+            Application application = mapper.Map<Application>(addApplicationCommand);
+
             await repository.CreateAsync(application);
         }
 
         public async Task<Application> DeleteAsync(long id)
         {
-            Application application=await repository.DeleteAsync(id);
+            Application application = await repository.DeleteAsync(id);
             if (application == null)
             {
                 throw new Exception("Exception while delete Application by id from the storage.");
@@ -44,11 +44,11 @@ namespace DomainNew.Service
         public async Task<IEnumerable<Application>> GetAsync()
         {
             IEnumerable<Application> applications = await repository.GetAsync();
-            if (applications == null) 
+            if (applications == null)
             {
                 throw new AccessViolationException("Violation Exception while accessing the resource.");
             }
-            
+
             return applications;
         }
 
@@ -67,7 +67,7 @@ namespace DomainNew.Service
             {
                 throw new Exception("Exception while selection Application by id from the storage.");
             }
-            Application application = mapper.Map<Application>(selectApplicationCommand);           
+            Application application = mapper.Map<Application>(selectApplicationCommand);
             await repository.SelectApplication(application);
         }
     }

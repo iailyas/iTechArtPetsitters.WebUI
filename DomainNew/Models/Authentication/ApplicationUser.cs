@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿
+
+using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Models.Authentication
 {
     public class ApplicationUser:IdentityUser
     {
-
+        public string CustomTag { get; set; }
     }
 }

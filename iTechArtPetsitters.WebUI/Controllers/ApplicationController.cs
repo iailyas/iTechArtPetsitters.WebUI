@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using Domain.Commands.ApplicationCommand;
-using DomainNew.Models;
 using DomainNew.Service.Interfaces;
-using iTechArtPetsitters.WebUI.Controllers.ViewModels;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.ApplicationView;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,13 +27,13 @@ namespace iTechArtPetsitters.WebUI.Controllers
             var apps = await ApplicationService.GetAsync();
             IEnumerable<ApplicationView> applicationView = mapper.Map<List<ApplicationView>>(apps);
             return applicationView;
-            
+
         }
-      
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            ApplicationView applicationView = mapper.Map<ApplicationView>(await ApplicationService.GetAsync(id));        
+            ApplicationView applicationView = mapper.Map<ApplicationView>(await ApplicationService.GetAsync(id));
 
             return new ObjectResult(applicationView);
 
@@ -46,7 +43,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] AddApplicationCommand addApplicationCommand)
         {
             await ApplicationService.CreateAsync(addApplicationCommand);
-            //return CreatedAtRoute("GetApplication", new { id = application.Id }, application);
+
             return Ok();
         }
 

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Commands.PetCommand;
-using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetView;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +15,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         private readonly IPetService PetService;
         private readonly IMapper mapper;
 
-        public PetController(IPetService petRepository,IMapper mapper)
+        public PetController(IPetService petRepository, IMapper mapper)
         {
             PetService = petRepository;
             this.mapper = mapper;

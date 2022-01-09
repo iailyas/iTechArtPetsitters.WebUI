@@ -1,10 +1,11 @@
 ﻿using Domain.Models.Authentication;
 using DomainNew.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureNew.EFDbContext
 {
-    public class EFMainDbContext : DbContext
+    public class EFMainDbContext : IdentityDbContext<ApplicationUser>
     {
         public EFMainDbContext(DbContextOptions<EFMainDbContext> options) : base(options)
         { }

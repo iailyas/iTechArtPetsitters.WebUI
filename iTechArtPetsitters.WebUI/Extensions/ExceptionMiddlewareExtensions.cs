@@ -4,20 +4,19 @@ using Microsoft.AspNetCore.Http;
 using System.Net;
 using Domain.Models;
 using Microsoft.AspNetCore.Diagnostics;
-using Domain.CustomExeptionMiddleware;
+using iTechArtPetsitters.WebUI.Middlewares;
 
-namespace Domain.Extensions
+namespace iTechArtPetsitters.WebUI.Extensions
 {
-    public static class ExtensionsMiddlewareExtensions
+    public static class ExceptionMiddlewareExtensions
     {
         public static void ConfigureExceptionHandler(this IApplicationBuilder app, ILoggerManager logger)
-        {
-          
-          
+        {        
             app.UseExceptionHandler(appError =>
             {
                 appError.Run(async context =>
                 {
+                   
                     context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     context.Response.ContentType = "application/json";
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
@@ -35,7 +34,7 @@ namespace Domain.Extensions
         }
         public static void ConfigureCustomExceptionMiddleware(this IApplicationBuilder app)
         {
-            app.UseMiddleware<ExeptionMiddleware>();
+            app.UseMiddleware<ExceptionMiddleware>();
         }
     }
 }

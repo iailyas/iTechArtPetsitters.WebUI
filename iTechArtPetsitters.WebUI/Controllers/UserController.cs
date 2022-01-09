@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Commands.UserCommand;
-using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.UserView;
 using Microsoft.AspNetCore.Mvc;
@@ -16,9 +15,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
     {
         private readonly IUserService userService;
         private readonly IMapper mapper;
-        
 
-        public UserController(IUserService userService,IMapper mapper)
+
+        public UserController(IUserService userService, IMapper mapper)
         {
             this.userService = userService;
             this.mapper = mapper;
@@ -46,7 +45,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] RegisterUserCommand registerUserCommand)
         {
             await userService.Register(registerUserCommand);
-            //return CreatedAtRoute("GetUser", new { id = user.Id }, user);
             return Ok();
         }
         //replaces all records with data from request
@@ -64,6 +62,6 @@ namespace iTechArtPetsitters.WebUI.Controllers
             UserView deletedUser = mapper.Map<UserView>(await userService.DeleteAsync(id));
             return new ObjectResult(deletedUser);
         }
-       
+
     }
 }

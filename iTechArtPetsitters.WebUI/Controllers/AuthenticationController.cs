@@ -1,6 +1,6 @@
 ﻿using Domain.Models;
 using Domain.Models.Authentication;
-using Microsoft.AspNetCore.Http;
+using iTechArtPetsitters.WebUI.Middlewares;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -70,7 +70,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.UserName);
             if (userExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+                throw new ValidationException("Error. User already exists! ");
 
             ApplicationUser user = new ApplicationUser()
             {
@@ -80,7 +80,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             };
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                throw new ValidationException("Error. User creation failed! Please check user details and try again.");
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }

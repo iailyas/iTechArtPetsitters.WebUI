@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Commands.PetsitterCommand;
-using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsitterView;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
     {
         private readonly IPetsitterService petsitterService;
         private readonly IMapper mapper;
-        public PetsitterController(IPetsitterService repository,IMapper mapper)
+        public PetsitterController(IPetsitterService repository, IMapper mapper)
         {
             this.petsitterService = repository;
             this.mapper = mapper;
@@ -46,7 +45,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> Delete(long id)
         {
-           PetsitterView DeletedPetsitterView = mapper.Map<PetsitterView>(await petsitterService.DeleteAsync(id));
+            PetsitterView DeletedPetsitterView = mapper.Map<PetsitterView>(await petsitterService.DeleteAsync(id));
             return new ObjectResult(DeletedPetsitterView);
         }
 

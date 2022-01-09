@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using Domain.Commands.PetsittingJobCommand;
 using DomainNew.Interfaces;
 using DomainNew.Models;
@@ -25,7 +24,7 @@ namespace DomainNew.Service
         public async Task CreateAsync(AddPetsittingJobCommand addPetsittingJobCommand)
         {
             PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(addPetsittingJobCommand);
-            if (petsittingJob==null) 
+            if (petsittingJob == null)
             {
                 throw new Exception("Exception while creating new PetsittingJob");
             }
@@ -39,7 +38,7 @@ namespace DomainNew.Service
 
         public async Task<IEnumerable<PetsittingJob>> GetAsync()
         {
-            var petsittingJobs= await repository.GetAsync();
+            var petsittingJobs = await repository.GetAsync();
             if (petsittingJobs == null)
             {
                 throw new Exception("Exception while accessing Petsitting job.");
@@ -49,10 +48,10 @@ namespace DomainNew.Service
 
         public async Task<PetsittingJob> GetAsync(long id)
         {
-            var petsittingJob= await GetAsync(id);
+            var petsittingJob = await GetAsync(id);
             if (petsittingJob == null)
             {
-               throw new Exception("Exception while accessing a Petsitters's job");
+                throw new Exception("Exception while accessing a Petsitters's job");
             }
             return petsittingJob;
         }
@@ -64,7 +63,7 @@ namespace DomainNew.Service
                 throw new Exception("Exeption while updating PetsittingJob");
             }
             PetsittingJob petsittingJob = mapper.Map<PetsittingJob>(updatePetsittingJobCommand);
-           await repository.UpdateAsync(petsittingJob);
+            await repository.UpdateAsync(petsittingJob);
         }
     }
 }

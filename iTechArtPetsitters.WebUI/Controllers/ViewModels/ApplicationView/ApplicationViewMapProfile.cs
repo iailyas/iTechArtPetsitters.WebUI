@@ -1,13 +1,9 @@
 ﻿using AutoMapper;
 using DomainNew.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace iTechArtPetsitters.WebUI.Controllers.ViewModels.ApplicationView
 {
-    public class ApplicationViewMapProfile:Profile
+    public class ApplicationViewMapProfile : Profile
     {
         public ApplicationViewMapProfile()
         {

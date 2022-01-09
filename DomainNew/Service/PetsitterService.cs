@@ -14,7 +14,7 @@ namespace DomainNew.Service
         private readonly IPetsitterRepository repository;
         private readonly IMapper mapper;
 
-        public PetsitterService(IPetsitterRepository repository,IMapper mapper)
+        public PetsitterService(IPetsitterRepository repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
@@ -23,7 +23,7 @@ namespace DomainNew.Service
         public async Task CreateAsync(AddPetsitterCommand addPetsitterCommand)
         {
             Petsitter petsitter = mapper.Map<Petsitter>(addPetsitterCommand);
-            if (petsitter==null) 
+            if (petsitter == null)
             {
                 throw new Exception("Exception while creating new Petsitter");
             }
@@ -38,7 +38,7 @@ namespace DomainNew.Service
         public async Task<IEnumerable<Petsitter>> GetAsync()
         {
             var Petsitters = await repository.GetAsync();
-            if (Petsitters==null) 
+            if (Petsitters == null)
             {
                 throw new Exception("Exception while accessing Petsitters");
             }

@@ -5,18 +5,16 @@ using DomainNew.Models;
 using DomainNew.Service.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DomainNew.Service
 {
-    public class UserInfoService:IUserInfoService
+    public class UserInfoService : IUserInfoService
     {
         private readonly IUserInfoRepository repository;
         private readonly IMapper mapper;
 
-        public UserInfoService(IUserInfoRepository repository,IMapper mapper)
+        public UserInfoService(IUserInfoRepository repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
