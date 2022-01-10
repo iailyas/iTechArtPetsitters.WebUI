@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Domain.Interfaces.CurrentUsers;
+using Domain.Interfaces;
+using Domain.Views.CurrentUserView;
 using DomainNew.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
-namespace Domain.Interfaces.CurrentUser
+namespace Domain.Service
 {
     public class CurrentUserService : ICurrentUserService
     {

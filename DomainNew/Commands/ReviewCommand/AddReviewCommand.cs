@@ -1,11 +1,14 @@
-﻿using DomainNew.Models;
+﻿using Domain.Service;
+using DomainNew.Models;
 using System;
 
 namespace Domain.Commands.ReviewCommand
 {
     public class AddReviewCommand
     {
-        public long Id { get; set; }
+        public CurrentUserService currentUserService;
+
+        public long Id => currentUserService.GetCurrentUser().Id;
         public int UserId { get; set; }
         public User User { get; set; }
         public int PetsitterId { get; set; }

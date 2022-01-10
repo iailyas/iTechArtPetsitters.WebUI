@@ -1,4 +1,4 @@
-﻿namespace Domain.Interfaces.CurrentUsers
+﻿namespace Domain.Views.CurrentUserView
 {
     public class CurrentUserView
     {
