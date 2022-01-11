@@ -2,6 +2,7 @@
 using Domain.Commands.PetsitterCommand;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetsitterView;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
+    [Authorize]
     public class PetsitterController : Controller
     {
         private readonly IPetsitterService petsitterService;
@@ -21,6 +24,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpGet(Name = "GetAllPetsitters")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IEnumerable<PetsitterView>> GetAsync()
         {
             IEnumerable<PetsitterView> petsitterView = mapper.Map<IEnumerable<PetsitterView>>(await petsitterService.GetAsync());
@@ -28,6 +32,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetAsync(long id)
         {
             PetsitterView petsitterView = mapper.Map<PetsitterView>(await petsitterService.GetAsync(id));
@@ -36,6 +41,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> CreateAsync([FromBody] AddPetsitterCommand addPetsitterCommand)
         {
             await petsitterService.CreateAsync(addPetsitterCommand);
@@ -43,6 +49,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpDelete("{id::long}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(long id)
         {
             PetsitterView DeletedPetsitterView = mapper.Map<PetsitterView>(await petsitterService.DeleteAsync(id));
