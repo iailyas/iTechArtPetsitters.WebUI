@@ -2,6 +2,7 @@
 using Domain.Commands.UserCommand;
 using DomainNew.Service.Interfaces;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.UserView;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IUserService userService;
@@ -26,6 +29,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         //returns all users
         [HttpGet(Name = "GetAllUsers")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IEnumerable<UserView>> GetAsync()
         {
             IEnumerable<UserView> userView = mapper.Map<List<UserView>>(await userService.GetAsync());
@@ -34,6 +38,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         //returns user by id
         //Case sensitivity {id} and long id
         [HttpGet("/user/{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetAsync(long id)
         {
             UserView userView = mapper.Map<UserView>(await userService.GetAsync(id));
@@ -42,6 +47,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //creating new record
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> CreateAsync([FromBody] RegisterUserCommand registerUserCommand)
         {
             await userService.Register(registerUserCommand);
@@ -49,6 +55,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //replaces all records with data from request
         [HttpPut("{id::long}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdateUserCommand updateUserCommand)
         {
             UserView userView = mapper.Map<UserView>(await userService.GetAsync(id));
@@ -56,6 +63,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return RedirectToRoute("GetAllUsers");
         }
         //delete record by id
+        [Authorize(Roles = "User,Petsitter,Administrator")]
         [HttpDelete("{id::long}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
