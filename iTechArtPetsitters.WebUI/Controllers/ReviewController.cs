@@ -14,12 +14,12 @@ namespace iTechArtPetsitters.WebUI.Controllers
     {
         private readonly IReviewService reviewService;
         private readonly IMapper mapper;
-        public ReviewController(IReviewService review, IMapper mapper)
+
+        public ReviewController(IReviewService reviewService, IMapper mapper)
         {
-            reviewService = review;
+            this.reviewService = reviewService;
             this.mapper = mapper;
         }
-
 
         [HttpGet(Name = "GetAllReviews")]
         public async Task<IEnumerable<ReviewView>> GetAsync()
@@ -43,9 +43,9 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
 
         [HttpDelete("{id::long}")]
-        public async Task<IActionResult> DeleteAsync(long id)
+        public async Task<IActionResult> DeleteAsync()
         {
-            ReviewView DeletedReview = mapper.Map<ReviewView>(await reviewService.DeleteAsync(id));
+            ReviewView DeletedReview = mapper.Map<ReviewView>(await reviewService.DeleteAsync());
             return new ObjectResult(DeletedReview);
         }
 

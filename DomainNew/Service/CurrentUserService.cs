@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using Domain.Interfaces;
+using Domain.Service.Interfaces;
 using Domain.Views.CurrentUserView;
 using DomainNew.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Domain.Service
 {
@@ -21,9 +22,15 @@ namespace Domain.Service
 
         public CurrentUserView GetCurrentUser()
         {
-            var CurrentUserId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var CurrentUserId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).ToString();
             CurrentUserView currentUserView =mapper.Map<CurrentUserView>(repository.GetAsync(long.Parse(CurrentUserId)));
             return currentUserView;
+        }
+        public long GetCurrentUserId()
+        {            
+            string CurrentUserId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).ToString();
+            long id = long.Parse(CurrentUserId);
+            return id;
         }
 
     }

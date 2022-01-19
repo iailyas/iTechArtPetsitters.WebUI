@@ -7,6 +7,9 @@ using Domain.Commands.ReviewCommand;
 using Domain.Commands.UserInfoCommand;
 using Domain.LoggerManager;
 using Domain.Models.Authentication;
+using Domain.Service;
+using Domain.Service.Interfaces;
+using Domain.Views.CurrentUserView;
 using DomainNew.Commands;
 using DomainNew.Interfaces;
 using DomainNew.Service;
@@ -53,6 +56,7 @@ namespace iTechArtPetsitters.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
 
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>
@@ -73,6 +77,7 @@ namespace iTechArtPetsitters.WebUI
                 mc.AddProfile(new PetViewMapProfile());
                 mc.AddProfile(new ReviewViewMapProfile());
                 mc.AddProfile(new UserViewMapProfile());
+                mc.AddProfile(new CurrentUserViewMapProfile());
 
 
 
@@ -105,6 +110,7 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IPetsittingJobService, PetsittingJobService>();
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICurrentUserService,CurrentUserService>();
 
             // For Identity  
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -175,7 +181,8 @@ namespace iTechArtPetsitters.WebUI
         {
 
             //Error handling middleware
-
+            app.UseAuthorization();
+            app.UseAuthentication();
 
             if (env.IsDevelopment())
             {

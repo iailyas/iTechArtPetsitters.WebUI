@@ -6,9 +6,8 @@ namespace Domain.Commands.ReviewCommand
 {
     public class AddReviewCommand
     {
-        public CurrentUserService currentUserService;
 
-        public long Id => currentUserService.GetCurrentUser().Id;
+        public long Id { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public int PetsitterId { get; set; }
