@@ -1,6 +1,8 @@
-﻿namespace Domain.Models.Authentication
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Domain.Models.Authentication
 {
-    public static class UserRoles
+    public class UserRoles: IdentityRole<long>
     {
         public const string Admin = "Administrator";
         public const string User = "User";

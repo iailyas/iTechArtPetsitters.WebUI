@@ -8,6 +8,8 @@ namespace Domain.Commands.ReviewCommand
         public ReviewMapProfile() 
         {
             CreateMap<Review,AddReviewCommand >().ReverseMap();
+            CreateMap<Review, UpdateReviewCommand>().ReverseMap();
+
         }
     }
 }

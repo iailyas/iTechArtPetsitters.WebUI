@@ -1,4 +1,6 @@
-﻿namespace DomainNew.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace DomainNew.Models
 {
     //model of data
     public class User

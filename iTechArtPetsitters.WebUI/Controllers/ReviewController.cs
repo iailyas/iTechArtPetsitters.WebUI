@@ -29,8 +29,8 @@ namespace iTechArtPetsitters.WebUI.Controllers
         [Authorize(Roles = "Administrator")]
         public async Task<IEnumerable<ReviewView>> GetAsync()
         {
-            IEnumerable<ReviewView> reviewView = mapper.Map<List<ReviewView>>(await reviewService.GetAsync());
-            return reviewView;
+            IEnumerable<ReviewView> reviewViews = mapper.Map<List<ReviewView>>(await reviewService.GetAsync());
+            return reviewViews;
         }
 
         [HttpGet("{id}")]
@@ -42,7 +42,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         }
         [HttpPost]
-        [Authorize(Roles = "User")]
+       [Authorize(Roles = "User")]
         public async Task<IActionResult> CreateAsync([FromBody] AddReviewCommand addReviewCommand)
         {
             await reviewService.CreateAsync(addReviewCommand);

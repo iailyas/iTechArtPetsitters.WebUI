@@ -24,6 +24,8 @@ using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetView;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.ReviewView;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.UserView;
 using iTechArtPetsitters.WebUI.Extensions;
+using iTechArtPetsitters.WebUI.InitializeDB;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -88,14 +90,14 @@ namespace iTechArtPetsitters.WebUI
             //logger
             services.AddSingleton<ILoggerManager, LoggerManager>();
             //for current user service
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+          //  services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllers();
             services.AddLogging();
             //services.ConfigureLoggerService();
             //contexts
             services.AddDbContext<EFMainDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            
+
             //repositories
             services.AddTransient<IApplicationRepository, EFApplicationRepository>();
             services.AddTransient<IPetRepository, EFPetRepository>();
@@ -110,36 +112,36 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IPetsittingJobService, PetsittingJobService>();
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<ICurrentUserService,CurrentUserService>();
+            services.AddTransient<ICurrentUserService, CurrentUserService>();
 
             // For Identity  
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser,UserRoles>()
             .AddEntityFrameworkStores<EFMainDbContext>()
             .AddDefaultTokenProviders();
 
+            var Secret = Configuration["JWT:Secret"];
 
             // Adding Authentication  
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
 
-            // Adding Jwt Bearer  
-            .AddJwtBearer(options =>
+
+            services.AddAuthentication(cfg =>
             {
-                options.SaveToken = true;
-                options.RequireHttpsMetadata = false;
-                options.TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidAudience = Configuration["JWT:ValidAudience"],
-                    ValidIssuer = Configuration["JWT:ValidIssuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
-                };
-            });
+                cfg.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                cfg.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+    .AddJwtBearer(cfg =>
+    {
+        cfg.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = false,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Secret)),
+
+        };
+    });
+
+
 
 
 
@@ -170,19 +172,21 @@ namespace iTechArtPetsitters.WebUI
 
                     }
                 });
-            
-        
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArtPetsitters.WebUI", Version = "v1" });
+
+
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArtPetsitters.WebUI", Version = "v1" });
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger, UserManager<ApplicationUser> userManager,RoleManager<UserRoles> roleManager)
         {
-
+            Initialize.AddRoles(roleManager);
+            Initialize.AddAdmin(userManager);
+            
             //Error handling middleware
-            app.UseAuthorization();
-            app.UseAuthentication();
+           
+          
 
             if (env.IsDevelopment())
             {
@@ -204,8 +208,9 @@ namespace iTechArtPetsitters.WebUI
             //for custom viewing exeptions JSON
             app.ConfigureCustomExceptionMiddleware();
 
-
+            app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

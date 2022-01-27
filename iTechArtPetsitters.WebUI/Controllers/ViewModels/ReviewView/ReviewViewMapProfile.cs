@@ -7,7 +7,7 @@ namespace iTechArtPetsitters.WebUI.Controllers.ViewModels.ReviewView
     {
         public ReviewViewMapProfile()
         {
-            CreateMap<ReviewView, Review>();
+            CreateMap<ReviewView, Review>().ReverseMap();
         }
     }
 }

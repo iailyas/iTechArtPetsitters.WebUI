@@ -25,7 +25,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         [HttpGet(Name = "GetAllPets")]
 
-        [Authorize(Roles = "Petsitter,Administrator")]
+        [Authorize]
         public async Task<IEnumerable<PetView>> GetAsync()
         {
             IEnumerable<PetView> petView = mapper.Map<List<PetView>>(await PetService.GetAsync());

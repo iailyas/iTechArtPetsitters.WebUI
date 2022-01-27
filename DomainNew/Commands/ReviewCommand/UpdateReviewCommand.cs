@@ -1,12 +1,14 @@
-﻿using Domain.Service;
-using DomainNew.Models;
+﻿using DomainNew.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Domain.Commands.ReviewCommand
 {
-    public class AddReviewCommand
+    public class UpdateReviewCommand
     {
-
         public long Id { get; set; }
         public long UserId { get; set; }
         public User User { get; set; }

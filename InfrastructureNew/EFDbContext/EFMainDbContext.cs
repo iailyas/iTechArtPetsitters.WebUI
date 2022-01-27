@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InfrastructureNew.EFDbContext
 {
-    public class EFMainDbContext : IdentityDbContext<ApplicationUser>
+    public class EFMainDbContext : IdentityDbContext<ApplicationUser, UserRoles, long>
     {
         public EFMainDbContext(DbContextOptions<EFMainDbContext> options) : base(options)
         { }

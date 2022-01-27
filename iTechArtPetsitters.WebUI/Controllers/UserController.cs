@@ -29,7 +29,7 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         //returns all users
         [HttpGet(Name = "GetAllUsers")]
-        [Authorize(Roles = "Administrator")]
+      //  [Authorize(Roles = "Administrator")]
         public async Task<IEnumerable<UserView>> GetAsync()
         {
             IEnumerable<UserView> userView = mapper.Map<List<UserView>>(await userService.GetAsync());

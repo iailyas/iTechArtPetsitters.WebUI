@@ -11,11 +11,11 @@ namespace iTechArtPetsitters.WebUI.InitializeDB
 {
     public static class Initialize
     {
-        public static void AddRoles(RoleManager<IdentityRole> roleManager) 
+        public static void AddRoles(RoleManager<UserRoles> roleManager) 
         {
             if (roleManager.FindByNameAsync("Administrator").Result == null)
             {
-                var adminRole = new IdentityRole
+                var adminRole = new UserRoles
                 {
                     Name = "Administrator",
                     NormalizedName = "Administrator".ToUpper()
@@ -25,7 +25,7 @@ namespace iTechArtPetsitters.WebUI.InitializeDB
 
             if (roleManager.FindByNameAsync("User").Result == null)
             {
-                var userRole = new IdentityRole
+                var userRole = new UserRoles
                 {
                     Name = "User",
                     NormalizedName = "User".ToUpper()
@@ -34,7 +34,7 @@ namespace iTechArtPetsitters.WebUI.InitializeDB
             }
             if (roleManager.FindByNameAsync("Petsitter").Result == null)
             {
-                var userRole = new IdentityRole
+                var userRole = new UserRoles
                 {
                     Name = "Petsitter",
                     NormalizedName = "Petsitter".ToUpper()

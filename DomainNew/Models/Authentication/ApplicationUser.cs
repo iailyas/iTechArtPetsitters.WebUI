@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Models.Authentication
 {
-    public class ApplicationUser:IdentityUser
+    public class ApplicationUser:IdentityUser<long>
     {
-        public string CustomTag { get; set; }
+       
     }
 }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.Commands.ReviewCommand;
-using Domain.Service;
 using Domain.Service.Interfaces;
 using DomainNew.Interfaces;
 using DomainNew.Models;
@@ -27,12 +26,12 @@ namespace DomainNew.Service
 
         public async Task CreateAsync(AddReviewCommand addReviewCommand)
         {
-            
-            Review review = mapper.Map<Review>(addReviewCommand); 
-            review.Id= currentUserService.GetCurrentUserId();
+
+            Review review = mapper.Map<Review>(addReviewCommand);
+            review.UserId = currentUserService.GetCurrentUserId();
             if (review == null)
             {
-               throw new Exception("Exception while creating a Review.");
+                throw new Exception("Exception while creating a Review.");
             }
             await repository.CreateAsync(review);
         }
@@ -50,7 +49,7 @@ namespace DomainNew.Service
             {
                 throw new Exception("Exception while accessing the Reviews.");
             }
-            return await repository.GetAsync();
+            return reviews;
         }
 
         public async Task<Review> GetAsync(long id)
