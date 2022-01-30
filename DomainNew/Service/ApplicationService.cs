@@ -24,7 +24,7 @@ namespace DomainNew.Service
         {
             if (addApplicationCommand == null)
             {
-                throw new Exception("Exception while fetching Application by id from the storage.");
+                throw new Exception("Exception while creating new Application");
             }
             Application application = mapper.Map<Application>(addApplicationCommand);
 

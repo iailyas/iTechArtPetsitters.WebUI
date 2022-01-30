@@ -4,7 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 ## 
 *.txt
-
+*.log
 ## For ignoring _logfile.txt and [......]log.txt files
 # User-specific files
 *.rsuser
