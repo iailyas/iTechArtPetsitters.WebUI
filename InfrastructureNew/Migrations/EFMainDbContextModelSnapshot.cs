@@ -115,6 +115,24 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
+            modelBuilder.Entity("Domain.Models.FileModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Path")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("files");
+                });
+
             modelBuilder.Entity("DomainNew.Models.Application", b =>
                 {
                     b.Property<long>("Id")

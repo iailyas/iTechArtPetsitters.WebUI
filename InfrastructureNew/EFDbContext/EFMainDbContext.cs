@@ -1,4 +1,5 @@
-﻿using Domain.Models.Authentication;
+﻿using Domain.Models;
+using Domain.Models.Authentication;
 using DomainNew.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ namespace InfrastructureNew.EFDbContext
         public DbSet<Review> Reviews { get; set; }
         public DbSet<PetsittingJob> Services { get; set; }
         public DbSet<UserInfo> InformationAboutUser { get; set; }
+        public DbSet<FileModel> files { get; set; }
        
     }
 }
