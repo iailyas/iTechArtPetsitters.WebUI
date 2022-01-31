@@ -37,12 +37,12 @@ namespace InfrastructureNew.Repositories
 
         public async Task<IEnumerable<Application>> GetAsync()
         {
-            return await context.Applications.ToListAsync();
+            return await context.Applications.AsNoTracking().ToListAsync();
         }
 
         public async Task<Application> GetAsync(long id)
         {
-            return await context.Applications.FindAsync(id);
+            return await context.Applications.AsNoTracking().SingleAsync(b => b.Id == id);
         }
         public async Task SelectApplication(Application application)
         {

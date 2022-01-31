@@ -1,10 +1,16 @@
 ﻿using AutoMapper;
 using Domain.Commands.PetCommand;
+using Domain.Models;
+using DomainNew.Models;
 using DomainNew.Service.Interfaces;
+using InfrastructureNew.EFDbContext;
 using iTechArtPetsitters.WebUI.Controllers.ViewModels.PetView;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 
@@ -18,12 +24,17 @@ namespace iTechArtPetsitters.WebUI.Controllers
     {
         private readonly IPetService PetService;
         private readonly IMapper mapper;
+        private readonly EFMainDbContext context;
+        private readonly IWebHostEnvironment appEnvironment;
 
-        public PetController(IPetService petRepository, IMapper mapper)
+        public PetController(IPetService petService, IMapper mapper, EFMainDbContext context, IWebHostEnvironment appEnvironment)
         {
-            PetService = petRepository;
+            PetService = petService;
             this.mapper = mapper;
+            this.context = context;
+            this.appEnvironment = appEnvironment;
         }
+
         [HttpGet(Name = "GetAllPets")]
 
         [Authorize]
@@ -32,6 +43,32 @@ namespace iTechArtPetsitters.WebUI.Controllers
             IEnumerable<PetView> petView = mapper.Map<List<PetView>>(await PetService.GetAsync());
             return petView;
         }
+
+        [HttpPost]
+        [Route("api/[controller]/Add")]
+        public async Task AddFile(IFormFile uploadedFile, long PetId)
+        {
+            if (uploadedFile != null)
+            {
+                // путь к папке Files
+                string path = "F:/downloadsOpera/iTechArtPetsitters.WebUI-master/iTechArtPetsitters.WebUI/images/" + uploadedFile.FileName;
+                // сохраняем файл в папку Files в каталоге wwwroot
+                using (var fileStream = new FileStream(appEnvironment.WebRootPath + path, FileMode.Create))
+                {
+                    await uploadedFile.CopyToAsync(fileStream);
+                }
+                FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
+                context.files.Add(file);
+                Pet pet = await PetService.GetAsync(PetId);
+                pet.FileId = file.Id;
+
+                UpdatePetCommand updatePetCommand = mapper.Map<UpdatePetCommand>(pet);
+                await PetService.UpdateAsync(updatePetCommand);
+
+                context.SaveChanges();
+            }
+        }
+
         [HttpPost]
         [Authorize(Roles = "User")]
         public async Task<IActionResult> CreateAsync([FromBody] AddPetCommand addPetCommand)
@@ -42,11 +79,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Petsitter,Administrator")]
-        public async Task<IActionResult> GetAsync(long id)
+        public async Task<PetView> GetAsync(long id)
         {
             PetView petView = mapper.Map<PetView>(await PetService.GetAsync(id));
-            return new ObjectResult(petView);
-
+            return petView;
         }
 
         [HttpDelete("{id::long}")]
@@ -59,11 +95,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         [HttpPatch(Name = "Path")]
         [Authorize(Roles = "User,Petsitter,Administrator")]
-        public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdatePetCommand updatePetCommand)
+        public async Task UpdateAsync([FromBody] UpdatePetCommand updatePetCommand)
         {
-            PetView petView = mapper.Map<PetView>(await PetService.GetAsync(id));
             await PetService.UpdateAsync(updatePetCommand);
-            return RedirectToRoute("GetAllPets");
         }
+
+       
     }
 }

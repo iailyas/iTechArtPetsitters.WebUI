@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(EFMainDbContext))]
-    [Migration("20220130185651_FileId")]
-    partial class FileId
+    [Migration("20220131152600_Pet")]
+    partial class Pet
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

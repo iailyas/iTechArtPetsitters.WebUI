@@ -102,9 +102,10 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IApplicationRepository, EFApplicationRepository>();
             services.AddTransient<IPetRepository, EFPetRepository>();
             services.AddTransient<IPetsitterRepository, EFPetsitterRepository>();
-            services.AddTransient<IPetsittingJobRepository, EFPetsittingServiceRepository>();
+            services.AddTransient<IPetsittingJobRepository, EFPetsittingJobServiceRepository>();
             services.AddTransient<IReviewRepository, EFReviewRepository>();
             services.AddTransient<IUserRepository, EFUserRepository>();
+            services.AddTransient<IUserInfoRepository, EFUserInfoRepository>();
             //services
             services.AddTransient<IApplicationService, ApplicationService>();
             services.AddTransient<IPetService, PetService>();
@@ -113,6 +114,7 @@ namespace iTechArtPetsitters.WebUI
             services.AddTransient<IReviewService, ReviewService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ICurrentUserService, CurrentUserService>();
+            services.AddTransient<IUserInfoService, UserInfoService>();
 
             // For Identity  
             services.AddIdentity<ApplicationUser,UserRoles>()

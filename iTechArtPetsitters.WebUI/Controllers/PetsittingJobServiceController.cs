@@ -39,10 +39,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
         //Case sensitivity {id} and long id
         [HttpGet("{id}")]
         [Authorize(Roles = "Petsitter,Administrator")]
-        public async Task<IActionResult> GetAsync(long id)
+        public async Task<PetsittingJobView> GetAsync(long id)
         {
             PetsittingJobView petsittingJobView = mapper.Map<PetsittingJobView>(await PetsittingServiceService.GetAsync(id));
-            return new ObjectResult(petsittingJobView);
+            return petsittingJobView;
 
         }
         //creating new record
@@ -56,12 +56,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
         }
         //replaces all records with data from request
         [Authorize(Roles = "Petsitter,Administrator")]
-        [HttpPut("{id::long}")]
-        public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdatePetsittingJobCommand updatePetsittingJobCommand)
+        [HttpPatch]
+        public async Task UpdateAsync([FromBody] UpdatePetsittingJobCommand updatePetsittingJobCommand)
         {
-            PetsittingJobView petsittingJobView = mapper.Map<PetsittingJobView>(await PetsittingServiceService.GetAsync(id));
             await PetsittingServiceService.UpdateAsync(updatePetsittingJobCommand);
-            return RedirectToRoute("GetAllServices");
         }
         //delete record by id
         [HttpDelete("{id::long}")]

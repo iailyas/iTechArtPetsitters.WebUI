@@ -37,11 +37,11 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> GetAsync(long id)
+        public async Task<ApplicationView> GetAsync(long id)
         {
             ApplicationView applicationView = mapper.Map<ApplicationView>(await ApplicationService.GetAsync(id));
 
-            return new ObjectResult(applicationView);
+            return applicationView;
 
         }
 
@@ -64,12 +64,12 @@ namespace iTechArtPetsitters.WebUI.Controllers
 
             return new ObjectResult(applicationView);
         }
-        [HttpPut("{id::long}")]
+        [HttpPatch("{id::long}")]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> SelectApplication(long id, [FromBody] SelectApplicationCommand selectApplicationCommand)
+        public async Task ChangeApplication([FromBody] SelectApplicationCommand selectApplicationCommand)
         {
             await ApplicationService.SelectApplication(selectApplicationCommand);
-            return RedirectToRoute("GetAllServices");
+           
         }
 
     }

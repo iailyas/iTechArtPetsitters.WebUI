@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureNew.Repositories
 {
-    class EFUserInfoRepository : IUserInfoRepository
+    public class EFUserInfoRepository : IUserInfoRepository
     {
         private readonly EFMainDbContext context;
 
