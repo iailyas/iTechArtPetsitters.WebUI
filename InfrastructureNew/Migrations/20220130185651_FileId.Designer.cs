@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(EFMainDbContext))]
-    [Migration("20220130164302_Files")]
-    partial class Files
+    [Migration("20220130185651_FileId")]
+    partial class FileId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -183,6 +183,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Breed")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("FileId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

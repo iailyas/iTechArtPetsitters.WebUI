@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+
 namespace iTechArtPetsitters.WebUI.Controllers
 {
     [Route("api/[controller]")]
@@ -54,6 +55,15 @@ namespace iTechArtPetsitters.WebUI.Controllers
         {
             PetView DeletedPetView = mapper.Map<PetView>(await PetService.DeleteAsync(id));
             return new ObjectResult(DeletedPetView);
+        }
+
+        [HttpPatch(Name = "Path")]
+        [Authorize(Roles = "User,Petsitter,Administrator")]
+        public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdatePetCommand updatePetCommand)
+        {
+            PetView petView = mapper.Map<PetView>(await PetService.GetAsync(id));
+            await PetService.UpdateAsync(updatePetCommand);
+            return RedirectToRoute("GetAllPets");
         }
     }
 }

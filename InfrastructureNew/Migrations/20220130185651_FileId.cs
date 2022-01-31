@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Migrations
 {
-    public partial class Files : Migration
+    public partial class FileId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -238,7 +238,8 @@ namespace Infrastructure.Migrations
                     Weight = table.Column<float>(type: "real", nullable: false),
                     Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    UserId1 = table.Column<long>(type: "bigint", nullable: true)
+                    UserId1 = table.Column<long>(type: "bigint", nullable: true),
+                    FileId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -182,6 +182,9 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Breed")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("FileId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 

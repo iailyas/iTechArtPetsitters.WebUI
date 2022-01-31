@@ -57,6 +57,16 @@ namespace DomainNew.Service
             Pet pet = mapper.Map<Pet>(addPetCommand);
             await repository.CreateAsync(pet);
         }
+        public async Task UpdateAsync(UpdatePetCommand updatePetCommand)
+        {
+
+            Pet pet = mapper.Map<Pet>(updatePetCommand);
+            if (pet == null)
+            {
+                throw new Exception("Exception while updating User");
+            }
+            await repository.UpdateAsync(pet);
+        }
 
 
     }

@@ -29,6 +29,14 @@ namespace InfrastructureNew.Repositories
             await Context.AddAsync(pet);
             await Context.SaveChangesAsync();
         }
+        public async Task UpdateAsync(Pet pet)
+        {
+            
+            
+            Pet currentPet = pet;
+            Context.Update(currentPet);
+            Context.ChangeTracker.AcceptAllChanges();
+        }
 
         public async Task<Pet> DeleteAsync(long id)
         {
@@ -43,6 +51,8 @@ namespace InfrastructureNew.Repositories
             return pet;
 
         }
+
+       
     }
 }
 

@@ -11,5 +11,6 @@ namespace Domain.Commands.PetCommand
         public string Adress { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
+        public long FileId { get; set; }
     }
 }

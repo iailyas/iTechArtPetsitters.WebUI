@@ -39,10 +39,10 @@ namespace iTechArtPetsitters.WebUI.Controllers
         //Case sensitivity {id} and long id
         [HttpGet("/user/{id}")]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> GetAsync(long id)
+        public async Task<UserView> GetAsync(long id)
         {
             UserView userView = mapper.Map<UserView>(await userService.GetAsync(id));
-            return new ObjectResult(userView);
+            return userView;
 
         }
         //creating new record
@@ -54,17 +54,17 @@ namespace iTechArtPetsitters.WebUI.Controllers
             return Ok();
         }
         //replaces all records with data from request
-        [HttpPut("{id::long}")]
+       
+        [HttpPatch]        
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> UpdateAsync(long id, [FromBody] UpdateUserCommand updateUserCommand)
+        public async Task UpdateAsync([FromBody] UpdateUserCommand updateUserCommand)
         {
-            UserView userView = mapper.Map<UserView>(await userService.GetAsync(id));
             await userService.UpdateAsync(updateUserCommand);
-            return RedirectToRoute("GetAllUsers");
         }
         //delete record by id
-        [Authorize(Roles = "User,Petsitter,Administrator")]
+        
         [HttpDelete("{id::long}")]
+        [Authorize(Roles = "User,Petsitter,Administrator")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             UserView deletedUser = mapper.Map<UserView>(await userService.DeleteAsync(id));

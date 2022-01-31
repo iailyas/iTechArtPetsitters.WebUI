@@ -10,6 +10,7 @@ namespace DomainNew.Interfaces
         Task<IEnumerable<Pet>> GetAsync();
         Task<Pet> GetAsync(long id);
         Task<Pet> DeleteAsync(long id);
+        Task UpdateAsync(Pet pet);
         
     }
 }

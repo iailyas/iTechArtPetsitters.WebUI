@@ -22,12 +22,15 @@ namespace Infrastructure.Repositories
 
         async Task<IEnumerable<User>> IUserRepository.GetAsync()
         {
-            return await context.Users.ToListAsync();
+            return await context.Users.AsNoTracking().ToListAsync();
         }
 
         async Task<User> IUserRepository.GetAsync(long id)
         {
-            return await context.Users.FindAsync(id);
+            return await  context.Users.AsNoTracking().SingleAsync(b=>b.Id==id);
+            // return await context.Users.Include(i => i.Id==id).ToListAsync();//Include(i => i.Id).ToListAsync();
+            //return await context.Users.FindAsync(id);
+            
         }
 
         async Task IUserRepository.CreateAsync(User user)
